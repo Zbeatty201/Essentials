@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: BookshelfAct.ma
-//Last modified: Thu, May 21, 2026 06:25:25 PM
+//Last modified: Thu, May 21, 2026 06:43:36 PM
 //Codeset: UTF-8
 requires maya "2027";
 requires "mtoa" "5.6.0";
@@ -10,23 +10,23 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202603302215-e16e754b0e";
 fileInfo "osv" "Mac OS X 20.5";
-fileInfo "UUID" "F0359B77-E848-D88A-A09C-02B92AB96845";
+fileInfo "UUID" "D7C737CC-BE47-B358-A415-0981137783D2";
 createNode transform -s -n "persp";
 	rename -uid "60D39CB9-7449-C03A-29D8-B8B470AABD31";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.49437033799237184 9.7742845545286663 -29.500463525419683 ;
-	setAttr ".r" -type "double3" 170.82480899597581 -1080.8871216881937 180.00000000003826 ;
+	setAttr ".t" -type "double3" -4.4361098718430663 12.554298527924114 3.6940498851540009 ;
+	setAttr ".r" -type "double3" 145.62480899599899 -1758.0871216872285 179.99999999997306 ;
 	setAttr ".rp" -type "double3" -8.8817841970012523e-16 2.7755575615628914e-16 0 ;
 	setAttr ".rpt" -type "double3" 1.7333878095577415e-15 8.4521422854786155e-17 3.1722033406794328e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "C28D64D5-9342-5989-A469-48AABDAD6FF7";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 32.344591498594511;
+	setAttr ".coi" 11.512259055177468;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".tp" -type "double3" -10.783267764775818 6.0543656562779109 10.764875006722988 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "DE38D9B6-FA4A-6C41-3B11-D4AE91AE2282";
@@ -78,270 +78,10 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
-createNode transform -n "pPlane1";
-	rename -uid "5A1D8520-6742-846C-682C-11BE4050EF2E";
-	setAttr ".t" -type "double3" -1.7107709574693475 0 2.5974881962999374 ;
-	setAttr ".s" -type "double3" 20.28829094802267 9.8206145736360888 19.331135199084954 ;
-createNode mesh -n "pPlaneShape1" -p "pPlane1";
-	rename -uid "E8ED99E7-8A4A-9553-25B5-09A9D573044D";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "group";
-	rename -uid "0030225B-064F-F616-EB2E-7D9E1B6E3254";
-	setAttr ".t" -type "double3" 0 0 -29.746773934274856 ;
-	setAttr ".rp" -type "double3" 0 6.000035180926016 15.01898105417887 ;
-	setAttr ".sp" -type "double3" 0 6.000035180926016 15.01898105417887 ;
-createNode transform -n "pCube2";
-	rename -uid "CA292E90-E142-C82C-9B25-F893B40075AE";
-	setAttr ".t" -type "double3" -2.0619326178635489 5.9731346168123505 12.081768863312888 ;
-	setAttr ".s" -type "double3" 20.006305125049074 12 0.5 ;
-createNode mesh -n "pCubeShape2" -p "pCube2";
-	rename -uid "5D572803-C742-5496-83C9-AC9B8AD54DF0";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr -s 6 ".gtag";
-	setAttr ".gtag[0].gtagnm" -type "string" "back";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
-	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
-	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
-	setAttr ".gtag[2].gtagnm" -type "string" "front";
-	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
-	setAttr ".gtag[3].gtagnm" -type "string" "left";
-	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
-	setAttr ".gtag[4].gtagnm" -type "string" "right";
-	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
-	setAttr ".gtag[5].gtagnm" -type "string" "top";
-	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
-		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
-		 0.875 0.25 0.125 0 0.125 0.25;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
-		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
-	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
-		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
-	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
-		f 4 0 5 -2 -5
-		mu 0 4 0 1 3 2
-		f 4 1 7 -3 -7
-		mu 0 4 2 3 5 4
-		f 4 2 9 -4 -9
-		mu 0 4 4 5 7 6
-		f 4 3 11 -1 -11
-		mu 0 4 6 7 9 8
-		f 4 -12 -10 -8 -6
-		mu 0 4 1 10 11 3
-		f 4 10 4 6 8
-		mu 0 4 12 0 2 13;
-	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
-	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube3";
-	rename -uid "034B2EEC-2949-F516-E279-72AAF2AB8B23";
-	setAttr ".t" -type "double3" -11.915860204735441 6.000035180926016 2.3588771297819306 ;
-	setAttr ".r" -type "double3" 0 90 0 ;
-	setAttr ".s" -type "double3" 20.006305125049074 12 0.5 ;
-createNode mesh -n "pCubeShape3" -p "pCube3";
-	rename -uid "0057C001-2241-5140-B617-C8B5F36DF3A8";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr -s 6 ".gtag";
-	setAttr ".gtag[0].gtagnm" -type "string" "back";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
-	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
-	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
-	setAttr ".gtag[2].gtagnm" -type "string" "front";
-	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
-	setAttr ".gtag[3].gtagnm" -type "string" "left";
-	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
-	setAttr ".gtag[4].gtagnm" -type "string" "right";
-	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
-	setAttr ".gtag[5].gtagnm" -type "string" "top";
-	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
-	setAttr ".pv" -type "double2" 0.5 0.5 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
-		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
-		 0.875 0.25 0.125 0 0.125 0.25;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
-		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
-	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
-		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
-	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
-		f 4 0 5 -2 -5
-		mu 0 4 0 1 3 2
-		f 4 1 7 -3 -7
-		mu 0 4 2 3 5 4
-		f 4 2 9 -4 -9
-		mu 0 4 4 5 7 6
-		f 4 3 11 -1 -11
-		mu 0 4 6 7 9 8
-		f 4 -12 -10 -8 -6
-		mu 0 4 1 10 11 3
-		f 4 10 4 6 8
-		mu 0 4 12 0 2 13;
-	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
-	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "group1";
-	rename -uid "DCA1B96A-0047-3FB2-54D1-219C6C08C9C7";
-	setAttr ".t" -type "double3" 3.9628691695244775 -1.3061695114528291 3.5737750324639004 ;
-	setAttr ".r" -type "double3" 0 -88.234812585090168 0 ;
-	setAttr ".rp" -type "double3" -11.001261627656628 11.268373481552812 7.792265748963894 ;
-	setAttr ".rpt" -type "double3" 4.929390229335695e-14 0 -6.3948846218409017e-14 ;
-	setAttr ".sp" -type "double3" -11.001261627656628 11.268373481552812 7.792265748963894 ;
-createNode transform -n "group2";
-	rename -uid "54FB4909-EC46-1931-3020-57A361A15C1E";
-	setAttr ".t" -type "double3" -3.0183668062593245 1.2228319760987767 -3.9223801668636993 ;
-	setAttr ".r" -type "double3" 0 90 0 ;
-	setAttr ".rp" -type "double3" -7.3371735976065757 10.685496765560288 11.174774664517878 ;
-	setAttr ".sp" -type "double3" -7.3371735976065757 10.685496765560288 11.174774664517878 ;
-createNode transform -n "pasted__group1" -p "group2";
-	rename -uid "36ED2EA4-654A-F2E7-636E-8DBD98FFDD49";
-	setAttr ".t" -type "double3" 3.9628691695244775 -1.3061695114528291 3.5737750324639004 ;
-	setAttr ".r" -type "double3" 0 -88.234812585090168 0 ;
-	setAttr ".rp" -type "double3" -11.001261627656628 11.268373481552812 7.792265748963894 ;
-	setAttr ".rpt" -type "double3" 4.929390229335695e-14 0 -6.3948846218409017e-14 ;
-	setAttr ".sp" -type "double3" -11.001261627656628 11.268373481552812 7.792265748963894 ;
-createNode transform -n "group3";
-	rename -uid "50769B4B-4D4E-A7AF-2D4C-EBA8BE68CE36";
-	setAttr ".t" -type "double3" 3.0471791653027545 -1.7743726166570157 3.1372066329070032 ;
-	setAttr ".r" -type "double3" 0 90 0 ;
-	setAttr ".s" -type "double3" 0.39717312173173924 0.27422435540546303 0.85681340382613291 ;
-	setAttr ".rp" -type "double3" -10.971522545722426 11.691696387281812 7.6750413405983382 ;
-	setAttr ".sp" -type "double3" -10.971522545722426 11.691696387281812 7.6750413405983382 ;
-createNode transform -n "pasted__group2" -p "group3";
-	rename -uid "02961D3B-FA49-279E-D26F-C9B99C6FDDBE";
-	setAttr ".t" -type "double3" -3.0183668062593245 1.2228319760987767 -3.9223801668636993 ;
-	setAttr ".r" -type "double3" 0 90 0 ;
-	setAttr ".rp" -type "double3" -7.3371735976065757 10.685496765560288 11.174774664517878 ;
-	setAttr ".sp" -type "double3" -7.3371735976065757 10.685496765560288 11.174774664517878 ;
-createNode transform -n "pasted__pasted__group1" -p "pasted__group2";
-	rename -uid "9095B2B5-8343-643D-1120-F58C942172BC";
-	setAttr ".t" -type "double3" 3.9628691695244775 -1.3061695114528291 3.5737750324639004 ;
-	setAttr ".r" -type "double3" 0 -88.234812585090168 0 ;
-	setAttr ".rp" -type "double3" -11.001261627656628 11.268373481552812 7.792265748963894 ;
-	setAttr ".rpt" -type "double3" 4.929390229335695e-14 0 -6.3948846218409017e-14 ;
-	setAttr ".sp" -type "double3" -11.001261627656628 11.268373481552812 7.792265748963894 ;
-createNode transform -n "group4";
-	rename -uid "A2D0323B-784E-7FB5-2120-29A3459F9831";
-	setAttr ".t" -type "double3" 0 0 -5.0613320034954263 ;
-	setAttr ".r" -type "double3" 0 90 0 ;
-	setAttr ".rp" -type "double3" -6.8188966816307861 9.9173237706247974 10.65385410636555 ;
-	setAttr ".sp" -type "double3" -6.8188966816307861 9.9173237706247974 10.65385410636555 ;
-createNode transform -n "pasted__group3" -p "group4";
-	rename -uid "ED663D92-DE46-4B3B-9E6A-8F9D095486AB";
-	setAttr ".t" -type "double3" 3.0471791653027545 -1.7743726166570157 3.1372066329070032 ;
-	setAttr ".r" -type "double3" 0 90 0 ;
-	setAttr ".s" -type "double3" 0.39717312173173924 0.27422435540546303 0.85681340382613291 ;
-	setAttr ".rp" -type "double3" -10.971522545722426 11.691696387281812 7.6750413405983382 ;
-	setAttr ".sp" -type "double3" -10.971522545722426 11.691696387281812 7.6750413405983382 ;
-createNode transform -n "pasted__pasted__group2" -p "|group4|pasted__group3";
-	rename -uid "C37173E5-994D-706F-CEE8-B296621DD274";
-	setAttr ".t" -type "double3" -3.0183668062593245 1.2228319760987767 -3.9223801668636993 ;
-	setAttr ".r" -type "double3" 0 90 0 ;
-	setAttr ".rp" -type "double3" -7.3371735976065757 10.685496765560288 11.174774664517878 ;
-	setAttr ".sp" -type "double3" -7.3371735976065757 10.685496765560288 11.174774664517878 ;
-createNode transform -n "pasted__pasted__pasted__group1" -p "|group4|pasted__group3|pasted__pasted__group2";
-	rename -uid "DDE18BA0-D549-941E-2996-D5B3B6A4EDFE";
-	setAttr ".t" -type "double3" 3.9628691695244775 -1.3061695114528291 3.5737750324639004 ;
-	setAttr ".r" -type "double3" 0 -88.234812585090168 0 ;
-	setAttr ".rp" -type "double3" -11.001261627656628 11.268373481552812 7.792265748963894 ;
-	setAttr ".rpt" -type "double3" 4.929390229335695e-14 0 -6.3948846218409017e-14 ;
-	setAttr ".sp" -type "double3" -11.001261627656628 11.268373481552812 7.792265748963894 ;
-createNode transform -n "group5";
-	rename -uid "2CCADE6A-3344-E1AD-1EDD-D29A87B21306";
-	setAttr ".t" -type "double3" 0 3.9565065729415121 0 ;
-	setAttr ".s" -type "double3" 1 1 0.40374840467173018 ;
-	setAttr ".rp" -type "double3" -6.8188966816307861 9.9173237706247974 10.65385410636555 ;
-	setAttr ".sp" -type "double3" -6.8188966816307861 9.9173237706247974 10.65385410636555 ;
-createNode transform -n "pasted__group3" -p "group5";
-	rename -uid "7BDC762B-954C-9F6D-0FD8-4CA693BDCA1D";
-	setAttr ".t" -type "double3" 3.0471791653027545 -1.7743726166570157 3.1372066329070032 ;
-	setAttr ".r" -type "double3" 0 90 0 ;
-	setAttr ".s" -type "double3" 0.39717312173173924 0.27422435540546303 0.85681340382613291 ;
-	setAttr ".rp" -type "double3" -10.971522545722426 11.691696387281812 7.6750413405983382 ;
-	setAttr ".sp" -type "double3" -10.971522545722426 11.691696387281812 7.6750413405983382 ;
-createNode transform -n "pasted__pasted__group2" -p "|group5|pasted__group3";
-	rename -uid "02D171D2-D046-D395-CD1B-2C9BDABC2D6E";
-	setAttr ".t" -type "double3" -3.0183668062593245 1.2228319760987767 -3.9223801668636993 ;
-	setAttr ".r" -type "double3" 0 90 0 ;
-	setAttr ".rp" -type "double3" -7.3371735976065757 10.685496765560288 11.174774664517878 ;
-	setAttr ".sp" -type "double3" -7.3371735976065757 10.685496765560288 11.174774664517878 ;
-createNode transform -n "pasted__pasted__pasted__group1" -p "|group5|pasted__group3|pasted__pasted__group2";
-	rename -uid "9186141B-7047-DB99-CA97-D997EBD11AEF";
-	setAttr ".t" -type "double3" 3.9628691695244775 -1.3061695114528291 3.5737750324639004 ;
-	setAttr ".r" -type "double3" 0 -88.234812585090168 0 ;
-	setAttr ".rp" -type "double3" -11.001261627656628 11.268373481552812 7.792265748963894 ;
-	setAttr ".rpt" -type "double3" 4.929390229335695e-14 0 -6.3948846218409017e-14 ;
-	setAttr ".sp" -type "double3" -11.001261627656628 11.268373481552812 7.792265748963894 ;
-createNode transform -n "group6";
-	rename -uid "4EF7F3D2-2948-6BF1-CD63-99A607253242";
-	setAttr ".t" -type "double3" -2.7918940397376311 0 -4.3306467458276732 ;
-	setAttr ".rp" -type "double3" -5.7118318144328448 11.413940256027482 11.123270003016774 ;
-	setAttr ".sp" -type "double3" -5.7118318144328448 11.413940256027482 11.123270003016774 ;
-createNode transform -n "pasted__group5" -p "group6";
-	rename -uid "B7985EBD-6E42-1272-7DF9-0BBA8DCDB830";
-	setAttr ".t" -type "double3" 0 3.9565065729415121 0 ;
-	setAttr ".s" -type "double3" 1 1 0.40374840467173018 ;
-	setAttr ".rp" -type "double3" -6.8188966816307861 9.9173237706247974 10.65385410636555 ;
-	setAttr ".sp" -type "double3" -6.8188966816307861 9.9173237706247974 10.65385410636555 ;
-createNode transform -n "pasted__pasted__group3" -p "pasted__group5";
-	rename -uid "E6A4115C-5D46-8B9E-8B05-559B85BB95E1";
-	setAttr ".t" -type "double3" 3.0471791653027545 -1.7743726166570157 3.1372066329070032 ;
-	setAttr ".r" -type "double3" 0 90 0 ;
-	setAttr ".s" -type "double3" 0.39717312173173924 0.27422435540546303 0.85681340382613291 ;
-	setAttr ".rp" -type "double3" -10.971522545722426 11.691696387281812 7.6750413405983382 ;
-	setAttr ".sp" -type "double3" -10.971522545722426 11.691696387281812 7.6750413405983382 ;
-createNode transform -n "pasted__pasted__pasted__group2" -p "pasted__pasted__group3";
-	rename -uid "D5A39710-7946-0AE1-B516-95AD081BD590";
-	setAttr ".t" -type "double3" -3.0183668062593245 1.2228319760987767 -3.9223801668636993 ;
-	setAttr ".r" -type "double3" 0 90 0 ;
-	setAttr ".rp" -type "double3" -7.3371735976065757 10.685496765560288 11.174774664517878 ;
-	setAttr ".sp" -type "double3" -7.3371735976065757 10.685496765560288 11.174774664517878 ;
-createNode transform -n "pasted__pasted__pasted__pasted__group1" -p "pasted__pasted__pasted__group2";
-	rename -uid "01840B1A-F64D-C7BA-59F6-348B01E44E45";
-	setAttr ".t" -type "double3" 3.9628691695244775 -1.3061695114528291 3.5737750324639004 ;
-	setAttr ".r" -type "double3" 0 -88.234812585090168 0 ;
-	setAttr ".rp" -type "double3" -11.001261627656628 11.268373481552812 7.792265748963894 ;
-	setAttr ".rpt" -type "double3" 4.929390229335695e-14 0 -6.3948846218409017e-14 ;
-	setAttr ".sp" -type "double3" -11.001261627656628 11.268373481552812 7.792265748963894 ;
-createNode transform -n "pCube4";
-	rename -uid "1B0BBADA-ED48-6C7D-457B-8DB6BB6973E2";
-	setAttr ".t" -type "double3" -8.2121379716270173 6.1701923538692753 11.390240217057764 ;
-	setAttr ".s" -type "double3" 5 0.3 3 ;
-createNode mesh -n "pCubeShape4" -p "pCube4";
-	rename -uid "D2C6EE0C-A94E-1BE8-D51A-DDBD7A42DD92";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "group7";
+createNode transform -n "TREE";
 	rename -uid "F823FB27-E54B-0F1E-7E78-7DB7F8C15D2F";
 	setAttr ".t" -type "double3" -0.70509450991648226 0 0.59045585406887025 ;
-createNode transform -n "pasted__pCylinder2" -p "group7";
+createNode transform -n "pasted__pCylinder2" -p "TREE";
 	rename -uid "383E09FF-E84F-BF5A-EE5F-AB99D8CC2976";
 	setAttr ".t" -type "double3" -6.8551402042281904 9.9028781075719063 11.236637726744716 ;
 	setAttr ".r" -type "double3" 90 -88.234812585090168 -1.0325316686128092e-13 ;
@@ -403,7 +143,7 @@ createNode mesh -n "pasted__pCylinderShape2" -p "pasted__pCylinder2";
 		-0.060692392 -0.068192586 -0.029210955 -0.051394962 -0.17320865 -0.049797058 0.13705407 
 		-0.08602269 -0.02906093 -0.022683591 0.058243409 0.021336734 -0.22588259 0.13256989 
 		0.045256406 -0.32712871 0.17073295 0.05771178 -0.373478;
-createNode transform -n "pasted__pasted__pasted__pasted__pCylinder2" -p "group7";
+createNode transform -n "pasted__pasted__pasted__pasted__pCylinder2" -p "TREE";
 	rename -uid "7E7E1D76-6A4B-EF3C-F138-92BAA635E225";
 	setAttr ".t" -type "double3" -5.5761221350331684 11.285471603527213 11.102942760418184 ;
 	setAttr ".r" -type "double3" 174.06571462245213 29.895801694035011 176.89634242685625 ;
@@ -466,7 +206,7 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pCylinderShape2" -p "pasted_
 		-0.060692392 -0.068192586 -0.029210955 -0.051394962 -0.17320865 -0.049797058 0.13705407 
 		-0.08602269 -0.02906093 -0.022683591 0.058243409 0.021336734 -0.22588259 0.13256989 
 		0.045256406 -0.32712871 0.17073295 0.05771178 -0.373478;
-createNode transform -n "pasted__pasted__pasted__pCylinder2" -p "group7";
+createNode transform -n "pasted__pasted__pasted__pCylinder2" -p "TREE";
 	rename -uid "4891652C-D443-B038-7BA8-BCAF468072EB";
 	setAttr ".t" -type "double3" -7.2311443773179569 9.8268629657306512 10.681045170470011 ;
 	setAttr ".r" -type "double3" 89.999999999999972 123.69643795805294 0 ;
@@ -529,7 +269,7 @@ createNode mesh -n "pasted__pasted__pasted__pCylinderShape2" -p "pasted__pasted_
 		-0.060692392 -0.068192586 -0.029210955 -0.051394962 -0.17320865 -0.049797058 0.13705407 
 		-0.08602269 -0.02906093 -0.022683591 0.058243409 0.021336734 -0.22588259 0.13256989 
 		0.045256406 -0.32712871 0.17073295 0.05771178 -0.373478;
-createNode transform -n "pCylinder1" -p "group7";
+createNode transform -n "pCylinder1" -p "TREE";
 	rename -uid "74CC5C40-3548-63E5-129D-49A28DBEF794";
 	setAttr ".t" -type "double3" -10.05511636031855 6.4109007344782825 10.431554037249988 ;
 	setAttr ".s" -type "double3" 1.5 6.4698379351871722 1.5 ;
@@ -715,7 +455,7 @@ createNode mesh -n "pCylinderShape1" -p "pCylinder1";
 	setAttr ".pt[167]" -type "float3" -0.18189466 0.035841167 -0.67583603 ;
 	setAttr ".pt[168]" -type "float3" -0.15250629 0.021221519 -0.55022436 ;
 	setAttr ".pt[169]" -type "float3" -0.13790119 0.0066642165 -0.16797781 ;
-createNode transform -n "pasted__pasted__pCylinder2" -p "group7";
+createNode transform -n "pasted__pasted__pCylinder2" -p "TREE";
 	rename -uid "71A7691E-314D-6FEC-0C25-6A9ED2C4959B";
 	setAttr ".t" -type "double3" -11.039984036736477 11.361817574145785 7.1939007633778349 ;
 	setAttr ".r" -type "double3" 89.999999999999986 17.176675039243054 0 ;
@@ -777,7 +517,7 @@ createNode mesh -n "pasted__pasted__pCylinderShape2" -p "pasted__pasted__pCylind
 		-0.060692392 -0.068192586 -0.029210955 -0.051394962 -0.17320865 -0.049797058 0.13705407 
 		-0.08602269 -0.02906093 -0.022683591 0.058243409 0.021336734 -0.22588259 0.13256989 
 		0.045256406 -0.32712871 0.17073295 0.05771178 -0.373478;
-createNode transform -n "pasted__pasted__pasted__pasted__pCylinder3" -p "group7";
+createNode transform -n "pasted__pasted__pasted__pasted__pCylinder3" -p "TREE";
 	rename -uid "24224CD9-8740-8351-C77E-D2A717C973E8";
 	setAttr ".t" -type "double3" -11.059235274186319 10.932513917966926 7.6650935652355496 ;
 	setAttr ".r" -type "double3" 72.993221688771428 213.64544710336861 0.22907637965090052 ;
@@ -840,7 +580,7 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pCylinderShape3" -p "pasted_
 		-0.060692392 -0.068192586 -0.029210955 -0.051394962 -0.17320865 -0.049797058 0.13705407 
 		-0.08602269 -0.02906093 -0.022683591 0.058243409 0.021336734 -0.22588259 0.13256989 
 		0.045256406 -0.32712871 0.17073295 0.05771178 -0.373478;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCylinder2" -p "group7";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCylinder2" -p "TREE";
 	rename -uid "3B8A9914-FB42-4B12-80ED-588A723FDBDE";
 	setAttr ".t" -type "double3" -10.767398863738778 10.663102106377574 8.2314903243293358 ;
 	setAttr ".r" -type "double3" 152.83237333098324 29.895801694035004 176.89634242685622 ;
@@ -903,7 +643,9 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCylinderShape2" -p 
 		-0.060692392 -0.068192586 -0.029210955 -0.051394962 -0.17320865 -0.049797058 0.13705407 
 		-0.08602269 -0.02906093 -0.022683591 0.058243409 0.021336734 -0.22588259 0.13256989 
 		0.045256406 -0.32712871 0.17073295 0.05771178 -0.373478;
-createNode transform -n "group8";
+createNode transform -n "Top_Shelves";
+	rename -uid "6C7677EC-2E41-2CF2-D566-A4BEBCE8CA5C";
+createNode transform -n "group8" -p "Top_Shelves";
 	rename -uid "5AC649B6-BF4D-E045-8A6B-1E8B76309A16";
 	setAttr ".t" -type "double3" -0.64097560201162729 1.9162575610262493 0.64494463667464252 ;
 	setAttr ".rp" -type "double3" -7.8032070304286414 6.1701923538692753 10.768116518814539 ;
@@ -912,7 +654,7 @@ createNode transform -n "pasted__pCube4" -p "group8";
 	rename -uid "906814BB-E143-03AB-D6FE-C083991021C8";
 	setAttr ".t" -type "double3" -7.8032070304286414 5.9616740976314304 11.075808174857345 ;
 	setAttr ".s" -type "double3" 5 0.3 3 ;
-createNode mesh -n "pasted__pCubeShape4" -p "|group8|pasted__pCube4";
+createNode mesh -n "pasted__pCubeShape4" -p "|Top_Shelves|group8|pasted__pCube4";
 	rename -uid "52DCFF09-D74B-C215-39FA-B8BB1C5129E1";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -922,42 +664,12 @@ createNode mesh -n "pasted__pCubeShape4" -p "|group8|pasted__pCube4";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "group9";
-	rename -uid "9538C368-044E-745B-3011-3EAE105B41A8";
-	setAttr ".t" -type "double3" -3.0456283987645492 0.0048559040312126101 -2.2629723833000099 ;
-	setAttr ".r" -type "double3" 0 90 0 ;
-	setAttr ".rp" -type "double3" -7.8032070304286414 6.1701923538692753 11.109871917456264 ;
-	setAttr ".sp" -type "double3" -7.8032070304286414 6.1701923538692753 11.109871917456264 ;
-createNode transform -n "pasted__pCube4" -p "group9";
-	rename -uid "466E590A-634F-A298-A529-34BA49B60ADF";
-	setAttr ".t" -type "double3" -8.0546070274006443 6.1701923538692753 10.502815204604216 ;
-	setAttr ".s" -type "double3" 5 0.3 3 ;
-createNode mesh -n "pasted__pCubeShape4" -p "|group9|pasted__pCube4";
-	rename -uid "EC49A13E-3843-DD6E-9854-6293547CBD37";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "group10";
-	rename -uid "CD9D93F5-FC4C-B8AF-065B-F3ACAE2721F3";
-	setAttr ".t" -type "double3" -3.2103593762281939 0 -3.5661936918737389 ;
-	setAttr ".r" -type "double3" 0 90 0 ;
-	setAttr ".rp" -type "double3" -8.4441826324402687 7.8779316586576797 11.720752811531987 ;
-	setAttr ".sp" -type "double3" -8.4441826324402687 7.8779316586576797 11.720752811531987 ;
-createNode transform -n "pasted__group8" -p "group10";
-	rename -uid "D3F66AD4-D746-9B3C-0489-74AC0608717A";
-	setAttr ".t" -type "double3" -0.64097560201162729 1.9162575610262493 0.64494463667464252 ;
-	setAttr ".rp" -type "double3" -7.8032070304286414 6.1701923538692753 10.768116518814539 ;
-	setAttr ".sp" -type "double3" -7.8032070304286414 6.1701923538692753 10.768116518814539 ;
-createNode transform -n "pasted__pasted__pCube4" -p "pasted__group8";
+createNode transform -n "pasted__pasted__pCube4" -p "Top_Shelves";
 	rename -uid "4F92939C-DF40-8A0B-7C41-D2B57EC40B93";
-	setAttr ".t" -type "double3" -7.8032070304286414 5.9616740976314304 11.075808174857345 ;
+	setAttr ".t" -type "double3" -11.654542008668464 7.8779316586576797 8.1545591196582485 ;
+	setAttr ".r" -type "double3" 0 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 5 0.3 3 ;
-createNode mesh -n "pasted__pasted__pCubeShape4" -p "|group10|pasted__group8|pasted__pasted__pCube4";
+createNode mesh -n "pasted__pasted__pCubeShape4" -p "|Top_Shelves|pasted__pasted__pCube4";
 	rename -uid "1B5D0270-2D4D-221B-AFCF-0EA3114BB171";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -967,16 +679,44 @@ createNode mesh -n "pasted__pasted__pCubeShape4" -p "|group10|pasted__group8|pas
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "group11";
-	rename -uid "C737BA97-1645-80B8-17BA-1CBA99C4619C";
-	setAttr ".t" -type "double3" 0 -1.9122262946599253 0 ;
-	setAttr ".rp" -type "double3" -7.8032070304286414 6.1701923538692753 11.109871917456264 ;
-	setAttr ".sp" -type "double3" -7.8032070304286414 6.1701923538692753 11.109871917456264 ;
-createNode transform -n "pasted__pCube4" -p "group11";
-	rename -uid "F16B7CD2-7841-303C-542E-BF959570FE01";
-	setAttr ".t" -type "double3" -7.8032070304286414 6.1701923538692753 11.109871917456264 ;
+createNode transform -n "Middle_Shelves";
+	rename -uid "CD1658CF-6F4E-DCC3-EA46-19B369103F85";
+createNode transform -n "pCube4" -p "Middle_Shelves";
+	rename -uid "1B0BBADA-ED48-6C7D-457B-8DB6BB6973E2";
+	setAttr ".t" -type "double3" -8.2121379716270173 6.1701923538692753 11.390240217057764 ;
 	setAttr ".s" -type "double3" 5 0.3 3 ;
-createNode mesh -n "pasted__pCubeShape4" -p "|group11|pasted__pCube4";
+createNode mesh -n "pCubeShape4" -p "pCube4";
+	rename -uid "D2C6EE0C-A94E-1BE8-D51A-DDBD7A42DD92";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pCube4" -p "Middle_Shelves";
+	rename -uid "466E590A-634F-A298-A529-34BA49B60ADF";
+	setAttr ".t" -type "double3" -11.45589214204524 6.1750482579004879 9.0982995311282568 ;
+	setAttr ".r" -type "double3" 0 89.999999999999986 0 ;
+	setAttr ".s" -type "double3" 5 0.3 3 ;
+createNode mesh -n "pasted__pCubeShape4" -p "|Middle_Shelves|pasted__pCube4";
+	rename -uid "EC49A13E-3843-DD6E-9854-6293547CBD37";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "Bottom_Shelves";
+	rename -uid "016ADAA6-B540-1D78-C8EC-CEAC8AD619C5";
+createNode transform -n "pasted__pCube4" -p "Bottom_Shelves";
+	rename -uid "F16B7CD2-7841-303C-542E-BF959570FE01";
+	setAttr ".t" -type "double3" -7.8032070304286414 4.25796605920935 11.109871917456264 ;
+	setAttr ".s" -type "double3" 5 0.3 3 ;
+createNode mesh -n "pasted__pCubeShape4" -p "|Bottom_Shelves|pasted__pCube4";
 	rename -uid "12942792-3A49-F109-D295-8EBBC741BD4E";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -986,22 +726,12 @@ createNode mesh -n "pasted__pCubeShape4" -p "|group11|pasted__pCube4";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "group12";
-	rename -uid "823D131E-D04F-C6DC-79CC-279A139E6B07";
-	setAttr ".t" -type "double3" 0 -1.9692089503915069 0 ;
-	setAttr ".rp" -type "double3" -11.388607897593241 6.1750482579004879 8.6893685899298809 ;
-	setAttr ".sp" -type "double3" -11.388607897593241 6.1750482579004879 8.6893685899298809 ;
-createNode transform -n "pasted__group9" -p "group12";
-	rename -uid "AA439393-7244-D71F-12A5-57AA96EB0120";
-	setAttr ".t" -type "double3" -3.0456283987645492 0.0048559040312126101 -2.2629723833000099 ;
-	setAttr ".r" -type "double3" 0 90 0 ;
-	setAttr ".rp" -type "double3" -7.8032070304286414 6.1701923538692753 11.109871917456264 ;
-	setAttr ".sp" -type "double3" -7.8032070304286414 6.1701923538692753 11.109871917456264 ;
-createNode transform -n "pasted__pasted__pCube4" -p "pasted__group9";
+createNode transform -n "pasted__pasted__pCube4" -p "Bottom_Shelves";
 	rename -uid "3EEE0201-8F49-AD37-AAC3-C2B6199DAFE2";
-	setAttr ".t" -type "double3" -7.6456760862022684 6.1701923538692753 10.570099449056215 ;
+	setAttr ".t" -type "double3" -11.388607897593241 4.2058393075089811 8.6893685899298809 ;
+	setAttr ".r" -type "double3" 0 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 5 0.3 3 ;
-createNode mesh -n "pasted__pasted__pCubeShape4" -p "|group12|pasted__group9|pasted__pasted__pCube4";
+createNode mesh -n "pasted__pasted__pCubeShape4" -p "|Bottom_Shelves|pasted__pasted__pCube4";
 	rename -uid "DCC7E8FD-FA42-E1EB-3285-158D07EB4143";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -1011,45 +741,140 @@ createNode mesh -n "pasted__pasted__pCubeShape4" -p "|group12|pasted__group9|pas
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "group13";
-	rename -uid "80A2BCA7-D14E-5227-3D7A-27B2DF1D0434";
-	setAttr ".t" -type "double3" 0.16045007195288763 0 0 ;
-	setAttr ".rp" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
-	setAttr ".sp" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
-createNode transform -n "group14";
-	rename -uid "C23635F4-FB4E-7266-F54D-ABB6897AEB1D";
-	setAttr ".t" -type "double3" -0.084179762733913865 0 0 ;
-	setAttr ".rp" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
-	setAttr ".sp" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
-createNode transform -n "pasted__group13" -p "group14";
-	rename -uid "890F9444-D042-D737-97C2-74857FEDA930";
-	setAttr ".t" -type "double3" 0.16045007195288763 0 0 ;
-	setAttr ".rp" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
-	setAttr ".sp" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
-createNode transform -n "group15";
-	rename -uid "CA7792BE-3940-F97C-7D0B-028ED6CA6E1B";
-	setAttr ".t" -type "double3" 0 0 -0.36639082978053494 ;
-	setAttr ".s" -type "double3" 2 1 0.1 ;
-	setAttr ".rp" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
-	setAttr ".sp" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
-createNode transform -n "pasted__group14" -p "group15";
-	rename -uid "E5734AA3-D049-710F-44EA-659971973FD2";
-	setAttr ".t" -type "double3" -0.084179762733913865 0 0 ;
-	setAttr ".rp" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
-	setAttr ".sp" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
-createNode transform -n "pasted__pasted__group13" -p "pasted__group14";
-	rename -uid "1FA35547-DB45-8F8F-F98B-D3B2D8A4952B";
-	setAttr ".t" -type "double3" 0.16045007195288763 0 0 ;
-	setAttr ".rp" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
-	setAttr ".sp" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
-createNode transform -n "group16";
+createNode transform -n "Room";
+	rename -uid "A84E5426-F947-2FBC-A2C1-F99E5506FC99";
+createNode transform -n "pCube2" -p "Room";
+	rename -uid "CA292E90-E142-C82C-9B25-F893B40075AE";
+	setAttr ".t" -type "double3" -2.0619326178635489 5.9731346168123505 12.081768863312888 ;
+	setAttr ".s" -type "double3" 20.006305125049074 12 0.5 ;
+createNode mesh -n "pCubeShape2" -p "pCube2";
+	rename -uid "5D572803-C742-5496-83C9-AC9B8AD54DF0";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr -s 6 ".gtag";
+	setAttr ".gtag[0].gtagnm" -type "string" "back";
+	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
+	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
+	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
+	setAttr ".gtag[2].gtagnm" -type "string" "front";
+	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
+	setAttr ".gtag[3].gtagnm" -type "string" "left";
+	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
+	setAttr ".gtag[4].gtagnm" -type "string" "right";
+	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
+	setAttr ".gtag[5].gtagnm" -type "string" "top";
+	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
+		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "pCube3" -p "Room";
+	rename -uid "034B2EEC-2949-F516-E279-72AAF2AB8B23";
+	setAttr ".t" -type "double3" -11.915860204735441 6.000035180926016 2.3588771297819306 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".s" -type "double3" 20.006305125049074 12 0.5 ;
+createNode mesh -n "pCubeShape3" -p "pCube3";
+	rename -uid "0057C001-2241-5140-B617-C8B5F36DF3A8";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr -s 6 ".gtag";
+	setAttr ".gtag[0].gtagnm" -type "string" "back";
+	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
+	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
+	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
+	setAttr ".gtag[2].gtagnm" -type "string" "front";
+	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
+	setAttr ".gtag[3].gtagnm" -type "string" "left";
+	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
+	setAttr ".gtag[4].gtagnm" -type "string" "right";
+	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
+	setAttr ".gtag[5].gtagnm" -type "string" "top";
+	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
+	setAttr ".pv" -type "double2" 0.5 0.5 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
+		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "pPlane1" -p "Room";
+	rename -uid "5A1D8520-6742-846C-682C-11BE4050EF2E";
+	setAttr ".t" -type "double3" -1.7107709574693475 0 2.5974881962999374 ;
+	setAttr ".s" -type "double3" 20.28829094802267 9.8206145736360888 19.331135199084954 ;
+createNode mesh -n "pPlaneShape1" -p "pPlane1";
+	rename -uid "E8ED99E7-8A4A-9553-25B5-09A9D573044D";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "Books_Template_1";
+	rename -uid "F3E14688-B34E-457B-A65B-D6885FC1F6B8";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "Book_1" -p "Books_Template_1";
 	rename -uid "D6D5DB41-184E-0C3F-5CEE-0D859006A41D";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
-createNode transform -n "pasted__pasted__pCube5" -p "group16";
+createNode transform -n "pasted__pasted__pCube5" -p "Book_1";
 	rename -uid "8E43303C-B84B-2978-2DBA-64BA7CD2A3BF";
 	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
 	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
-createNode mesh -n "pasted__pasted__pCubeShape5" -p "pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pCubeShape5" -p "|Books_Template_1|Book_1|pasted__pasted__pCube5";
 	rename -uid "833CFBC4-4C4E-69F6-48C5-B18148FF9DCA";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -1059,7 +884,7 @@ createNode mesh -n "pasted__pasted__pCubeShape5" -p "pasted__pasted__pCube5";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "pCube5" -p "group16";
+createNode transform -n "pCube5" -p "Book_1";
 	rename -uid "75D4DC4E-F545-063C-7977-4EA11DCE6453";
 	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
 	setAttr ".s" -type "double3" 0.05 1 0.8 ;
@@ -1073,11 +898,11 @@ createNode mesh -n "pCubeShape5" -p "pCube5";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "pasted__pCube5" -p "group16";
+createNode transform -n "pasted__pCube5" -p "Book_1";
 	rename -uid "B329D4D9-FC4B-A099-3372-438A2934F134";
 	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
 	setAttr ".s" -type "double3" 0.05 1 0.8 ;
-createNode mesh -n "pasted__pCubeShape5" -p "pasted__pCube5";
+createNode mesh -n "pasted__pCubeShape5" -p "|Books_Template_1|Book_1|pasted__pCube5";
 	rename -uid "90741E4D-F148-9D66-B86E-29802DD380DD";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -1087,12 +912,2873 @@ createNode mesh -n "pasted__pCubeShape5" -p "pasted__pCube5";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "pasted__pasted__pasted__pCube5" -p "group16";
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "Book_1";
 	rename -uid "6307533B-7A4C-D179-1F8C-7FB4707F124D";
 	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
 	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
-createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Books_Template_1|Book_1|pasted__pasted__pasted__pCube5";
 	rename -uid "C520C889-6A4C-235C-9E8D-6E9F9E65049C";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "Book_2" -p "Books_Template_1";
+	rename -uid "19352BCB-2A45-B74E-0C74-72A52F355C5A";
+	setAttr ".t" -type "double3" 0.29299862901414997 0 0 ;
+	setAttr ".r" -type "double3" 1.557675929899065 -0.72501092284057955 9.6429894561233809 ;
+	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+	setAttr ".rpt" -type "double3" -1.7763568394002505e-15 6.9388939039072284e-15 -1.0952350137927169e-13 ;
+	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+createNode transform -n "pasted__group16" -p "Book_2";
+	rename -uid "EE84DA79-0743-9BFA-7BA8-9DBE08CE7573";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|Books_Template_1|Book_2|pasted__group16";
+	rename -uid "00155D15-E845-ED57-1704-80A58DE74A1E";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Books_Template_1|Book_2|pasted__group16|pasted__pasted__pasted__pCube5";
+	rename -uid "2A46499B-7C44-A57D-335A-7CBAF7905A9F";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pCube5" -p "|Books_Template_1|Book_2|pasted__group16";
+	rename -uid "088C883B-1641-D7DB-C43D-C1A0F901D5A1";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pCubeShape5" -p "|Books_Template_1|Book_2|pasted__group16|pasted__pCube5";
+	rename -uid "C33AC4E9-CE43-B802-D090-5F95DC5DF5C2";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pCube5" -p "|Books_Template_1|Book_2|pasted__group16";
+	rename -uid "134F0485-D340-4B2D-BBFB-E2B50BE0559F";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pCubeShape5" -p "|Books_Template_1|Book_2|pasted__group16|pasted__pasted__pCube5";
+	rename -uid "90FBEA81-7948-1D7E-0A75-6083C952F557";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Books_Template_1|Book_2|pasted__group16";
+	rename -uid "EAEF13C2-EB4B-81B1-7642-FD8B4D61D283";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Books_Template_1|Book_2|pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "D127B382-5140-B328-C670-648FA2885E3F";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "Book_3" -p "Books_Template_1";
+	rename -uid "78D0B139-154D-AB95-C30B-A68289273260";
+	setAttr ".t" -type "double3" 0.53178463796925202 -0.012016431534337183 -0.00018351519590353862 ;
+	setAttr ".r" -type "double3" 0.9189023131852575 -0.18584857647906569 12.262665708998515 ;
+	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+	setAttr ".rpt" -type "double3" 8.8817841970012523e-16 -2.4674706722294104e-14 -2.6006974351844292e-14 ;
+	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+createNode transform -n "pasted__group16" -p "Book_3";
+	rename -uid "F6896339-C443-C9D3-7ED9-008965F1F617";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|Books_Template_1|Book_3|pasted__group16";
+	rename -uid "62F0C7E6-8C4D-A497-FB8D-2EBC3A0D29A3";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Books_Template_1|Book_3|pasted__group16|pasted__pasted__pasted__pCube5";
+	rename -uid "160A408B-844D-F672-54BE-82B24B64143E";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pCube5" -p "|Books_Template_1|Book_3|pasted__group16";
+	rename -uid "1597D147-C34A-7DD6-4F8D-97BD913528B4";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pCubeShape5" -p "|Books_Template_1|Book_3|pasted__group16|pasted__pCube5";
+	rename -uid "F8A2DF00-6540-2F3B-D36A-21A5330715BC";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pCube5" -p "|Books_Template_1|Book_3|pasted__group16";
+	rename -uid "16473A86-D940-ECAE-76A3-389AC0083881";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pCubeShape5" -p "|Books_Template_1|Book_3|pasted__group16|pasted__pasted__pCube5";
+	rename -uid "1C9AAEA6-C849-4D2D-10C7-7BB814355273";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Books_Template_1|Book_3|pasted__group16";
+	rename -uid "1F1F3307-0E48-42F0-02E4-099EADFF94D6";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Books_Template_1|Book_3|pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "4393869C-5C46-FC59-76F8-898386121C11";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "group";
+	rename -uid "B2C5FF70-D443-81A4-2C84-0987852D27AE";
+	setAttr ".t" -type "double3" 0 1.7808566418571887 -1.342495236469718 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__Books_Template_1" -p "group";
+	rename -uid "D81B9ECC-EE47-26CB-EEFB-83B5706049A5";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__Book_1" -p "|group|pasted__Books_Template_1";
+	rename -uid "02D1BA19-5148-BEEF-2C13-1D96D508BC1B";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|group|pasted__Books_Template_1|pasted__Book_1";
+	rename -uid "7CDDBC3D-3444-38D7-DA47-47BB9EB67B6B";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|group|pasted__Books_Template_1|pasted__Book_1|pasted__pasted__pasted__pCube5";
+	rename -uid "2997D073-E847-3170-A954-0DBC19B610D2";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pCube5" -p "|group|pasted__Books_Template_1|pasted__Book_1";
+	rename -uid "4C62E095-BD40-D205-661E-FCA4D212A32F";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pCubeShape5" -p "|group|pasted__Books_Template_1|pasted__Book_1|pasted__pCube5";
+	rename -uid "1731D47D-9C48-F505-E495-7EBF74F31F50";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pCube5" -p "|group|pasted__Books_Template_1|pasted__Book_1";
+	rename -uid "D54DB0FC-1242-CF09-62AE-68A997A4B851";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pCubeShape5" -p "|group|pasted__Books_Template_1|pasted__Book_1|pasted__pasted__pCube5";
+	rename -uid "208BF332-4E49-159D-BED3-7EACBE35DB4C";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|group|pasted__Books_Template_1|pasted__Book_1";
+	rename -uid "3573B8AD-F94B-5955-5867-2F8D0921A753";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|group|pasted__Books_Template_1|pasted__Book_1|pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "0D700227-9245-F838-A625-E5890B00B613";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__Book_2" -p "|group|pasted__Books_Template_1";
+	rename -uid "35148BDF-7741-F702-6EFB-C8A5616CCEAE";
+	setAttr ".t" -type "double3" 0.29299862901414997 0 0 ;
+	setAttr ".r" -type "double3" 1.557675929899065 -0.72501092284057955 9.6429894561233809 ;
+	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+	setAttr ".rpt" -type "double3" -1.7763568394002505e-15 6.9388939039072284e-15 -1.0952350137927169e-13 ;
+	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+createNode transform -n "pasted__pasted__group16" -p "|group|pasted__Books_Template_1|pasted__Book_2";
+	rename -uid "4C009D38-EE44-4942-61CC-B8863379D4A4";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|group|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16";
+	rename -uid "1570657F-2345-8234-2154-F485729BBF96";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|group|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "9D529469-F344-303E-A703-A49CD513DAE8";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pCube5" -p "|group|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16";
+	rename -uid "798FF39D-EF40-1EEF-44B3-2AA6B934C330";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pCubeShape5" -p "|group|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pCube5";
+	rename -uid "CCF86FB0-D248-2D5A-DA12-29ADA3BF25AF";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|group|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16";
+	rename -uid "392F12D8-DC40-D7AA-21C1-2EAE9195830E";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|group|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pCube5";
+	rename -uid "529D7632-3D46-734A-4B2E-58B8EFA4053C";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|group|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16";
+	rename -uid "86866A29-9541-F823-BD6A-B3A24C13F2EA";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|group|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "5131761A-2B4B-BFE4-CFDE-A78E4D89AB3D";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__Book_3" -p "|group|pasted__Books_Template_1";
+	rename -uid "83831C1D-0745-0020-83DC-3C825EED6FDC";
+	setAttr ".t" -type "double3" 0.53178463796925202 -0.012016431534337183 -0.00018351519590353862 ;
+	setAttr ".r" -type "double3" 0.9189023131852575 -0.18584857647906569 12.262665708998515 ;
+	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+	setAttr ".rpt" -type "double3" 8.8817841970012523e-16 -2.4674706722294104e-14 -2.6006974351844292e-14 ;
+	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+createNode transform -n "pasted__pasted__group16" -p "|group|pasted__Books_Template_1|pasted__Book_3";
+	rename -uid "42EF0FA7-4F42-FAE3-10BB-3FB795F4256C";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|group|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16";
+	rename -uid "1F050FF6-3F4C-CA1C-6A72-8EB6ECB8E5C7";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|group|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "09044A6F-3C46-FD8B-F4FD-4B9160E7B986";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pCube5" -p "|group|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16";
+	rename -uid "7E239A39-1340-691B-737A-3BAC8420A0CC";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pCubeShape5" -p "|group|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pCube5";
+	rename -uid "858DE4F8-6842-45DB-8C69-9B9BB01FD14B";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|group|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16";
+	rename -uid "7535F64C-8343-3E0F-960E-4FB838F7F61A";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|group|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pCube5";
+	rename -uid "78525168-AD4A-74C8-A7B7-A5A2B222212E";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|group|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16";
+	rename -uid "1061A409-7448-51D4-D9BB-5BAE028424E6";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|group|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "A4952DDC-8F42-9EEA-B92D-B0A98247A23D";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "group9";
+	rename -uid "48BC78E6-4B45-2D82-7D39-4387A2E3E56E";
+	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__Books_Template_1" -p "group9";
+	rename -uid "0A64D853-5D4A-80B9-8A49-3DA6C8AA42FC";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__Book_1" -p "|group9|pasted__Books_Template_1";
+	rename -uid "B9A42661-0847-3E5F-3CDC-4FAE2E1B8DB3";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|group9|pasted__Books_Template_1|pasted__Book_1";
+	rename -uid "BBAC38C4-F64C-C6F0-A1C6-B9A8263E3913";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|group9|pasted__Books_Template_1|pasted__Book_1|pasted__pasted__pasted__pCube5";
+	rename -uid "18B4C6FB-BE42-7418-953E-469065422CC5";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pCube5" -p "|group9|pasted__Books_Template_1|pasted__Book_1";
+	rename -uid "25ADFACB-A543-ADE6-94E4-629FF54139AB";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pCubeShape5" -p "|group9|pasted__Books_Template_1|pasted__Book_1|pasted__pCube5";
+	rename -uid "554D43C5-B947-B705-61BC-B6A413DD5923";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pCube5" -p "|group9|pasted__Books_Template_1|pasted__Book_1";
+	rename -uid "85A25FC4-184F-012C-8C3E-01ACD5259783";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pCubeShape5" -p "|group9|pasted__Books_Template_1|pasted__Book_1|pasted__pasted__pCube5";
+	rename -uid "CA7BDE3E-EE4D-864E-6CD5-D499E0D3AD41";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|group9|pasted__Books_Template_1|pasted__Book_1";
+	rename -uid "2F94A14D-A649-BCD9-1BDE-ECB08C4A7487";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|group9|pasted__Books_Template_1|pasted__Book_1|pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "D534BD55-374F-0F4E-72E9-AF8DA78CEAD0";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__Book_2" -p "|group9|pasted__Books_Template_1";
+	rename -uid "986EC447-354C-0A2B-AA65-E9BF650A4EF0";
+	setAttr ".t" -type "double3" 0.29299862901414997 0 0 ;
+	setAttr ".r" -type "double3" 1.557675929899065 -0.72501092284057955 9.6429894561233809 ;
+	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+	setAttr ".rpt" -type "double3" -1.7763568394002505e-15 6.9388939039072284e-15 -1.0952350137927169e-13 ;
+	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+createNode transform -n "pasted__pasted__group16" -p "|group9|pasted__Books_Template_1|pasted__Book_2";
+	rename -uid "DAFB3589-0D47-4B7D-1616-5EA2198557F0";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|group9|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16";
+	rename -uid "8BF44913-C246-77C1-074D-C5B6E379A4A9";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|group9|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "DD6103CE-FD49-0F79-44B2-8D9569699ECA";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pCube5" -p "|group9|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16";
+	rename -uid "B4A47501-BB41-EB84-1D4D-FE90D9F59AB2";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pCubeShape5" -p "|group9|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pCube5";
+	rename -uid "EE2B871D-4D43-E943-4789-47823C0D127E";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|group9|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16";
+	rename -uid "997900BC-1945-E69D-88EB-10A1D164D475";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|group9|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pCube5";
+	rename -uid "0CE03EEF-C04B-3D05-CD19-9CAE0852E86C";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|group9|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16";
+	rename -uid "CA8D1275-6E4F-8465-A465-9EB261A74AD4";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|group9|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "D5BB2F94-374B-B442-CA83-47BEBB2E223F";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__Book_3" -p "|group9|pasted__Books_Template_1";
+	rename -uid "339EF8EC-3B40-E145-2FA8-E8912E6C1D08";
+	setAttr ".t" -type "double3" 0.53178463796925202 -0.012016431534337183 -0.00018351519590353862 ;
+	setAttr ".r" -type "double3" 0.9189023131852575 -0.18584857647906569 12.262665708998515 ;
+	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+	setAttr ".rpt" -type "double3" 8.8817841970012523e-16 -2.4674706722294104e-14 -2.6006974351844292e-14 ;
+	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+createNode transform -n "pasted__pasted__group16" -p "|group9|pasted__Books_Template_1|pasted__Book_3";
+	rename -uid "4DF2E7F5-ED46-A783-93BA-7D9293ADDD96";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|group9|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16";
+	rename -uid "6F0B896F-6D42-9E39-4546-51B6A7605206";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|group9|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "2B9FEB09-D447-36DF-0152-2683B0151CAF";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pCube5" -p "|group9|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16";
+	rename -uid "68090BD0-E044-0886-FE1E-CFB9B612567D";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pCubeShape5" -p "|group9|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pCube5";
+	rename -uid "DE5578C2-A44F-B6B5-DC3B-3E920F0394F1";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|group9|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16";
+	rename -uid "F857E1D5-DB4B-4007-F20D-2592A3841E34";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|group9|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pCube5";
+	rename -uid "35763F6F-AC40-53B9-00F7-C186D94421BC";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|group9|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16";
+	rename -uid "704DED33-F148-7E96-3AA1-7A941C71DC8D";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|group9|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "E37FDEDB-AF49-D1DE-8B37-F1BE8CA481AF";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "group10";
+	rename -uid "7F2B3020-5F47-6084-106E-F4A4D37E6D54";
+	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+createNode transform -n "pasted__group9" -p "group10";
+	rename -uid "6B8D880E-7C41-84D2-3F30-309C3B6D81E6";
+	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__pasted__Books_Template_1" -p "pasted__group9";
+	rename -uid "1FD4D4EC-3E49-73DF-1AFA-2AAF37BD1730";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__pasted__Book_1" -p "pasted__pasted__Books_Template_1";
+	rename -uid "53CA0CCE-214D-5C4C-C8C1-489D1EC71602";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "pasted__pasted__Book_1";
+	rename -uid "A74C2CD0-C440-9454-D96D-0B848A17C0BD";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "6E610B36-9040-DC50-FCFC-83A485DD911C";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pCube5" -p "pasted__pasted__Book_1";
+	rename -uid "EAE859F4-4F4A-B511-38AE-73A260948221";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pCubeShape5" -p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pCube5";
+	rename -uid "8156657A-6844-DD3E-761E-85BDA8E8BE09";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "pasted__pasted__Book_1";
+	rename -uid "FD4320F9-CD43-A88F-2FF0-C5A7DD723C17";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pCube5";
+	rename -uid "BF1BE005-F344-53D9-7E20-FB88202FE5D3";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "pasted__pasted__Book_1";
+	rename -uid "A3852397-6445-1651-A485-34BC04B4CE25";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "8416872A-A442-E925-B0D3-70A2EA0A9076";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__Book_2" -p "pasted__pasted__Books_Template_1";
+	rename -uid "450AF1E6-0A40-3A65-455D-F29DBC4725F7";
+	setAttr ".t" -type "double3" 0.29299862901414997 0 0 ;
+	setAttr ".r" -type "double3" 1.557675929899065 -0.72501092284057955 9.6429894561233809 ;
+	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+	setAttr ".rpt" -type "double3" -1.7763568394002505e-15 6.9388939039072284e-15 -1.0952350137927169e-13 ;
+	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+createNode transform -n "pasted__pasted__pasted__group16" -p "pasted__pasted__Book_2";
+	rename -uid "C5693C63-2D43-26F4-228C-A988737C00DB";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
+	rename -uid "23B86DB1-824F-2155-182A-4599C1128831";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "712D13DF-CB40-D7BB-B634-25B9667BE560";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
+	rename -uid "28E9F844-B144-C2E4-73EA-C0BEE0BD16A4";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5";
+	rename -uid "51E1DFBE-B54F-7531-076C-BE91AEFFD308";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
+	rename -uid "3E23E397-124C-B60C-A706-199E71EF0312";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "2DE709F0-7649-1119-AE28-F78C0E9D05BD";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
+	rename -uid "C0425EDD-4C40-B55D-469A-0897CA174594";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "D61F7E86-7E4E-9F9D-1CBD-0B96B6B466FC";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__Book_3" -p "pasted__pasted__Books_Template_1";
+	rename -uid "B81A9290-A04F-3699-B20F-10A6CDCD6604";
+	setAttr ".t" -type "double3" 0.53178463796925202 -0.012016431534337183 -0.00018351519590353862 ;
+	setAttr ".r" -type "double3" 0.9189023131852575 -0.18584857647906569 12.262665708998515 ;
+	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+	setAttr ".rpt" -type "double3" 8.8817841970012523e-16 -2.4674706722294104e-14 -2.6006974351844292e-14 ;
+	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+createNode transform -n "pasted__pasted__pasted__group16" -p "pasted__pasted__Book_3";
+	rename -uid "9EBA7D0C-B347-D483-E658-B4A4D8BCD6F1";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
+	rename -uid "EE629812-CE4F-22F0-0B26-839C14FDD9AE";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "8DB8A028-DB40-42F1-7721-6885B98B3C54";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
+	rename -uid "2996A3B7-884D-0259-818E-6096EE881347";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5";
+	rename -uid "D88B50A4-D346-0BA9-92C1-16A8FDE2E652";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
+	rename -uid "2A055D41-F249-9DAC-D613-D4AA2A64FC12";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "5CE15C01-F741-8D50-6B20-149B8BC17F24";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
+	rename -uid "B0C0788E-F64F-B112-4930-6DAB22858A8C";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "8CE9DED3-714A-FBF4-5CD1-EB8EDA031469";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "group11";
+	rename -uid "EFD02233-7F49-11AA-1858-D5AF761C3CCD";
+	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
+	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+createNode transform -n "pasted__group10" -p "group11";
+	rename -uid "29916DC8-0B4A-C259-E423-6AAD1C8EC231";
+	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+createNode transform -n "pasted__pasted__group9" -p "|group11|pasted__group10";
+	rename -uid "73B2616C-7A49-BC8F-3DB2-CE9D6514B23D";
+	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__pasted__pasted__Books_Template_1" -p "|group11|pasted__group10|pasted__pasted__group9";
+	rename -uid "29DDB2FB-7C41-73E3-3B0F-D587CDC1807B";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__pasted__pasted__Book_1" -p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1";
+	rename -uid "C78930F5-B84D-A0D6-701C-08B43D2C0A03";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1";
+	rename -uid "45C36DE9-934A-7DE1-7222-AF963C13445F";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "F55F4910-6648-54BE-79D0-72A24BA8326D";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1";
+	rename -uid "181CB381-144B-00AA-6991-7FBA2B02CFFF";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pCube5";
+	rename -uid "2E740D88-504D-6214-0556-78940624E661";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1";
+	rename -uid "C211AEA4-614A-378F-9FD0-95A60EE2304E";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "5297F1BD-254C-3FC9-5D10-3F93FD0E032E";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1";
+	rename -uid "E4761BD0-0D45-C567-7FF3-798AB08C9F75";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "80F549A2-524C-8FB1-9DE7-0D96AFA22A85";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__Book_2" -p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1";
+	rename -uid "47EE23F1-784A-1FEF-860B-1195C5E853C4";
+	setAttr ".t" -type "double3" 0.29299862901414997 0 0 ;
+	setAttr ".r" -type "double3" 1.557675929899065 -0.72501092284057955 9.6429894561233809 ;
+	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+	setAttr ".rpt" -type "double3" -1.7763568394002505e-15 6.9388939039072284e-15 -1.0952350137927169e-13 ;
+	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+createNode transform -n "pasted__pasted__pasted__pasted__group16" -p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2";
+	rename -uid "27EBC5B4-2244-976D-E9E7-99BE139FDBB2";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16";
+	rename -uid "F2A7D4BF-EB4A-8376-1C80-88A957895B7F";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "CD9573FE-F04B-EDBD-1455-37A9F604EE90";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16";
+	rename -uid "2582D1F3-7B4E-E731-DF99-5E8FF80F8AD4";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "6A3AED18-FE4E-9D13-D1AB-C7BC8A5E95FC";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16";
+	rename -uid "3B83FB52-5240-4319-BAF6-99B9BA76EC80";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "84A20F48-2D4D-0D67-E560-06B0D64EB708";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16";
+	rename -uid "998560C1-284D-346A-A905-9FABE6E974C0";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "D06CAE22-E649-A3CA-0022-959F8E37F97A";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__Book_3" -p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1";
+	rename -uid "EE7F8887-7B43-2EC6-8B3D-52A94B473483";
+	setAttr ".t" -type "double3" 0.53178463796925202 -0.012016431534337183 -0.00018351519590353862 ;
+	setAttr ".r" -type "double3" 0.9189023131852575 -0.18584857647906569 12.262665708998515 ;
+	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+	setAttr ".rpt" -type "double3" 8.8817841970012523e-16 -2.4674706722294104e-14 -2.6006974351844292e-14 ;
+	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+createNode transform -n "pasted__pasted__pasted__pasted__group16" -p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3";
+	rename -uid "61BD4EAF-9740-3CA1-58C1-AC8C6DC36BF4";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16";
+	rename -uid "B8639892-FA4F-A2F9-A78C-50991195833D";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "D3F3A37D-2547-35CB-7193-EA90A9F6415E";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16";
+	rename -uid "1A8A1BE7-9F4B-33FC-29F0-E9BBBDAFB010";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "2BC8C6DB-D949-6BC9-1504-C1B3FB1C7DBE";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16";
+	rename -uid "36A478FB-F74B-8D30-2B0B-C399B7C9C4AC";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "F6871B11-8B42-8D4D-EC5C-4EAE804DCFD3";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16";
+	rename -uid "E2CBF4B4-254A-7696-16F1-A89964BB3E21";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "5FED1E3F-3146-AF51-2724-66A53D49B40D";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "group12";
+	rename -uid "13A62669-4042-2ED8-3C81-9B822FEB29B1";
+	setAttr ".t" -type "double3" 1.105416428862064 -3.6027250936199327 0 ;
+	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+createNode transform -n "pasted__group10" -p "group12";
+	rename -uid "D6875402-704C-1E10-B040-40A7EB94E971";
+	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+createNode transform -n "pasted__pasted__group9" -p "|group12|pasted__group10";
+	rename -uid "6A616AD5-FC40-3FA4-7173-F38D80E17C05";
+	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__pasted__pasted__Books_Template_1" -p "|group12|pasted__group10|pasted__pasted__group9";
+	rename -uid "102AACF3-4444-1B30-2961-799A19E25E14";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__pasted__pasted__Book_1" -p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1";
+	rename -uid "F63693B3-7541-6C2C-2C89-978E8432F250";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1";
+	rename -uid "2AF952D1-9442-988D-F9BA-D2B61DF5779A";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "41089869-DE4A-AE01-9563-9390CD449708";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1";
+	rename -uid "BAC4BDBE-2D42-7209-C582-2480E68213C5";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pCube5";
+	rename -uid "8A9E6871-8A49-29EF-74F5-D4A914C39170";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1";
+	rename -uid "C2B5A1A7-C045-D089-7191-42BE40CCF9E0";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "530D2C45-8A40-5782-0F1F-69BCF04D11C7";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1";
+	rename -uid "C7336604-B041-1F6C-28B0-5DBB3DFCC428";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "8ECCFD48-294D-B65B-B89C-7DBF681D99E6";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__Book_2" -p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1";
+	rename -uid "B4679B2F-CD4E-437E-2688-8ABDE8FE5CA9";
+	setAttr ".t" -type "double3" 0.29299862901414997 0 0 ;
+	setAttr ".r" -type "double3" 1.557675929899065 -0.72501092284057955 9.6429894561233809 ;
+	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+	setAttr ".rpt" -type "double3" -1.7763568394002505e-15 6.9388939039072284e-15 -1.0952350137927169e-13 ;
+	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+createNode transform -n "pasted__pasted__pasted__pasted__group16" -p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2";
+	rename -uid "198426DD-134C-860A-3315-049EA11EA16D";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16";
+	rename -uid "72744D4A-E842-3ED8-3EB1-45B6F7299288";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "221999DC-F349-C0B8-8ABE-7089848E1A0F";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16";
+	rename -uid "7B4D3848-1B46-7345-2C6A-AE9F6A649491";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "DB79E052-E444-7470-7858-39B4A4B35EE9";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16";
+	rename -uid "BD209053-B640-7490-448C-E79C6569C1A9";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "BCFD4B33-F14D-193C-DEAB-1EA8F93B4A2A";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16";
+	rename -uid "BF3C0ED9-FE4C-82C9-E098-F78864790578";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "BF3A2548-1043-C8D3-E4B9-E6A624D19B55";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__Book_3" -p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1";
+	rename -uid "ED2889A2-AB48-A839-1826-798D522E31BA";
+	setAttr ".t" -type "double3" 0.53178463796925202 -0.012016431534337183 -0.00018351519590353862 ;
+	setAttr ".r" -type "double3" 0.9189023131852575 -0.18584857647906569 12.262665708998515 ;
+	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+	setAttr ".rpt" -type "double3" 8.8817841970012523e-16 -2.4674706722294104e-14 -2.6006974351844292e-14 ;
+	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
+createNode transform -n "pasted__pasted__pasted__pasted__group16" -p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3";
+	rename -uid "E3F0609B-9540-140F-DD29-B9BF209CDB59";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16";
+	rename -uid "E08688AF-9840-FA25-A1FF-CDB59EEE4722";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "28B63969-C040-85FA-5ABD-1EBDE5306689";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16";
+	rename -uid "7539F4BE-FD4D-4FB8-9C3D-5FAEAAE26D19";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "4559DB86-F047-EFE7-0FEA-31AED286583C";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16";
+	rename -uid "E4BBF1FB-FF49-9496-582C-B7AB04158660";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "DB4B6103-9D42-A5EF-B5DD-B690475928A4";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16";
+	rename -uid "3013BAD9-D24E-197E-E138-04A35590CE62";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "18437735-8848-0406-FA09-B58C3E840EBE";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pTorus1";
+	rename -uid "D70A33AD-B742-B35B-B9AF-DAB125C22E53";
+	setAttr ".t" -type "double3" -7.7599515562986143 8.1241586263533332 11.080643810409512 ;
+	setAttr ".s" -type "double3" 0.45281213269768661 0.45281213269768661 0.45281213269768661 ;
+createNode mesh -n "pTorusShape1" -p "pTorus1";
+	rename -uid "A9994B69-B440-901B-DCD8-8F9F7EDC1A0A";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "group13";
+	rename -uid "0C300838-034E-E858-2D56-1AA97BBC53D9";
+	setAttr ".t" -type "double3" -3.1724267685760825 -3.6879257590330417 -3.9911612713990827 ;
+	setAttr ".rp" -type "double3" -7.7599516372677328 8.1241585858687735 11.080643702450686 ;
+	setAttr ".sp" -type "double3" -7.7599516372677328 8.1241585858687735 11.080643702450686 ;
+createNode transform -n "pasted__pTorus1" -p "group13";
+	rename -uid "9A191E0E-6448-7A38-DA66-08A02CC52375";
+	setAttr ".t" -type "double3" -7.7599515562986143 8.1241586263533332 11.080643810409512 ;
+	setAttr ".s" -type "double3" 0.45281213269768661 0.45281213269768661 0.45281213269768661 ;
+createNode mesh -n "pasted__pTorusShape1" -p "pasted__pTorus1";
+	rename -uid "226A14DE-B343-BA4F-0B8F-5AAA73679BFB";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "Book_Template_2";
+	rename -uid "C14030A1-8D45-EDFB-5952-078D3A6D2044";
+createNode transform -n "group18" -p "Book_Template_2";
+	rename -uid "34835499-6940-CD87-AEB0-EDB1E9B84375";
+	setAttr ".t" -type "double3" 0.48340515897661085 0 0 ;
+	setAttr ".rp" -type "double3" -8.6646097159422126 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -8.6646097159422126 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__group16" -p "group18";
+	rename -uid "2B14EAC9-8D47-A706-061F-10AD0425AFAB";
+	setAttr ".t" -type "double3" 0.24896254626738745 0 0 ;
+	setAttr ".rp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__group15" -p "|Book_Template_2|group18|pasted__group16";
+	rename -uid "84DA851C-CD4D-5FFD-0F1B-F49E763CB329";
+	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
+	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__group14" -p "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15";
+	rename -uid "A43BDBE9-D14E-5595-330A-668C0E0DEBEB";
+	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
+	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__pasted__group11" -p "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14";
+	rename -uid "F2963234-994A-C57F-E83B-43926887A1EF";
+	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
+	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group10" -p "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11";
+	rename -uid "4069970F-9245-7639-7A23-D28E01A9376D";
+	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group9" 
+		-p "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10";
+	rename -uid "A375FA94-9A4F-E86F-6C6E-EEAEC962E66E";
+	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
+		-p "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9";
+	rename -uid "08F2250F-1A41-675D-A953-B9A79DE845F5";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
+		-p "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+	rename -uid "2772B1DD-FA44-8492-BF60-B69E670754A1";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "84EBE0CD-9B42-4FC3-071C-0C80166399AC";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "EE028A40-FB4F-22E9-FE33-629BD4967E51";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "ECCC9EA1-5944-3D7E-B6F5-259DF3A36A22";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "80953BD6-FF4C-B328-2CF1-389DA9A70482";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "51DD2CAE-C245-A496-6E34-A9912C9BED98";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "EBF156AE-5444-4DF9-BD8A-B99AD9DE6F09";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "D4E274B9-F24B-DE3F-A525-5DA08E537991";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "78953951-FC48-2259-EC52-80A94DC4BB85";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "group17" -p "Book_Template_2";
+	rename -uid "65D0FCDA-7549-0F2B-82CF-BFADF42F2784";
+	setAttr ".t" -type "double3" 0.22608211198233263 0 0 ;
+	setAttr ".rp" -type "double3" -8.6646097159422126 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -8.6646097159422126 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__group16" -p "group17";
+	rename -uid "DB6A42CA-8849-95EF-0C82-0181095F6271";
+	setAttr ".t" -type "double3" 0.24896254626738745 0 0 ;
+	setAttr ".rp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__group15" -p "|Book_Template_2|group17|pasted__group16";
+	rename -uid "FBEBC1FA-0641-27EB-B2F3-13B5DD90021B";
+	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
+	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__group14" -p "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15";
+	rename -uid "8D1C221A-4D4A-F12C-9571-6881F765EE9B";
+	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
+	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__pasted__group11" -p "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14";
+	rename -uid "0F393B84-1240-0F89-1A3E-6B8EEAA5CF1B";
+	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
+	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group10" -p "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11";
+	rename -uid "0E2B99C9-E342-0A9A-587E-3A95A8CF630B";
+	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group9" 
+		-p "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10";
+	rename -uid "3A73FDB5-D44D-2D06-8F0C-77B0CDD9DD09";
+	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
+		-p "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9";
+	rename -uid "C02738DD-CF40-8FE0-302A-13AD2F8851AF";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
+		-p "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+	rename -uid "9683160B-974F-EB63-2278-3CAE1B7931A8";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "1EC88299-0F41-F506-802D-BF9CEC0087CB";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "D1E6AFFB-4841-F209-5116-30878BA98B54";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "AA345C85-7E41-6551-8D62-78AEBF757BD2";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "87409062-CC40-4DE0-0FE1-B6866AA3349D";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "607F9051-3048-95F8-A008-D79D236762C9";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "FE205ED0-F542-56B1-B7D2-45ADAA71F9C3";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "0D110B25-814C-1AD7-1932-01872E29E2E1";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "E3D9FB89-184C-286C-521B-8CB63779EB18";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "group16" -p "Book_Template_2";
+	rename -uid "18295100-EA4F-8760-F009-65B05CD8D454";
+	setAttr ".t" -type "double3" 0.24896254626738745 0 0 ;
+	setAttr ".rp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__group15" -p "group16";
+	rename -uid "D41BB2C7-384D-68E3-5F71-8B90E8230FAF";
+	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
+	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__group14" -p "|Book_Template_2|group16|pasted__group15";
+	rename -uid "D9FFFE18-DD49-EBCE-8413-F4974CB53797";
+	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
+	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__group11" -p "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14";
+	rename -uid "3938552A-1340-1ED2-DA27-CABCD24C50F4";
+	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
+	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+createNode transform -n "pasted__pasted__pasted__pasted__group10" -p "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11";
+	rename -uid "D5C1DDD2-1645-9AA0-167D-C09D7091475E";
+	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group9" -p "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10";
+	rename -uid "EBD8BD54-9848-6250-C57E-BC8C7AD622E6";
+	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
+		-p "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9";
+	rename -uid "2F3B404D-414B-02D0-FD49-D5AFD33CD53F";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
+		-p "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+	rename -uid "CFA42D81-1E4C-1B05-D304-868E4A70F7E0";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "84E3D7D7-804A-AD1C-7DC5-E29537D628E7";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "BFF4C4D8-B241-3541-16A2-BFA62420504A";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "149B1F42-E54C-1B45-43D8-72BE0669D07E";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "C6BAD0DE-F443-3DAF-A36C-B5BC38329754";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "B0067F95-9143-2EB0-2DCE-5A80B546029B";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "338C3218-5C45-BD75-79D7-C7BF2539E838";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "BE217699-1545-C0A5-762B-9692B41D0D4C";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "7ECA21A0-EA40-A2B8-BE96-38896E6CA52F";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "group15" -p "Book_Template_2";
+	rename -uid "9EB068B0-CC47-A80E-59E4-888686210569";
+	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
+	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__group14" -p "group15";
+	rename -uid "2F1A701F-4E42-E59D-C9D4-709A93D0CF24";
+	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
+	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__group11" -p "|Book_Template_2|group15|pasted__group14";
+	rename -uid "77F5800F-B444-2112-0DF2-2EA5AF7333B9";
+	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
+	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+createNode transform -n "pasted__pasted__pasted__group10" -p "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11";
+	rename -uid "8BD06B1F-3949-555E-E36B-54B220101983";
+	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+createNode transform -n "pasted__pasted__pasted__pasted__group9" -p "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10";
+	rename -uid "BAFE7343-954A-2338-6BFA-B29DBBEF96D6";
+	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
+		-p "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9";
+	rename -uid "5090EDB3-2F4E-0547-4723-DF9AF54EF722";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__Book_1" -p "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+	rename -uid "D02B8DD1-9B47-A780-D56F-6681771D7EC0";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "0265B5EE-7845-F164-B43B-A3B10367AB29";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "ADF064F2-D841-3D03-0213-E3BFCAD4C0CD";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "C57DD929-3C49-B4F0-D139-3BACD078A0CE";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "064DC63F-C448-3CE6-580C-36958967155A";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "9E7BFE47-0847-8EC2-3793-86B4BEAACE30";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "E71CBC40-894B-00FD-12DF-BA94DAD83829";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "7F57C22E-834A-89E2-1DB6-888E7CBCF0DA";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "BAEE053B-594F-8EE1-E750-DA9291847E0C";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "group14" -p "Book_Template_2";
+	rename -uid "5218F648-AA44-EAC5-56D1-45816634AD55";
+	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
+	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__group11" -p "group14";
+	rename -uid "8A96DB55-3542-1205-C910-52A24E056943";
+	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
+	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+createNode transform -n "pasted__pasted__group10" -p "pasted__group11";
+	rename -uid "4C7E56D5-FF4C-788C-E9B8-F194D696F130";
+	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+createNode transform -n "pasted__pasted__pasted__group9" -p "pasted__pasted__group10";
+	rename -uid "DB816E35-C142-6174-5123-5E8EAF11864B";
+	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__pasted__pasted__pasted__Books_Template_1" -p "pasted__pasted__pasted__group9";
+	rename -uid "45344AA0-EA47-D172-F1FD-A4B408FA80CB";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__pasted__pasted__pasted__Book_1" -p "pasted__pasted__pasted__pasted__Books_Template_1";
+	rename -uid "13CF5701-FA4C-6DB0-3C1A-C183FC8A7265";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "43BD29EC-6449-BE8B-8511-A98A6C96C206";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|Book_Template_2|group14|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "7050C194-074B-16D8-1842-9E8F2AF3A325";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "ACCA7DDD-3F4D-8E2C-DA10-F49358854FEB";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Book_Template_2|group14|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "08BFA5C9-B845-0787-0CD3-2FAAF0D9EAF6";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "F41C4DDB-414B-A9BB-F0FF-9FA97BCAA526";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Book_Template_2|group14|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "E787A20F-BB4C-AD0D-4172-F699191968F0";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "BBCBD454-4547-1006-BC8D-54A72CE31549";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|Book_Template_2|group14|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "A1C764AA-D54A-2B67-3936-9A8D61D0227C";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "group19";
+	rename -uid "E956DAC1-3148-5B7B-5ECB-3EBA317B4238";
+	setAttr ".t" -type "double3" 1.9592717863207048 -1.9162515792194963 0 ;
+	setAttr ".rp" -type "double3" -8.6817238810538662 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -8.6817238810538662 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__Book_Template_2" -p "group19";
+	rename -uid "0F0D579A-C548-4163-55A2-F4833754A5B7";
+createNode transform -n "pasted__group18" -p "pasted__Book_Template_2";
+	rename -uid "6EF0EC45-054C-4933-9646-C290BC03F449";
+	setAttr ".t" -type "double3" 0.48340515897661085 0 0 ;
+	setAttr ".rp" -type "double3" -8.6646097159422126 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -8.6646097159422126 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__group16" -p "pasted__group18";
+	rename -uid "12C9E0F5-3E46-9B13-8BAA-1CB8525A9AE9";
+	setAttr ".t" -type "double3" 0.24896254626738745 0 0 ;
+	setAttr ".rp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__group15" -p "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16";
+	rename -uid "6FB880F4-564F-0DB7-30AA-59AE85D75F8C";
+	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
+	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__pasted__group14" -p "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15";
+	rename -uid "040A9F67-154D-4F39-4057-3993584E2F0E";
+	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
+	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group11" -p "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14";
+	rename -uid "0AEA73E5-3B4D-75BB-29ED-6589DAFD4012";
+	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
+	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group10" 
+		-p "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11";
+	rename -uid "81B06BD8-B245-AE13-C67B-5B9025817991";
+	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9" 
+		-p "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10";
+	rename -uid "57860C90-5440-F5BE-01CF-88A8A52A7B8A";
+	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
+		-p "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
+	rename -uid "A41DEBA6-5E40-BFD6-5D07-D997DA07817A";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
+		-p "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+	rename -uid "054DB1AD-DD49-FD74-C1AB-EA9F0B0C04C7";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "F1E89CA0-E44D-2F63-FC2D-5A82A602C567";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "830DB730-7E41-78F6-0B61-4CB8123F077F";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "7CE2AAB8-5F4F-36DA-2763-5CA8ADB7F5CE";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "BBB4F29A-9B41-631F-87F4-DB913C0483E7";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "1915C344-0D49-9AC1-F967-6FA2154DD214";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "1193BFCC-954E-B2A2-6875-39965F277895";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "82A97E0D-1B48-3ED9-4B2B-F382F74E18E4";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "9479AA1A-2446-675C-EA6A-939C79228BF2";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__group17" -p "pasted__Book_Template_2";
+	rename -uid "8D7CA945-FC44-A5B7-6843-9CB212F6944B";
+	setAttr ".t" -type "double3" 0.22608211198233263 0 0 ;
+	setAttr ".rp" -type "double3" -8.6646097159422126 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -8.6646097159422126 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__group16" -p "pasted__group17";
+	rename -uid "1E800106-BC44-6F86-F908-B891E74D1A56";
+	setAttr ".t" -type "double3" 0.24896254626738745 0 0 ;
+	setAttr ".rp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__group15" -p "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16";
+	rename -uid "8ACE6E5E-CE4A-C950-8589-888F0B609CA7";
+	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
+	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__pasted__group14" -p "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15";
+	rename -uid "1865CEB9-1144-7851-8F92-EFB1C44C0F36";
+	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
+	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group11" -p "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14";
+	rename -uid "4DB9FD43-D34F-859A-D5C6-2985B800AC3A";
+	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
+	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group10" 
+		-p "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11";
+	rename -uid "A896C1E0-C24C-0328-72A0-AC91D4079CDE";
+	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9" 
+		-p "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10";
+	rename -uid "4011DDF7-A443-C9A9-6575-FEB931C71F7A";
+	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
+		-p "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
+	rename -uid "3B43B6ED-DA4B-EB0E-CD4E-4EA904642113";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
+		-p "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+	rename -uid "7D87119C-BB41-987F-913E-70B6D5A37B3D";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "F25EE386-1F43-29F6-BA35-3DB5CB15D43C";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "84DF0C3D-1542-6532-2E20-309E9DF6D690";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "692B400E-BC45-BDBD-FC5D-B5A54E848A42";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "D23CB683-0445-EF28-CBEA-E8814D679892";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "8C2187BF-CC49-FD61-F878-6888D32C6079";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "87076748-4742-3206-36B0-629B6D26FCB1";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "022DA968-0D4A-55E3-89B9-94A6BB2AA6B9";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "269505AA-0B40-0DCB-80D7-65AAE1E8DCCA";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__group16" -p "pasted__Book_Template_2";
+	rename -uid "8C457BF5-7446-7E58-A31A-A9B73E4240F6";
+	setAttr ".t" -type "double3" 0.24896254626738745 0 0 ;
+	setAttr ".rp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__group15" -p "|group19|pasted__Book_Template_2|pasted__group16";
+	rename -uid "812946AA-5B47-E5EC-A64C-6A85317058BC";
+	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
+	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__group14" -p "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15";
+	rename -uid "BB745FCC-F34A-EC33-2D04-3EB0A892E5BC";
+	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
+	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__pasted__group11" -p "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14";
+	rename -uid "0FA6A532-B743-F74A-6AA2-639FA9415827";
+	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
+	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group10" -p "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11";
+	rename -uid "E663BDBB-9B4E-4147-52C0-5A80F6B8EF3D";
+	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group9" 
+		-p "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10";
+	rename -uid "D4869A5E-9E44-55C9-A5EB-CEACE6373ED4";
+	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
+		-p "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9";
+	rename -uid "09FFC78B-4045-3035-933C-67B80114DB2E";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
+		-p "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+	rename -uid "892025D6-244C-A719-57B5-D18B71D0CD0A";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "430B53F1-EA4D-0B55-F088-B2A353D1D6B9";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "72F49B9E-BB4A-4591-EAC0-30B0B0F7A9EE";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "2AEF8322-D54B-9C75-834A-C0A38E99E45C";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "34CA3301-A54C-BEC7-6ADF-92A7FC535558";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "F5DFAE70-F944-61BF-AE3A-6DA4AD59C30F";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "01F29350-4B4E-B1F8-F66D-2F9EB6F5BF46";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "96293271-1F40-E266-275D-A4BBFDC7A0AA";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "02D1EEC7-0D47-D538-AA40-CEA5D099911E";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__group15" -p "pasted__Book_Template_2";
+	rename -uid "1F4AC7E2-8347-8012-115F-74B536A5853F";
+	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
+	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__group14" -p "|group19|pasted__Book_Template_2|pasted__group15";
+	rename -uid "3853F047-624D-9C70-8211-8BA8D65DD7F7";
+	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
+	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__group11" -p "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14";
+	rename -uid "766452FE-FB4A-56C4-D44A-829B7D1D0E44";
+	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
+	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+createNode transform -n "pasted__pasted__pasted__pasted__group10" -p "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11";
+	rename -uid "6939986E-3E40-B9FA-4E83-DCBA075A4C00";
+	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group9" -p "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10";
+	rename -uid "2378704D-C446-4F60-96EB-F28E270B07D2";
+	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
+		-p "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9";
+	rename -uid "3473D4BB-6E40-B99C-D662-BFB5D2C6D2D7";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
+		-p "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+	rename -uid "143457F9-0C4E-FCCA-44D6-0598C8890C15";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "445B4C53-0543-2487-2C77-BF892444C4AC";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "D09D436C-9144-EB8F-EAF1-2186AFC2C2F3";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "EB142F72-FD47-29FE-054B-F486D09034AB";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "B2093B2C-9540-DD09-FF51-E5BEFF36BBB8";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "464E0A59-234F-9AE2-0C52-73A4D705AFCA";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "224FAA16-A242-F9F9-AE79-1993BB59C019";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "8A3D19CE-004B-1D20-3000-299D0DB6E719";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "626F91E5-8542-2842-D62A-6380008FBFC4";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__group14" -p "pasted__Book_Template_2";
+	rename -uid "BEA81AC3-BA4D-F95B-B89B-C9BBFEAAF576";
+	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
+	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__group11" -p "|group19|pasted__Book_Template_2|pasted__group14";
+	rename -uid "900617B4-A74D-FC6E-18BA-C5A7D04ADC5F";
+	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
+	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+createNode transform -n "pasted__pasted__pasted__group10" -p "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11";
+	rename -uid "A05A902B-E74B-A3B4-FB5D-16B3609A5979";
+	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+createNode transform -n "pasted__pasted__pasted__pasted__group9" -p "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10";
+	rename -uid "C230D083-C043-3385-5C7E-4187774290D7";
+	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
+		-p "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9";
+	rename -uid "0B9449D3-F44F-C1E2-4023-219B2AA9C566";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__Book_1" -p "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+	rename -uid "4289FF6F-0540-AC23-D182-AD9ABCEE62C9";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "BA6D2518-3849-55C7-BEA3-99A33F7DD456";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "62E469C4-664F-3E47-33A3-18900E80F6BC";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "1F1C0781-0440-3CBD-504D-CB9A0E1E2981";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "DA062BB6-9F4A-D568-C502-B1A772E9353A";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "5F967891-F548-CA67-66DB-FAA8829F9DDC";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "61095B01-044D-B020-C05F-F3B905DFBC9D";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "5F8E694B-B546-07FA-2FD8-5CA4E6ECD600";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "0B58956D-9942-1BD2-ADE3-8F83B8676539";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pCone1";
+	rename -uid "99D635B4-194B-E1EA-E63F-2588305D08BD";
+	setAttr ".t" -type "double3" -8.9896610011786215 4.8279390204296844 11.264733125726996 ;
+	setAttr ".s" -type "double3" 0.42484229252438854 0.42484229252438854 0.42484229252438854 ;
+createNode mesh -n "pConeShape1" -p "pCone1";
+	rename -uid "B04537A6-D241-E197-4840-9CACF6497BDA";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "group20";
+	rename -uid "07C3889D-FD4E-25D3-DD02-07AC61BCAE05";
+	setAttr ".t" -type "double3" -1.6213208663860588 2.0053880473730565 -3.15053895403104 ;
+	setAttr ".rp" -type "double3" -8.9896610518237701 4.8279390204296844 11.264733049759275 ;
+	setAttr ".sp" -type "double3" -8.9896610518237701 4.8279390204296844 11.264733049759275 ;
+createNode transform -n "pasted__pCone1" -p "group20";
+	rename -uid "7AD0466D-AA47-4B02-8B37-9A94B45DC1D5";
+	setAttr ".t" -type "double3" -8.9896610011786215 4.6617517493328462 11.264733125726996 ;
+	setAttr ".s" -type "double3" 0.42484229252438854 0.42484229252438854 0.42484229252438854 ;
+createNode mesh -n "pasted__pConeShape1" -p "pasted__pCone1";
+	rename -uid "B92E052A-EB44-77BC-25FE-518FFD064765";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "group21";
+	rename -uid "B49F1E39-7147-FF64-A5B8-B098F864C154";
+	setAttr ".t" -type "double3" -4.1438867221985145 3.6403459138941496 -3.8889330338420578 ;
+	setAttr ".r" -type "double3" 0 -90 0 ;
+	setAttr ".rp" -type "double3" -6.7224520947331623 4.875987923366532 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -6.7224520947331623 4.875987923366532 11.21764590792443 ;
+createNode transform -n "pasted__group19" -p "group21";
+	rename -uid "7E64D754-6945-72B0-F057-B090E300BEE6";
+	setAttr ".t" -type "double3" 1.9592717863207048 -1.9162515792194963 0 ;
+	setAttr ".rp" -type "double3" -8.6817238810538662 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -8.6817238810538662 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__Book_Template_2" -p "pasted__group19";
+	rename -uid "FCC98136-8546-C178-E63F-82836B0D8966";
+createNode transform -n "pasted__pasted__group18" -p "pasted__pasted__Book_Template_2";
+	rename -uid "15F7EE5A-3847-B078-1DCB-E39E301B819E";
+	setAttr ".t" -type "double3" 0.48340515897661085 0 0 ;
+	setAttr ".rp" -type "double3" -8.6646097159422126 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -8.6646097159422126 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__group16" -p "pasted__pasted__group18";
+	rename -uid "41D4FA4B-094A-A644-F050-DD99F46D9E1B";
+	setAttr ".t" -type "double3" 0.24896254626738745 0 0 ;
+	setAttr ".rp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__pasted__group15" -p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16";
+	rename -uid "B6C24E19-794C-A75A-DD0F-6EA4CAAF9B8D";
+	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
+	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group14" -p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15";
+	rename -uid "785B25D2-C64B-7D33-D162-54AEB8A17938";
+	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
+	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group11" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14";
+	rename -uid "3E12A84F-864A-BE1D-A7C0-AA9153E3D8DA";
+	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
+	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11";
+	rename -uid "66CA1A4B-B94A-9BF7-B014-C8BE4930E214";
+	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10";
+	rename -uid "3C93F5CD-E14B-D878-6F6B-94B9B7FFDE5D";
+	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
+	rename -uid "C160FFDF-C247-01CF-790F-A2B4993838B8";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+	rename -uid "70FB95D5-904B-1AE5-5AD9-F298D3938DBB";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "35C97813-3F44-38B4-64EE-14B3CDC461FA";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "05E142CB-4A44-652F-6080-D0B053146F8C";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "93BBB3EB-534B-9EA7-2531-298EB4C97367";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "E75A78D0-D649-1C87-CF36-F7825E9086AB";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "FD7121AF-364C-5813-1A72-D59F449CA070";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "55871B94-F942-975D-891B-4A8ACA418DA6";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "30EEA119-EA41-C4B1-126F-BC9D1AF19089";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "B105FED6-104A-A6EA-2E9F-8882C648E5F5";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__group17" -p "pasted__pasted__Book_Template_2";
+	rename -uid "C0B399DF-6C41-E414-E2FD-ED9DF5C41E20";
+	setAttr ".t" -type "double3" 0.22608211198233263 0 0 ;
+	setAttr ".rp" -type "double3" -8.6646097159422126 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -8.6646097159422126 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__group16" -p "pasted__pasted__group17";
+	rename -uid "759E0DC6-924A-8C60-45FF-D382A8D00D13";
+	setAttr ".t" -type "double3" 0.24896254626738745 0 0 ;
+	setAttr ".rp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__pasted__group15" -p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16";
+	rename -uid "7E33D3D9-C544-5AEA-C42C-F08696C56797";
+	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
+	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group14" -p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15";
+	rename -uid "9455A98C-8245-2A08-82F3-A7B71CE296EA";
+	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
+	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group11" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14";
+	rename -uid "B181E16D-9748-50F6-AD43-C3A968E28754";
+	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
+	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11";
+	rename -uid "C89401F5-FE48-07B1-95F5-5994D74EAB16";
+	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10";
+	rename -uid "2A6583C2-2D41-10A5-08FB-518E9CA915FB";
+	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
+	rename -uid "FF61BF68-3F4B-3597-8CDC-93B0B258F366";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+	rename -uid "8785614B-5844-BDDF-9362-C3810C8C9E12";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "FEAD38A0-DE48-A6BC-F782-90832A3A3087";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "17613574-C14A-4CF5-EBE6-72A393E89043";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "1E44B73B-C641-8331-4563-E4BF4610C63A";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "065DDFEA-5945-C76C-696B-E0899509D972";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "095ADE98-A24F-A739-2379-EE91FFD692D0";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "EDE658FF-9146-4315-C34A-D3A838826FAB";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "DCD81261-264E-8670-CE01-C38FE292A843";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "12597A59-8549-A619-0788-DDA4E2359418";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__group16" -p "pasted__pasted__Book_Template_2";
+	rename -uid "1945DED0-AC4B-4758-116C-5A981828E307";
+	setAttr ".t" -type "double3" 0.24896254626738745 0 0 ;
+	setAttr ".rp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__group15" -p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16";
+	rename -uid "AA1C9320-8F4C-4E15-AC0C-F5AB3F699A4A";
+	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
+	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__pasted__group14" -p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15";
+	rename -uid "8194EFE6-3E41-B97C-28C2-BDA2BD297332";
+	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
+	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group11" -p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14";
+	rename -uid "A8916BD7-D44B-CFD3-B472-91AD8EDFD643";
+	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
+	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group10" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11";
+	rename -uid "BE223170-CC4D-EE11-E659-D98F74E8FB81";
+	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10";
+	rename -uid "F163A1BE-8946-6F96-0A04-F8BC147C0E38";
+	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
+	rename -uid "EE1674AE-2742-EA12-7552-3CB0AC05C9A3";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+	rename -uid "860253D9-F44C-417F-2C39-4BAE0359FD13";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "26202FB1-3448-088F-2168-1D8A94844741";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "CFBDF025-B74C-4B2C-93A1-3C8C51B57D3E";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "B281D898-5546-DA3F-409C-78888D435AFE";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "32A855EC-CF44-29A4-CA6D-BCB3E907B261";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "BCB2C091-A24C-9F46-AE9B-059C61CB783F";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "45F00CC5-214B-AF83-CA18-F390587CCDC6";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "01555719-774D-D2F8-7C9D-5E9CD1AFB0F3";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "D8C1C3B9-DA4C-7B13-BB80-0591CE3F9F20";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__group15" -p "pasted__pasted__Book_Template_2";
+	rename -uid "029A95B8-244A-2D73-CD7A-CAA162C1191C";
+	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
+	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__group14" -p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15";
+	rename -uid "837CD853-3441-F263-6FB7-12884633DE9A";
+	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
+	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__pasted__group11" -p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14";
+	rename -uid "72001D49-B64B-7D1A-ADA0-4284CC38BC2A";
+	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
+	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group10" -p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11";
+	rename -uid "52D7E21E-B646-B238-359C-479C4349516C";
+	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group9" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10";
+	rename -uid "CE79572F-FE4E-C044-7B81-93BB1664FBF7";
+	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9";
+	rename -uid "30603B3F-2544-3AD0-7FF5-B9B152511F74";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+	rename -uid "447295A4-E241-1571-3D15-70985FB232D6";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "21AAA893-AF42-E4F9-AFAB-0DB7991D6BDF";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "4847B68C-8B45-C9D7-3076-5F9DE4F2D831";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "E7EED39B-3745-06C0-F631-92952EED9E47";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "1B714FCA-1747-D7AC-A5E5-AAA6521E4B99";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "65148326-AC44-B177-8BA8-558CD79BEE3E";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "8599882E-594B-F8C9-47D3-2CA07C0B52B8";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "EFB8E7CF-0B41-4599-62D8-4D9FFB1A3750";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "736A97DE-E346-76FE-48D9-738AD0B406FC";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__group14" -p "pasted__pasted__Book_Template_2";
+	rename -uid "2C55713A-E345-CCC7-1292-8AAAF95D2513";
+	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
+	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
+createNode transform -n "pasted__pasted__pasted__group11" -p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14";
+	rename -uid "5C34D5C7-2548-4CE7-154B-908B6806C5BF";
+	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
+	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
+createNode transform -n "pasted__pasted__pasted__pasted__group10" -p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11";
+	rename -uid "7F9DFEDF-DB43-6C4D-1A56-D1A4CB75AEBB";
+	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group9" -p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10";
+	rename -uid "190EDF37-8049-B968-15B4-6A8C6762C4E1";
+	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
+	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9";
+	rename -uid "A5259949-E045-9643-10E3-E89FC811475F";
+	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+	rename -uid "7C642195-A048-CCD2-6E96-5983A0593243";
+	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "ED69373B-EF4D-1753-D745-FAB953C6894F";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.1 0.95 0.7 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "42563B67-034E-63D4-A0C8-7CAC80804FE3";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "24D020AC-8443-93E4-7A0C-2A96F82EEFD1";
+	setAttr ".t" -type "double3" 0 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "32C7C791-7C49-E5F4-E993-DB913897C157";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "2E7E30A2-0048-0769-D3FC-A091132BB583";
+	setAttr ".t" -type "double3" 0.16045007195288763 4.6168183408456462 2.4264645985724509 ;
+	setAttr ".s" -type "double3" 0.05 1 0.8 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "B25112BB-0A4F-AD39-558F-E2804B29E5AE";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+	rename -uid "22B123CC-8848-BCA0-D9EE-0FAC2FA26CEB";
+	setAttr ".t" -type "double3" 0.076270309218973764 4.6168183408456462 2.0600737687919159 ;
+	setAttr ".s" -type "double3" 0.2 1 0.069999999999999993 ;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
+		-p "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+	rename -uid "3FFC01B4-F947-E848-D176-748CD612FB68";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
@@ -1138,7 +3824,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 662\n            -height 578\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            -pluginObjects \"mayaUsdProxyShapeBaseDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
 		+ "\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n"
 		+ "            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n"
-		+ "            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1338\n            -height 1248\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n"
+		+ "            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1330\n            -height 1248\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n"
 		+ "        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            -pluginObjects \"mayaUsdProxyShapeBaseDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n"
 		+ "            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n"
 		+ "            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n"
@@ -1162,8 +3848,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"motionMakerEditorPanel\" (localizedPanelLabel(\"MotionMaker Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"MotionMaker Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n"
 		+ "        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1338\\n    -height 1248\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    -pluginObjects \\\"mayaUsdProxyShapeBaseDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1338\\n    -height 1248\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    -pluginObjects \\\"mayaUsdProxyShapeBaseDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1330\\n    -height 1248\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    -pluginObjects \\\"mayaUsdProxyShapeBaseDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1330\\n    -height 1248\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    -pluginObjects \\\"mayaUsdProxyShapeBaseDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -1716,9 +4402,403 @@ createNode polyCube -n "pasted__pasted__polyCube4";
 createNode polyCube -n "pasted__pasted__pasted__polyCube4";
 	rename -uid "204CB778-2A4C-2BE5-A0BF-B9B3637E5922";
 	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__polyCube5";
+	rename -uid "17F5C5E8-D643-8AAD-A726-7B8775C00DD7";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__polyCube5";
+	rename -uid "C791B3A8-2544-A17E-2066-24A3F12A690B";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__polyCube5";
+	rename -uid "7465336F-E64A-64D2-6257-26A053C2FB8C";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__polyCube4";
+	rename -uid "13B11E5D-4840-6598-3DAD-5590D6FE5040";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__polyCube6";
+	rename -uid "5E908932-FB48-68C0-569C-82B508B7A361";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__polyCube6";
+	rename -uid "785D9EAC-9F4D-E9C3-6A49-DA8D61D2EF3F";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__polyCube6";
+	rename -uid "EEAA1DD1-4941-4A78-C277-65A88E431117";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__polyCube5";
+	rename -uid "34D5039B-9441-A5BA-C22C-87AFBA184C07";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__polyCube7";
+	rename -uid "892A2F57-A44A-87EB-A797-FB83F03540D9";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__polyCube7";
+	rename -uid "1ACE48E6-D244-4DD0-9C30-BEB80E6F8374";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__polyCube7";
+	rename -uid "1E001BD5-5C4A-3E14-05AC-7BACDA8A8D2F";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__polyCube6";
+	rename -uid "F523921E-7542-77E7-827D-9AAD3F0DAAAD";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__polyCube7";
+	rename -uid "81152702-B84D-5E59-246B-B587D413FCB6";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__polyCube8";
+	rename -uid "EF00E262-5040-C214-312C-70999949572F";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__polyCube8";
+	rename -uid "DFD975CE-124A-2032-76E7-D68FDDC1E658";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__polyCube4";
+	rename -uid "AB151706-DC43-5614-8C34-17A2F2327B4C";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__polyCube8";
+	rename -uid "4B68633D-0341-42EA-6563-1B8603B52455";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__polyCube9";
+	rename -uid "FAEADFCF-C446-2DC6-1CC1-7A9C9FD24344";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__polyCube9";
+	rename -uid "404C09EB-8042-661A-CD8E-BC9A7E2E222E";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__polyCube5";
+	rename -uid "ED546074-AC48-397A-D423-57B9D8BFF2E2";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__polyCube10";
+	rename -uid "A14C7ECD-8644-0BD9-F4C9-8BB057B3F810";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__polyCube8";
+	rename -uid "5D987DB8-1341-BFF4-F180-2387E05A5DE8";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__polyCube10";
+	rename -uid "916A05A8-214C-10BA-EF27-58BA9231ADF7";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__polyCube9";
+	rename -uid "BA103979-274D-30B7-8FDA-E89C12159797";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__polyCube10";
+	rename -uid "9131957E-E342-745F-93DD-0ABE380D7887";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__polyCube11";
+	rename -uid "DA3A970B-2E4C-1D69-4022-0AB7646605FD";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__polyCube11";
+	rename -uid "E69A726E-4841-8131-761B-9BBDB61DB22C";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__polyCube6";
+	rename -uid "124AA008-6443-5A52-9619-4F95FF3AB042";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__polyCube11";
+	rename -uid "35D8C436-3A4E-93AC-5831-D7AB6D8A3D52";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__polyCube12";
+	rename -uid "55A14394-3845-FA14-472A-0382028D80C4";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__polyCube12";
+	rename -uid "468EA478-214F-C6F8-A974-A5B46023212E";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__polyCube7";
+	rename -uid "7EBC7990-694E-84A9-FA33-0CB48634B7E8";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__polyCube12";
+	rename -uid "A033D1B8-4A41-55F1-8DC1-95A2C1F5E6F9";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__polyCube13";
+	rename -uid "58A990A0-E341-3058-38E2-6AB06283400E";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__polyCube13";
+	rename -uid "23AAADF6-7F4F-4E55-A56F-F6BCFFD3C0D1";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__polyCube9";
+	rename -uid "001102BC-3448-4010-0198-2289E3A25F47";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__polyCube10";
+	rename -uid "B4FD32E9-BD45-FC71-E1A6-2684ED3E62BD";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__polyCube14";
+	rename -uid "B513BDE7-E246-14B9-227B-AAA094F99D34";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__polyCube13";
+	rename -uid "8BCDE875-7C46-6F5B-DE22-B2B45AA5F6F8";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__polyCube6";
+	rename -uid "1BBC3ADB-2E4D-487C-C110-00A5662DCF66";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__polyCube11";
+	rename -uid "FD9871ED-104B-FB19-D5DA-C5B84772B546";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__polyCube15";
+	rename -uid "D6FD506C-8344-0011-A133-3D8ECD414408";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__polyCube14";
+	rename -uid "C7682276-894A-5033-AD8B-26B624EE4B60";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__polyCube7";
+	rename -uid "5F309D2A-4142-EA09-E3EA-3AB3C30CF11D";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__polyCube12";
+	rename -uid "116C3220-1F47-CC5B-369C-D9882971EED0";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__polyCube16";
+	rename -uid "BF0031E5-594E-F5E3-2C9A-9FB34B78A824";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__polyCube15";
+	rename -uid "01B0F776-5F4C-2CA6-D95B-47AF794ABC68";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__polyCube9";
+	rename -uid "C44F4D9E-9D43-F247-61C2-2CB140E6D0E8";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__polyCube10";
+	rename -uid "D5CBA47D-CF4D-F3DC-BB6F-EE8AF8F0B704";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__polyCube16";
+	rename -uid "76284E86-5C4E-FD2E-EF7D-528692688C4C";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__polyCube13";
+	rename -uid "A548DCC8-0C4F-7B7A-4898-9F8472631DEC";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube6";
+	rename -uid "DA9C921A-4648-AF30-006C-0FA3D135C19C";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__polyCube11";
+	rename -uid "9E1BCC48-0D4B-6940-4876-9397A43DFE74";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__polyCube17";
+	rename -uid "30AAE4AC-B54E-B4CA-9BF0-9E98AC284D99";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__polyCube14";
+	rename -uid "036A9142-6C46-7BE9-67C1-A7BF2B5EEE9C";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube7";
+	rename -uid "B994B9C4-2A40-127F-0DB2-248025DEB6B4";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__polyCube15";
+	rename -uid "FF863D88-C74E-1FD7-F799-92AAA7FD5884";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__polyCube17";
+	rename -uid "FBFCEEA9-F544-532A-D07C-CEB4C53C46C6";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__polyCube18";
+	rename -uid "0E117834-9E4F-A0B0-CD0E-C9915A958C80";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__polyCube12";
+	rename -uid "721C99A7-8343-0935-CF29-2A9E9988AEC4";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__polyCube13";
+	rename -uid "67A8AE05-4C41-B635-625D-36BDEA43BF3C";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__polyCube19";
+	rename -uid "933F165A-FC4F-14D2-739E-D4ACDB1E3F5B";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__polyCube16";
+	rename -uid "7682ABA4-C04B-9D9B-4282-B3BFEB38C07C";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube8";
+	rename -uid "BACC721C-9B49-D5E4-0FB5-E89DEADF79F7";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__polyCube14";
+	rename -uid "A8FA780E-9F41-EDFB-9529-C0995582EC1D";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__polyCube20";
+	rename -uid "166E0B2F-7748-4398-7633-E390978D8A06";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__polyCube17";
+	rename -uid "4B2297C1-1643-1EE7-8BA1-9297E9DF70FC";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube9";
+	rename -uid "66048093-D94E-7C8E-A4EA-9BB21F323F9E";
+	setAttr ".cuv" 4;
+createNode polyTorus -n "polyTorus1";
+	rename -uid "088D4E99-F147-B96D-D512-4EA314E5B730";
+createNode polyTorus -n "pasted__polyTorus1";
+	rename -uid "B092AA0B-0447-51CE-B671-C4BC930F790F";
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__polyCube15";
+	rename -uid "F6B3722A-E647-0F9D-05DF-A288E79143C4";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__polyCube21";
+	rename -uid "B1AA667E-9949-C03F-D78A-40883E85C43F";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__polyCube18";
+	rename -uid "54B31309-D443-8082-5F92-4AB69BD2B33C";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube10";
+	rename -uid "4FFA5E47-E840-2B1F-839C-A6BA6D6B5F30";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube15";
+	rename -uid "929A1D00-C54B-1603-95E8-F9A51BF4E56D";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__polyCube21";
+	rename -uid "577F8D2B-134B-0C8C-762C-ED957FA614DC";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__polyCube18";
+	rename -uid "52A37F9A-A34D-EFAE-C87A-6CA9D36C1FC4";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube10";
+	rename -uid "2FFF5912-5544-40D6-ACCB-DAADE1C35F9D";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube15";
+	rename -uid "36BA07A8-2E46-7660-4395-F6B05A9466DE";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__polyCube21";
+	rename -uid "4939926D-4C46-0E04-71C7-CEBDB74FCBD4";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube18";
+	rename -uid "C69A6DEF-5C4C-DFA4-A94E-09BAF15EDFAE";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube10";
+	rename -uid "C3D26FA2-8E42-C2B8-B296-C3A0B019DBEF";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube15";
+	rename -uid "2EC37FC5-8C46-6AF6-B953-4598FD8082CC";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube21";
+	rename -uid "D354A593-014B-F484-0A6D-44806D165789";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube18";
+	rename -uid "4232C31A-3546-CD6B-DBD8-319E06B89E01";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube10";
+	rename -uid "84C2D65C-4D46-88FF-245D-9FBB775729C5";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube16";
+	rename -uid "D1837D9D-514E-D876-9DEA-5EA0AFC856CA";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube22";
+	rename -uid "EAC593A3-444B-BBEB-834D-86B206A711D5";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube19";
+	rename -uid "CA8F7B6B-934F-A45A-5CB8-309A3EE9A575";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube11";
+	rename -uid "B6C07C58-E44D-E635-F747-5FB66CF6EF6B";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube16";
+	rename -uid "241275B4-CD4E-EFCB-0C72-A589F33B942C";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube24";
+	rename -uid "4E3D4CB5-E048-5EAB-F909-5BBE609109AE";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube20";
+	rename -uid "4C87CE64-F44F-2942-9287-3B9F294AEF57";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube11";
+	rename -uid "986671EF-6F46-31B6-BA96-47A7EF877A84";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube15";
+	rename -uid "6C468DA4-194F-A236-2407-31AF2A096D69";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube23";
+	rename -uid "03822665-CA42-EC73-1184-23B661C4578B";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube19";
+	rename -uid "250177C0-8C45-1F5E-1F78-3EBAD56289FD";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube10";
+	rename -uid "2A251204-8240-4558-25FE-979A38C6A862";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube18";
+	rename -uid "747FAA34-FA41-0471-11B7-2D8854CBA4D0";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube25";
+	rename -uid "6F74D8E3-9048-8ABE-F851-B3958E57BB5E";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube22";
+	rename -uid "5E328028-5C40-EDBD-EC22-E09D66FC4C7E";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube12";
+	rename -uid "6A2DB866-5E46-3A66-51CA-35B9F3CE1A5A";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube21";
+	rename -uid "DDDE01B6-EE4F-B64D-29C0-7E8A8D2EAC79";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__polyCube23";
+	rename -uid "952D769F-5C45-C2F2-FE4A-629FA1C86C23";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube24";
+	rename -uid "FA4DB3B3-4647-432B-D59A-FC8D3772918D";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube17";
+	rename -uid "E6FB0497-EC47-DB6D-092B-7A96C10F4D8B";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube23";
+	rename -uid "93C9E976-164C-1C55-BA01-A19C75654F3E";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__polyCube22";
+	rename -uid "47243C13-5F41-60E7-3477-2DA637EBEA63";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__polyCube22";
+	rename -uid "3B777AAF-8B45-445F-AA86-DA9B7099F30F";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube20";
+	rename -uid "DBFB16F3-4F40-F62D-A0F9-4883F67EC81F";
+	setAttr ".cuv" 4;
+createNode polyCone -n "polyCone1";
+	rename -uid "B2698E51-AC43-C997-E7B0-6DBD99FB203A";
+	setAttr ".cuv" 3;
+createNode polyCone -n "pasted__polyCone1";
+	rename -uid "939C392A-9A40-BBE0-6B42-3384BA678533";
+	setAttr ".cuv" 3;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube16";
+	rename -uid "6311DDA5-6141-C087-8F1B-03A391A97910";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube25";
+	rename -uid "658F162F-BB40-52BA-A4C3-2DAA6732D783";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube20";
+	rename -uid "D8EDE440-164E-5E8C-5874-8385576CA734";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube11";
+	rename -uid "D5BCA933-8149-634E-B7E2-2BACA06D4CA0";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube15";
+	rename -uid "07A29175-7048-CC56-86C0-679310CD6ABA";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube24";
+	rename -uid "F24E0D15-7843-08D0-66B5-2BAEEBA4FD99";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube19";
+	rename -uid "CBD009D4-0946-785B-6F05-73940394F636";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube10";
+	rename -uid "35C24166-4146-18D5-7A5A-CDB449D3AE15";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube18";
+	rename -uid "C7486D0D-2E43-AC65-B7C0-0C9C2F0CD8E3";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube27";
+	rename -uid "3C12FB08-904F-465C-D6F2-DEB7950AFF44";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube23";
+	rename -uid "07E472A5-E348-A7E0-39F2-1B9DE9C68272";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube12";
+	rename -uid "D307B1DE-CC44-5724-4D9D-DCBE712660C7";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube22";
+	rename -uid "3782160E-B549-AA2D-D0A7-61BDA7EBFB9A";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube27";
+	rename -uid "C188CE5C-A942-0432-56D7-4F93CCF3ECBC";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube26";
+	rename -uid "E3A9678E-9641-712F-C6ED-93A79A42D4C3";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube17";
+	rename -uid "B77A6450-EB45-13A8-6501-0C883FB1C2C9";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube25";
+	rename -uid "8CC64D47-AE47-8CD5-8390-EFAAA21D9F66";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__polyCube24";
+	rename -uid "F16F4CDE-2F49-31AD-FA0F-97A146F50B58";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube26";
+	rename -uid "28F079A3-E146-D400-EE5D-468456F334C8";
+	setAttr ".cuv" 4;
+createNode polyCube -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube21";
+	rename -uid "B9D1CA45-A94E-894E-49E2-05BE2793540A";
+	setAttr ".cuv" 4;
 select -ne :time1;
-	setAttr ".o" 1;
-	setAttr ".unw" 1;
+	setAttr ".o" 35;
+	setAttr ".unw" 35;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -1741,7 +4821,7 @@ select -ne :openPBR_shader1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 20 ".dsm";
+	setAttr -s 152 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -1765,8 +4845,6 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
 	setAttr -s 4 ".sol";
-connectAttr "polyPlane1.out" "pPlaneShape1.i";
-connectAttr "polyCube1.out" "pCubeShape4.i";
 connectAttr "polySplitRing11.out" "pasted__pCylinderShape2.i";
 connectAttr "pasted__pasted__pasted__polySplitRing15.out" "pasted__pasted__pasted__pasted__pCylinderShape2.i"
 		;
@@ -1778,20 +4856,284 @@ connectAttr "pasted__pasted__pasted__polySplitRing11.out" "pasted__pasted__paste
 		;
 connectAttr "pasted__pasted__pasted__pasted__polySplitRing15.out" "pasted__pasted__pasted__pasted__pasted__pCylinderShape2.i"
 		;
-connectAttr "pasted__polyCube1.out" "|group8|pasted__pCube4|pasted__pCubeShape4.i"
+connectAttr "pasted__polyCube1.out" "|Top_Shelves|group8|pasted__pCube4|pasted__pCubeShape4.i"
 		;
-connectAttr "pasted__polyCube2.out" "|group9|pasted__pCube4|pasted__pCubeShape4.i"
+connectAttr "pasted__pasted__polyCube1.out" "|Top_Shelves|pasted__pasted__pCube4|pasted__pasted__pCubeShape4.i"
 		;
-connectAttr "pasted__pasted__polyCube1.out" "|group10|pasted__group8|pasted__pasted__pCube4|pasted__pasted__pCubeShape4.i"
+connectAttr "polyCube1.out" "pCubeShape4.i";
+connectAttr "pasted__polyCube2.out" "|Middle_Shelves|pasted__pCube4|pasted__pCubeShape4.i"
 		;
-connectAttr "pasted__polyCube3.out" "|group11|pasted__pCube4|pasted__pCubeShape4.i"
+connectAttr "pasted__polyCube3.out" "|Bottom_Shelves|pasted__pCube4|pasted__pCubeShape4.i"
 		;
-connectAttr "pasted__pasted__polyCube2.out" "|group12|pasted__group9|pasted__pasted__pCube4|pasted__pasted__pCubeShape4.i"
+connectAttr "pasted__pasted__polyCube2.out" "|Bottom_Shelves|pasted__pasted__pCube4|pasted__pasted__pCubeShape4.i"
 		;
-connectAttr "pasted__pasted__polyCube4.out" "pasted__pasted__pCubeShape5.i";
+connectAttr "polyPlane1.out" "pPlaneShape1.i";
+connectAttr "pasted__pasted__polyCube4.out" "|Books_Template_1|Book_1|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.i"
+		;
 connectAttr "polyCube2.out" "pCubeShape5.i";
-connectAttr "pasted__polyCube4.out" "pasted__pCubeShape5.i";
-connectAttr "pasted__pasted__pasted__polyCube4.out" "pasted__pasted__pasted__pCubeShape5.i"
+connectAttr "pasted__polyCube4.out" "|Books_Template_1|Book_1|pasted__pCube5|pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__polyCube4.out" "|Books_Template_1|Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__polyCube5.out" "|Books_Template_1|Book_2|pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__polyCube5.out" "|Books_Template_1|Book_2|pasted__group16|pasted__pCube5|pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__polyCube5.out" "|Books_Template_1|Book_2|pasted__group16|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__polyCube4.out" "|Books_Template_1|Book_2|pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__polyCube6.out" "|Books_Template_1|Book_3|pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__polyCube6.out" "|Books_Template_1|Book_3|pasted__group16|pasted__pCube5|pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__polyCube6.out" "|Books_Template_1|Book_3|pasted__group16|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__polyCube5.out" "|Books_Template_1|Book_3|pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__polyCube7.out" "|group|pasted__Books_Template_1|pasted__Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__polyCube7.out" "|group|pasted__Books_Template_1|pasted__Book_1|pasted__pCube5|pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__polyCube7.out" "|group|pasted__Books_Template_1|pasted__Book_1|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__polyCube6.out" "|group|pasted__Books_Template_1|pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__polyCube7.out" "|group|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__polyCube8.out" "|group|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__polyCube8.out" "|group|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__polyCube4.out" "|group|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__polyCube8.out" "|group|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__polyCube9.out" "|group|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__polyCube9.out" "|group|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__polyCube5.out" "|group|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__polyCube10.out" "|group9|pasted__Books_Template_1|pasted__Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__polyCube8.out" "|group9|pasted__Books_Template_1|pasted__Book_1|pasted__pCube5|pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__polyCube10.out" "|group9|pasted__Books_Template_1|pasted__Book_1|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__polyCube9.out" "|group9|pasted__Books_Template_1|pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__polyCube10.out" "|group9|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__polyCube11.out" "|group9|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__polyCube11.out" "|group9|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__polyCube6.out" "|group9|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__polyCube11.out" "|group9|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__polyCube12.out" "|group9|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__polyCube12.out" "|group9|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__polyCube7.out" "|group9|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__polyCube12.out" "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__polyCube13.out" "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__polyCube13.out" "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__polyCube9.out" "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__polyCube10.out" "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__polyCube14.out" "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__polyCube13.out" "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__polyCube6.out" "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__polyCube11.out" "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__polyCube15.out" "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__polyCube14.out" "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__polyCube7.out" "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__polyCube12.out" "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__polyCube16.out" "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__polyCube15.out" "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__polyCube9.out" "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__polyCube10.out" "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__polyCube16.out" "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__polyCube13.out" "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube6.out" "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__polyCube11.out" "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__polyCube17.out" "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__polyCube14.out" "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube7.out" "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__polyCube15.out" "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__polyCube17.out" "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__polyCube18.out" "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__polyCube12.out" "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__polyCube13.out" "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__polyCube19.out" "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__polyCube16.out" "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube8.out" "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__polyCube14.out" "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__polyCube20.out" "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__polyCube17.out" "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube9.out" "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "polyTorus1.out" "pTorusShape1.i";
+connectAttr "pasted__polyTorus1.out" "pasted__pTorusShape1.i";
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube16.out" "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube22.out" "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube19.out" "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube11.out" "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube15.out" "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube21.out" "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube18.out" "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube10.out" "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube15.out" "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__polyCube21.out" "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube18.out" "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube10.out" "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube15.out" "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__polyCube21.out" "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__polyCube18.out" "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube10.out" "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__polyCube15.out" "|Book_Template_2|group14|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__polyCube21.out" "|Book_Template_2|group14|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__polyCube18.out" "|Book_Template_2|group14|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube10.out" "|Book_Template_2|group14|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube16.out" "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube24.out" "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube20.out" "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube11.out" "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube15.out" "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube23.out" "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube19.out" "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube10.out" "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube18.out" "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube25.out" "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube22.out" "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube12.out" "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube21.out" "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__polyCube23.out" "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube24.out" "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube17.out" "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube23.out" "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__polyCube22.out" "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__polyCube22.out" "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube20.out" "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "polyCone1.out" "pConeShape1.i";
+connectAttr "pasted__polyCone1.out" "pasted__pConeShape1.i";
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube16.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube25.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube20.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube11.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube15.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube24.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube19.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube10.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube18.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube27.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube23.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube12.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube22.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube27.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube26.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube17.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube25.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__polyCube24.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube26.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyCube21.out" "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.i"
 		;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
@@ -1920,19 +5262,281 @@ connectAttr "pasted__pasted__pasted__pasted__pCylinderShape2.iog" ":initialShadi
 connectAttr "pasted__pasted__pasted__pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "pCubeShape4.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|group8|pasted__pCube4|pasted__pCubeShape4.iog" ":initialShadingGroup.dsm"
+connectAttr "|Top_Shelves|group8|pasted__pCube4|pasted__pCubeShape4.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|group9|pasted__pCube4|pasted__pCubeShape4.iog" ":initialShadingGroup.dsm"
+connectAttr "|Middle_Shelves|pasted__pCube4|pasted__pCubeShape4.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|group10|pasted__group8|pasted__pasted__pCube4|pasted__pasted__pCubeShape4.iog" ":initialShadingGroup.dsm"
+connectAttr "|Top_Shelves|pasted__pasted__pCube4|pasted__pasted__pCubeShape4.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|group11|pasted__pCube4|pasted__pCubeShape4.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bottom_Shelves|pasted__pCube4|pasted__pCubeShape4.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|group12|pasted__group9|pasted__pasted__pCube4|pasted__pasted__pCubeShape4.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bottom_Shelves|pasted__pasted__pCube4|pasted__pasted__pCubeShape4.iog" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "pCubeShape5.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pasted__pCubeShape5.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Books_Template_1|Book_1|pasted__pCube5|pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Books_Template_1|Book_1|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Books_Template_1|Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Books_Template_1|Book_2|pasted__group16|pasted__pCube5|pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Books_Template_1|Book_2|pasted__group16|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Books_Template_1|Book_2|pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Books_Template_1|Book_2|pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Books_Template_1|Book_3|pasted__group16|pasted__pCube5|pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Books_Template_1|Book_3|pasted__group16|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Books_Template_1|Book_3|pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Books_Template_1|Book_3|pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group|pasted__Books_Template_1|pasted__Book_1|pasted__pCube5|pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group|pasted__Books_Template_1|pasted__Book_1|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group|pasted__Books_Template_1|pasted__Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group|pasted__Books_Template_1|pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group9|pasted__Books_Template_1|pasted__Book_1|pasted__pCube5|pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group9|pasted__Books_Template_1|pasted__Book_1|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group9|pasted__Books_Template_1|pasted__Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group9|pasted__Books_Template_1|pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group9|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group9|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group9|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group9|pasted__Books_Template_1|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group9|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group9|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group9|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group9|pasted__Books_Template_1|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group10|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group11|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group12|pasted__group10|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "pTorusShape1.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pasted__pTorusShape1.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "|Book_Template_2|group14|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Book_Template_2|group14|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Book_Template_2|group14|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Book_Template_2|group14|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Book_Template_2|group15|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Book_Template_2|group16|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Book_Template_2|group17|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|Book_Template_2|group18|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group19|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "pConeShape1.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pasted__pConeShape1.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group21|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
 // End of BookshelfAct.ma
