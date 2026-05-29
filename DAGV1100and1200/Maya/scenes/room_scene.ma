@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: room_scene.ma
-//Last modified: Wed, May 27, 2026 08:14:29 PM
+//Last modified: Fri, May 29, 2026 02:55:20 PM
 //Codeset: UTF-8
 requires maya "2027";
 requires "mtoa" "5.6.0";
@@ -10,23 +10,23 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202603302215-e16e754b0e";
 fileInfo "osv" "Mac OS X 20.5";
-fileInfo "UUID" "328DC75F-E641-00AD-5A72-268A50EF727B";
+fileInfo "UUID" "6634740F-C545-64C8-0ED5-9BB294B43D19";
 createNode transform -s -n "persp";
 	rename -uid "D3033840-284C-06D2-BA2D-D9A748769E63";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -3.6795906003454597 7.0701382295509259 -12.640057539280148 ;
-	setAttr ".r" -type "double3" -11.999999999999762 170.19999999999291 0 ;
+	setAttr ".t" -type "double3" 2.6770352904772383 6.9224959291556578 -6.576977418501845 ;
+	setAttr ".r" -type "double3" -16.799999999967302 -581.39999999989868 0 ;
 	setAttr ".rp" -type "double3" 4.4408920985006262e-16 0 0 ;
 	setAttr ".rpt" -type "double3" -5.0610201582580574e-15 -2.2397144136967803e-15 -1.1860741790586499e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "7EAA092A-9949-FB74-A178-14A91F0CE97F";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 20.803650961375325;
+	setAttr ".coi" 22.180066857398959;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -7.1431907241678818 2.74481598298894 7.4120484590530396 ;
+	setAttr ".tp" -type "double3" -11.364870987421714 0.51175134902542818 9.3504388129425919 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "38DF6D78-C84A-4BAB-19AE-078914F9D8E1";
@@ -80,13 +80,13 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
-createNode transform -n "Bookshelf_Full";
+createNode transform -n "Bkshlv_Full";
 	rename -uid "E0B1C0E5-4F48-5604-04BE-20BE5FA407BA";
 	setAttr ".t" -type "double3" -0.94014365430976277 -3.7034385168858943 0.82174714795509729 ;
 	setAttr ".s" -type "double3" 0.50654116684584349 0.50654116684584349 0.50654116684584349 ;
 	setAttr ".rp" -type "double3" -9.3911540864017855 6.448254503996985 9.437655965595118 ;
 	setAttr ".sp" -type "double3" -9.3911540864017855 6.448254503996985 9.437655965595118 ;
-createNode transform -n "Tree_Full" -p "Bookshelf_Full";
+createNode transform -n "Tree_Full" -p "Bkshlv_Full";
 	rename -uid "8C91D5AE-6045-7C4E-2D87-CA82B48C5F35";
 	setAttr ".t" -type "double3" -0.70509450991648226 0 0.59045585406887025 ;
 createNode transform -n "Tree_LB" -p "Tree_Full";
@@ -3277,11 +3277,11 @@ createNode mesh -n "Tree_RBDShape" -p "Tree_RBD";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Bottom_Shelves_Full" -p "Bookshelf_Full";
+createNode transform -n "Bottom_Shlv_Full" -p "Bkshlv_Full";
 	rename -uid "3F9D5B95-0646-2993-99AC-E7A0F6B20129";
-createNode transform -n "Bottom_Shelves" -p "Bottom_Shelves_Full";
+createNode transform -n "Bottom_Shlv" -p "Bottom_Shlv_Full";
 	rename -uid "8EE28C62-054D-C039-2103-479138C7691A";
-createNode transform -n "BS_Left" -p "Bottom_Shelves";
+createNode transform -n "BS_Left" -p "Bottom_Shlv";
 	rename -uid "7B11F694-A64A-CFDE-F014-338C7084946C";
 	setAttr ".rp" -type "double3" -7.8032078742980957 4.2579660415649414 11.109872341156006 ;
 	setAttr ".sp" -type "double3" -7.8032078742980957 4.2579660415649414 11.109872341156006 ;
@@ -3403,7 +3403,7 @@ createNode mesh -n "BS_LeftShape" -p "BS_Left";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "BS_Right" -p "Bottom_Shelves";
+createNode transform -n "BS_Right" -p "Bottom_Shlv";
 	rename -uid "8DC4BE9F-134C-EB6C-A013-67ACE07A37E2";
 	setAttr ".rp" -type "double3" -11.388607025146484 4.2058393955230713 8.6893689632415771 ;
 	setAttr ".sp" -type "double3" -11.388607025146484 4.2058393955230713 8.6893689632415771 ;
@@ -3525,7 +3525,7 @@ createNode mesh -n "BS_RightShape" -p "BS_Right";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "BS_Right_Donut" -p "Bottom_Shelves_Full";
+createNode transform -n "BS_Right_Donut" -p "Bottom_Shlv_Full";
 	rename -uid "5CC56D33-0940-C1B5-235F-52A52BD76D43";
 	setAttr ".t" -type "double3" -3.1724267685760843 -3.6879257590330417 -3.9911612713990818 ;
 	setAttr ".rp" -type "double3" -7.7599516372677328 8.1241585858687735 11.080643702450686 ;
@@ -4829,7 +4829,7 @@ createNode mesh -n "pasted__pasted__pTorusShape1" -p "pasted__pasted__pTorus1";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "BS_Left_Books" -p "Bottom_Shelves_Full";
+createNode transform -n "BS_Left_Books" -p "Bottom_Shlv_Full";
 	rename -uid "E000C820-D04F-215F-CF17-148C827A36D9";
 createNode transform -n "pasted__group19" -p "BS_Left_Books";
 	rename -uid "98185DED-B44E-477A-9AEF-3DAA358324F5";
@@ -4848,53 +4848,53 @@ createNode transform -n "pasted__pasted__pasted__group16" -p "pasted__pasted__gr
 	setAttr ".t" -type "double3" 0.24896254626738745 0 0 ;
 	setAttr ".rp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__pasted__group15" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__group15" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16";
 	rename -uid "9A083696-A64E-B765-90FB-6E99BBDFFCB7";
 	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
 	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__group14" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group14" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15";
 	rename -uid "82BF33B7-2E4A-1EF3-74DA-629370C7A415";
 	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
 	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group11" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14";
 	rename -uid "A3FB4BE8-8441-1BDC-4859-5BBEB6BF106B";
 	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
 	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11";
 	rename -uid "FDD83A60-264D-DD56-8BCD-519C76E19D6F";
 	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10";
 	rename -uid "44D51A43-9E48-D179-28EB-3D93590D48F1";
 	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
 	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
 	rename -uid "0C0DAE26-1B42-582C-20A4-D4829B4AFBAF";
 	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "F159CF53-4742-7E7C-D40D-7F8345C5C86A";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "20A60F4A-E04F-A138-BD1D-5C8C5A2D7C80";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "47E84E00-9E44-1676-917C-BD8379211C6E";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -4946,12 +4946,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "30F05520-254F-A5C2-258F-999959853A0D";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "5A2E0D38-BB41-7F7D-F7BA-6B837BCDF17F";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -5003,12 +5003,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "256051C2-704A-62C7-73E6-5B9D60B74427";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "B26AC9D1-5D40-CB29-7098-F9A3C92EC9A5";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -5060,12 +5060,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "FADDEFA1-DF47-F76E-84D2-2DB7D6505BC5";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "BBBEB3AD-BE4E-268E-BFC4-628AD2DFD9EA";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -5126,53 +5126,53 @@ createNode transform -n "pasted__pasted__pasted__group16" -p "pasted__pasted__gr
 	setAttr ".t" -type "double3" 0.24896254626738745 0 0 ;
 	setAttr ".rp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__pasted__group15" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__group15" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16";
 	rename -uid "A4071621-6E4F-E81C-29C7-C99D16E18027";
 	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
 	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__group14" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group14" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15";
 	rename -uid "9E67DC36-4840-4B8E-793B-6BAC931258C4";
 	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
 	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group11" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14";
 	rename -uid "30EEB8E4-634B-F0FC-E0A0-A5BBAECD9D54";
 	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
 	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11";
 	rename -uid "B3CC352E-084B-4955-C59F-3E9D9A3E057D";
 	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10";
 	rename -uid "AD30B596-594C-9190-043A-CCA4CC0E6890";
 	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
 	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
 	rename -uid "10294F07-924E-EF0A-5C7B-2299502C2219";
 	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "8E1659F5-CA45-23A6-7518-29A5A64CC2A8";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "9DD30C43-E14B-BF9F-DEF0-03BE58A4F5EB";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "603024D8-514F-1D5B-8396-E48AA5BAB398";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -5224,12 +5224,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "1982633B-234E-A4CE-D59E-FC8E990E2FED";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "693219F4-E14A-CF1B-4FAE-519258D2951F";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -5281,12 +5281,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "9507001F-FC4B-0E3B-7045-E1A46727A76C";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "FB94CE74-894B-7449-6419-A7B56F6E929B";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -5338,12 +5338,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "D1742EEB-0F4B-E0DC-92DD-4792717C875D";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "441DA0A0-C74C-D05B-7668-41BCA2361A7B";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -5399,52 +5399,52 @@ createNode transform -n "pasted__pasted__group16" -p "pasted__pasted__Book_Templ
 	setAttr ".t" -type "double3" 0.24896254626738745 0 0 ;
 	setAttr ".rp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__group15" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__group15" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16";
 	rename -uid "C18BB157-9C49-4800-0672-2087E189BB65";
 	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
 	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__pasted__group14" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15";
+createNode transform -n "pasted__pasted__pasted__pasted__group14" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15";
 	rename -uid "5F501229-1E4E-7A5C-41F0-AAA80B4766C0";
 	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
 	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__group11" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group11" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14";
 	rename -uid "30D7BB58-7649-E0EE-8CAB-68B3543BCEC9";
 	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
 	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group10" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11";
 	rename -uid "FA0D48EB-A34D-E371-A91D-A1AFD8640874";
 	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10";
 	rename -uid "212CE9AD-3746-4AEA-F4BC-E88D3713EC14";
 	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
 	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
 	rename -uid "D81CB01D-5144-8FD9-3700-3CBA10F1BA8B";
 	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "3713248C-4940-431F-F710-258F2DD38408";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "32B93992-164F-904D-83EE-E8870E635468";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "1D1CB27A-B74B-B028-0068-069A774D564F";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -5496,12 +5496,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "E30A106F-424D-F598-B12D-40AF28A1F93E";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "A8CC8C74-DF4F-50CB-C668-1E81AAE77C89";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -5553,12 +5553,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "6A682638-2A4B-0D2E-A846-B0BF2CE43B2A";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "66189914-0F48-5EEB-B765-668F7DB634A4";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -5610,12 +5610,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "F3FB58BA-924E-F360-7C5A-29BDDC1F1192";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "521295D4-7D43-5051-DFB0-6285A341C102";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -5671,46 +5671,46 @@ createNode transform -n "pasted__pasted__group15" -p "pasted__pasted__Book_Templ
 	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
 	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__group14" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15";
+createNode transform -n "pasted__pasted__pasted__group14" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15";
 	rename -uid "B8145C17-FE48-7FBB-14D7-FC93D1BFA8C1";
 	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
 	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__pasted__group11" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14";
+createNode transform -n "pasted__pasted__pasted__pasted__group11" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14";
 	rename -uid "F4CE9B6F-464F-0E96-D940-85B5D5A4C118";
 	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
 	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__group10" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group10" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11";
 	rename -uid "9B6B13E6-BA4C-B973-7609-35811D040D2B";
 	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group9" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10";
 	rename -uid "385D91C5-BD42-99D9-F724-A89093FE183B";
 	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
 	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9";
 	rename -uid "5F94B12A-6F4B-98A4-2075-0AA9BF0E114E";
 	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "83A0F394-8041-B2DD-D3B1-009CE6B0DC61";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "67CB05C0-1648-C96A-1CD3-A6A958961286";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "7432BB78-CD45-B5B7-7F91-5AAF5457DF89";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -5762,12 +5762,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "2CE00581-E14B-8B10-291B-9BA6CBC66523";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "53D4712B-0B44-2B13-DBEA-A691E449F524";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -5819,12 +5819,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCub
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "09AC88C0-2340-8BC8-EC4A-6C83EF5D0AC4";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "163B8AD4-FA43-37F6-961E-64A2B1D466B5";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -5876,12 +5876,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "C76C4E20-4F4C-955B-47B2-2E9D1202EB89";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "B01B5A19-824E-3280-944E-BFB53E1091EE";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -5937,40 +5937,40 @@ createNode transform -n "pasted__pasted__group14" -p "pasted__pasted__Book_Templ
 	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
 	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__group11" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14";
+createNode transform -n "pasted__pasted__pasted__group11" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14";
 	rename -uid "0BFBADE1-0C48-FC38-1639-EB8E90E19FDA";
 	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
 	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
-createNode transform -n "pasted__pasted__pasted__pasted__group10" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11";
+createNode transform -n "pasted__pasted__pasted__pasted__group10" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11";
 	rename -uid "C8BC4B59-B04F-CC8D-4BE5-9C9FAFFE4E03";
 	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__group9" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group9" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10";
 	rename -uid "3E04F3E1-0440-1C40-AD62-96AD9B1A27B8";
 	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
 	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9";
 	rename -uid "B8772F22-C84D-FE52-032F-BD8A29300DCC";
 	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "A714C548-6E4B-BC53-A808-B6A2E1734ED7";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "B7CB8A39-3E46-B2F5-B223-CFB09EB7662A";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "BDB425D2-F448-DCAB-1FDE-E8890365AB89";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -6022,12 +6022,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "ABD756D7-6342-BE8B-60BD-A3B650091221";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "B6F71425-6B44-C7F5-82B1-CDA4A16186BF";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -6079,12 +6079,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5"
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "A804222A-FD47-4589-706B-C187D71CAE28";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "05FEB9DE-D847-B656-1674-D5A607D8024C";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -6136,12 +6136,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCub
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "5A8AC56C-FD46-C468-AA2C-0ABFB2B7FB0C";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "9EF8CBBA-524D-1C69-2B47-119339824989";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -6203,27 +6203,27 @@ createNode transform -n "pasted__pasted__group10" -p "pasted__group12";
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
-createNode transform -n "pasted__pasted__pasted__group9" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10";
+createNode transform -n "pasted__pasted__pasted__group9" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10";
 	rename -uid "0927108F-C14F-853B-D7D4-6AA5BAE04A01";
 	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
 	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
-createNode transform -n "pasted__pasted__pasted__pasted__Books_Template_1" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9";
+createNode transform -n "pasted__pasted__pasted__pasted__Books_Template_1" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9";
 	rename -uid "B78D76C3-614D-A73C-B056-9D8B52318FF8";
 	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
-createNode transform -n "pasted__pasted__pasted__pasted__Book_1" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1";
+createNode transform -n "pasted__pasted__pasted__pasted__Book_1" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "CCF5A3A4-C04F-AB4B-9911-0E99E3862CC0";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "4861A179-CD4A-8328-F392-EC97DDCA2072";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "491B77CA-C54E-AD4D-EF9A-7A98BA2209F9";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -6274,11 +6274,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5"
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1";
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "6FADC2F0-F541-2B54-E662-61996146577B";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "8FB88E52-FE46-9AC3-5EB9-849997B073C5";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -6329,11 +6329,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "50D4151A-C14F-0462-75DE-EF8B5E0789E0";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "F3ED3BE5-7340-505B-B55A-EFB32BB447CD";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -6385,12 +6385,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bo
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "8BE5991C-A549-7528-A311-82832A9DCBB8";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "807F413D-F749-1118-4D32-3AB70D7C7624";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -6441,23 +6441,23 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCub
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__Book_2" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1";
+createNode transform -n "pasted__pasted__pasted__pasted__Book_2" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "1ADA17F5-FA4A-1360-3E58-AC9D56D2F1F6";
 	setAttr ".t" -type "double3" 0.29299862901414997 0 0 ;
 	setAttr ".r" -type "double3" 1.557675929899065 -0.72501092284057955 9.6429894561233809 ;
 	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
 	setAttr ".rpt" -type "double3" -1.7763568394002505e-15 6.9388939039072284e-15 -1.0952350137927169e-13 ;
 	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__group16" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group16" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2";
 	rename -uid "0CC8CDF3-B240-0754-9CF5-6C8D6A520B1B";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16";
 	rename -uid "2E0D77E7-3746-3B45-A33A-91BD4E26A623";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "32857C27-7642-B903-D224-00B262FC010B";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -6508,11 +6508,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCub
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16";
 	rename -uid "59CB8C26-4548-0BE1-3A47-B19DD1C26524";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "916F5782-F44E-5034-3EE4-87A2E34C68D5";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -6564,12 +6564,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bo
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16";
 	rename -uid "786AB8BF-624C-B2AA-7215-D1AEF3FFC608";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "7B87C5B8-C945-88AA-7E87-CB8287BFF8E4";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -6621,12 +6621,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5"
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16";
 	rename -uid "D104DE03-1D45-96DA-F0F0-09B69075B84D";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "605D3C1F-1942-3AD2-3FF3-6FA4D6ABA8C5";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -6677,23 +6677,23 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__Book_3" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1";
+createNode transform -n "pasted__pasted__pasted__pasted__Book_3" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "7104DB6C-AA4B-B91A-69C7-C6B2E3F046FA";
 	setAttr ".t" -type "double3" 0.53178463796925202 -0.012016431534337183 -0.00018351519590353862 ;
 	setAttr ".r" -type "double3" 0.9189023131852575 -0.18584857647906569 12.262665708998515 ;
 	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
 	setAttr ".rpt" -type "double3" 8.8817841970012523e-16 -2.4674706722294104e-14 -2.6006974351844292e-14 ;
 	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__group16" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group16" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3";
 	rename -uid "60FFCF96-1942-0554-B50F-54BE8B52673F";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16";
 	rename -uid "8A633350-334F-D116-50DE-0186A2DDBE82";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "A26054C5-1548-ECBE-B218-11A9CB3670EE";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -6744,11 +6744,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCub
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16";
 	rename -uid "1709A1F2-B64C-CCA7-B286-3D83A9173CE0";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "D14BF4A0-A64F-B6DB-42AF-C09D64B37F6E";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -6800,12 +6800,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bo
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16";
 	rename -uid "D596F208-AB4B-9183-91C5-A3B95EEE5E46";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "AECED180-5D46-0D55-CAFF-8C9339DACF3B";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -6857,12 +6857,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5"
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16";
 	rename -uid "1842A5D5-9643-78F1-34A2-89B3C9F36249";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "C9138FDF-684D-29E1-FDBB-30878E89EE53";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -6913,7 +6913,7 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "BS_Left_Cone" -p "Bottom_Shelves_Full";
+createNode transform -n "BS_Left_Cone" -p "Bottom_Shlv_Full";
 	rename -uid "C6E4A214-E84C-9193-BD7B-F8B84A930EEE";
 	setAttr ".rp" -type "double3" -8.9896607398986816 4.8279390335083008 11.26473331451416 ;
 	setAttr ".sp" -type "double3" -8.9896607398986816 4.8279390335083008 11.26473331451416 ;
@@ -7008,7 +7008,7 @@ createNode mesh -n "BS_Left_ConeShape" -p "BS_Left_Cone";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "BS_Right_Books" -p "Bottom_Shelves_Full";
+createNode transform -n "BS_Right_Books" -p "Bottom_Shlv_Full";
 	rename -uid "6C89E5FA-D64A-398F-1CE7-83A3F867E713";
 	setAttr ".t" -type "double3" 5.965543371846751 0.2475102040374394 8.6151514402031175 ;
 	setAttr ".r" -type "double3" 0 89.999999999999986 0 ;
@@ -7022,7 +7022,7 @@ createNode transform -n "pasted__pasted__pasted__pCube5" -p "pasted__Book_1";
 	rename -uid "906E755D-054C-A9A2-EE10-08B8F0AFCFC2";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_1|pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_1|pasted__pasted__pasted__pCube5";
 	rename -uid "C72D15B9-2645-7848-05F1-82BC32825781";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -7132,7 +7132,7 @@ createNode transform -n "pasted__pasted__pCube5" -p "pasted__Book_1";
 	rename -uid "F2977BC8-C945-4377-DB5C-029E5F10CD24";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_1|pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_1|pasted__pasted__pCube5";
 	rename -uid "15A10E20-394E-B870-C24B-E2BAE6DF9B78";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -7187,7 +7187,7 @@ createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "pasted__Boo
 	rename -uid "6423D796-2148-DBCA-2654-C287A40EE2DD";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_1|pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_1|pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "BE2C3EB0-8841-6E52-B3F1-38B478815AF8";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -7248,11 +7248,11 @@ createNode transform -n "pasted__Book_2" -p "BS_Right_Books";
 createNode transform -n "pasted__pasted__group16" -p "pasted__Book_2";
 	rename -uid "AE598A5B-8341-E19F-BB87-569F270BFFD8";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16";
 	rename -uid "FC6F3E0F-EF4F-6E79-01F7-0DB024C95ADF";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "FA24EBC8-5B49-3A96-FCDF-E089BD591EFA";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -7303,11 +7303,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pCube5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pCube5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16";
 	rename -uid "CCC059E8-5448-2819-F850-DDA101736A5A";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pCube5";
 	rename -uid "EB2D884E-444A-F463-0CBA-96B36C95ED2F";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -7358,11 +7358,11 @@ createNode mesh -n "pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Bottom_Shel
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16";
 	rename -uid "270A0D1F-3344-D347-FDA0-2D874FDF70BF";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pCube5";
 	rename -uid "B525A522-EB42-66EF-AEA6-DC972FE63A67";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -7413,11 +7413,11 @@ createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Bot
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16";
 	rename -uid "C812BD05-E14C-BB1D-B3E9-988E81B20637";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "08F2588C-EA42-0D65-54C6-ECA7F8886D5D";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -7478,11 +7478,11 @@ createNode transform -n "pasted__Book_3" -p "BS_Right_Books";
 createNode transform -n "pasted__pasted__group16" -p "pasted__Book_3";
 	rename -uid "9C526432-3142-5BC9-DE88-E9A5B1DA20AC";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16";
 	rename -uid "A18CD34B-2742-EDC2-B69B-618628C0C945";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "FA9E554F-4949-FE79-0254-128A1A3BA5DA";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -7533,11 +7533,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pCube5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pCube5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16";
 	rename -uid "15607E23-344F-B3D2-67ED-178CA1939587";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pCube5";
 	rename -uid "F4552323-894A-98B5-8BCD-A5BFCA36B03B";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -7588,11 +7588,11 @@ createNode mesh -n "pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Bottom_Shel
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16";
 	rename -uid "D0541DC2-1145-0470-BA9A-A8BC64B9F132";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pCube5";
 	rename -uid "C23C9B12-2B49-4666-D65F-64A5E7DAEAA0";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -7643,11 +7643,11 @@ createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Bot
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16";
 	rename -uid "419E8E37-0540-3776-067E-54AB216A52D0";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "7EE817E6-FD42-0585-3A70-F68372E360F2";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -7698,11 +7698,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bo
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Middle_Shelves_Full" -p "Bookshelf_Full";
+createNode transform -n "Middle_Shlv_Full" -p "Bkshlv_Full";
 	rename -uid "DAFE8638-2F40-9AB0-3C74-EF9C1EE4BD75";
-createNode transform -n "Middle_Shelves" -p "Middle_Shelves_Full";
+createNode transform -n "Middle_Shlv" -p "Middle_Shlv_Full";
 	rename -uid "B23BFE2E-AC4F-3CA6-ADEA-BB90AC3DD0AB";
-createNode transform -n "MS_Left" -p "Middle_Shelves";
+createNode transform -n "MS_Left" -p "Middle_Shlv";
 	rename -uid "61CCFC42-3946-0F43-3F24-228F421BA09F";
 	setAttr ".rp" -type "double3" -8.2121376991271973 6.1701915264129639 11.390241146087646 ;
 	setAttr ".sp" -type "double3" -8.2121376991271973 6.1701915264129639 11.390241146087646 ;
@@ -7820,7 +7820,7 @@ createNode mesh -n "MS_LeftShape" -p "MS_Left";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "MS_Right" -p "Middle_Shelves";
+createNode transform -n "MS_Right" -p "Middle_Shlv";
 	rename -uid "57449AE5-7146-10F2-0C33-7EA01F2B2E27";
 	setAttr ".rp" -type "double3" -11.455893039703369 6.1750483512878418 8.9255490303039551 ;
 	setAttr ".sp" -type "double3" -11.455893039703369 6.1750483512878418 8.9255490303039551 ;
@@ -7942,7 +7942,7 @@ createNode mesh -n "MS_RightShape" -p "MS_Right";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "MS_Right_Books" -p "Middle_Shelves_Full";
+createNode transform -n "MS_Right_Books" -p "Middle_Shlv_Full";
 	rename -uid "200FB8A2-2B42-97B5-B5F5-04B5EB213389";
 	setAttr ".t" -type "double3" 0 1.7808566418571887 -1.342495236469718 ;
 	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
@@ -7953,14 +7953,14 @@ createNode transform -n "pasted__pasted__Books_Template_1" -p "MS_Right_Books";
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
-createNode transform -n "pasted__pasted__Book_1" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1";
+createNode transform -n "pasted__pasted__Book_1" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1";
 	rename -uid "2849500D-0A4A-54E1-A430-4DBBFDBAEB88";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1";
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1";
 	rename -uid "A81F4D69-584B-5CD7-8568-4FA0DDEA70ED";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "F72AD47E-4245-AED2-A9AB-618833C2B5E0";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -8011,11 +8011,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pCube5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1";
+createNode transform -n "pasted__pasted__pCube5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1";
 	rename -uid "73D53CE7-3743-8CD9-30EB-BF996BFB2A81";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pCube5";
 	rename -uid "1F104F0B-F04B-03EA-E9CC-58A19FAD342C";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -8066,11 +8066,11 @@ createNode mesh -n "pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Middle_Shel
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1";
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1";
 	rename -uid "4C0ED30C-9648-659B-1DC0-8CA26AE3CA87";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pCube5";
 	rename -uid "E2B8D66B-B840-AF07-6121-24BC9C749DEA";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -8121,11 +8121,11 @@ createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Mid
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1";
 	rename -uid "EBB34FDD-624F-1E03-600E-46AEE695E40D";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "931E62DE-C447-C72E-8488-F38410DDDE00";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -8176,21 +8176,21 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bo
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__Book_2" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1";
+createNode transform -n "pasted__pasted__Book_2" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1";
 	rename -uid "E64718A8-E54F-17AA-65E1-E48A5104B4DE";
 	setAttr ".t" -type "double3" 0.29299862901414997 0 0 ;
 	setAttr ".r" -type "double3" 1.557675929899065 -0.72501092284057955 9.6429894561233809 ;
 	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
 	setAttr ".rpt" -type "double3" -1.7763568394002505e-15 6.9388939039072284e-15 -1.0952350137927169e-13 ;
 	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
-createNode transform -n "pasted__pasted__pasted__group16" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2";
+createNode transform -n "pasted__pasted__pasted__group16" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2";
 	rename -uid "388F7DB6-FD4A-89A7-FB87-A990D458D072";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
 	rename -uid "4396389B-7140-CB46-D4FC-1B86E2C408B5";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "8DC872A3-1A43-FDF4-3A25-E5AB365312EF";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -8241,11 +8241,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bo
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
 	rename -uid "5D06CDBC-724F-7533-FA26-E2B592A9E5B2";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5";
 	rename -uid "D8857708-6C40-D0F1-FE3D-EE9847F7E8F3";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -8296,11 +8296,11 @@ createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Mid
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
 	rename -uid "D130C73B-3C45-9905-7609-64A22A2A3071";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "AD0DB83A-3C4B-11EE-9448-1A8C304BD500";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -8352,12 +8352,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
 	rename -uid "E4553623-DD41-DEE8-7973-6A922C4AB46B";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "5DD6C2B9-454B-EAE1-3A45-E3B2B210FD01";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -8408,21 +8408,21 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5"
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__Book_3" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1";
+createNode transform -n "pasted__pasted__Book_3" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1";
 	rename -uid "A99A8188-9049-1E1C-0B60-53A5CC5E3384";
 	setAttr ".t" -type "double3" 0.53178463796925202 -0.012016431534337183 -0.00018351519590353862 ;
 	setAttr ".r" -type "double3" 0.9189023131852575 -0.18584857647906569 12.262665708998515 ;
 	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
 	setAttr ".rpt" -type "double3" 8.8817841970012523e-16 -2.4674706722294104e-14 -2.6006974351844292e-14 ;
 	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
-createNode transform -n "pasted__pasted__pasted__group16" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3";
+createNode transform -n "pasted__pasted__pasted__group16" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3";
 	rename -uid "FD9BBA3A-1C41-6A17-4523-CFA6DE1B5552";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
 	rename -uid "4F036608-1A4B-34F8-5B32-25A913BC47F1";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "02170D5A-A74B-A1E7-3FED-3C8F12CB0E2E";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -8473,11 +8473,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bo
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
 	rename -uid "AD2E5BB0-A54B-F872-03B2-49AA42E42AB5";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5";
 	rename -uid "DA66D9B5-1A47-0CC8-60E5-F3B005C94176";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -8528,11 +8528,11 @@ createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Mid
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
 	rename -uid "31FDDF3F-CA4C-BA87-AB54-4FA85189D7AE";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "B8239034-964F-DBE5-ABD0-9EAA1773FF49";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -8584,12 +8584,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
 	rename -uid "FC4BACAD-8D4E-9252-6D26-B7A239A62E45";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "979968E4-7741-459E-0AAC-7990D5665B7B";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -8640,7 +8640,7 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5"
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "MS_Right_Cone" -p "Middle_Shelves_Full";
+createNode transform -n "MS_Right_Cone" -p "Middle_Shlv_Full";
 	rename -uid "36E3D96A-3B45-95A8-4336-999B9988F431";
 	setAttr ".t" -type "double3" -1.6213208663860605 2.0053880473730565 -3.1505389540310391 ;
 	setAttr ".rp" -type "double3" -8.9896610518237701 4.8279390204296844 11.264733049759275 ;
@@ -8740,7 +8740,7 @@ createNode mesh -n "pasted__pasted__pConeShape1" -p "pasted__pasted__pCone1";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "MS_Left_Books" -p "Middle_Shelves_Full";
+createNode transform -n "MS_Left_Books" -p "Middle_Shlv_Full";
 	rename -uid "A682590E-A64A-6EDA-8805-4882F5992396";
 createNode transform -n "pasted__group11" -p "MS_Left_Books";
 	rename -uid "2FF2C2F0-C94D-2F10-8627-80977CFA53C0";
@@ -8753,27 +8753,27 @@ createNode transform -n "pasted__pasted__group10" -p "pasted__group11";
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
-createNode transform -n "pasted__pasted__pasted__group9" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10";
+createNode transform -n "pasted__pasted__pasted__group9" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10";
 	rename -uid "F99AF87E-7149-5238-AB4B-85A927BD18FC";
 	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
 	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
-createNode transform -n "pasted__pasted__pasted__pasted__Books_Template_1" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9";
+createNode transform -n "pasted__pasted__pasted__pasted__Books_Template_1" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9";
 	rename -uid "26D678A6-5B45-3D76-053A-FF90428F3D3B";
 	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
-createNode transform -n "pasted__pasted__pasted__pasted__Book_1" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1";
+createNode transform -n "pasted__pasted__pasted__pasted__Book_1" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "2DE4AE7F-F44C-E184-2472-D9B097A073B1";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "B2CD8623-B44E-D228-B35F-FCA8FDB25960";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "60E80A49-B547-B3D5-1D1A-35A2300363FC";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -8824,11 +8824,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5"
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1";
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "6B00D153-3B48-DEDA-C803-738F56B6EF37";
 	setAttr ".rp" -type "double3" -0.0047035068273544312 4.6168184280395508 2.4264638423919678 ;
 	setAttr ".sp" -type "double3" -0.0047035068273544312 4.6168184280395508 2.4264638423919678 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "8B0E1B1C-7E40-87DD-426B-758C5D9E984C";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -8899,11 +8899,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "E4033A65-C841-7B10-71D1-B0AC98DB3328";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "A7CB97F3-6C40-EDF1-A553-E18EA4C3D44E";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -8955,12 +8955,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bo
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "E5004E0A-8C4A-2048-085C-73AB7BE8757C";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "2DDD79A3-8A43-6F7B-1262-2AA2F7033577";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -9011,23 +9011,23 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCub
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__Book_2" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1";
+createNode transform -n "pasted__pasted__pasted__pasted__Book_2" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "28D705BE-CA40-74CA-88A5-BC8919473913";
 	setAttr ".t" -type "double3" 0.29299862901414997 0 0 ;
 	setAttr ".r" -type "double3" 1.557675929899065 -0.72501092284057955 9.6429894561233809 ;
 	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
 	setAttr ".rpt" -type "double3" -1.7763568394002505e-15 6.9388939039072284e-15 -1.0952350137927169e-13 ;
 	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__group16" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group16" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2";
 	rename -uid "7660A754-2C4E-7D4D-4AEF-BB918F4E8E2F";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16";
 	rename -uid "D32F3B74-4A42-E490-BF10-54A88714162A";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "C8F641AB-C54A-D216-240D-F48915D7ADDD";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -9078,11 +9078,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCub
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16";
 	rename -uid "868E74EF-784F-CA62-894E-82AB0454A8C4";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "81EBB351-9D48-AB54-98B0-1D82310D42C2";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -9134,12 +9134,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bo
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16";
 	rename -uid "E0951796-5E4B-26F2-98CF-0FB8BAF1AB7B";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "77920739-3A41-0A5C-F332-D28354C2740E";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -9191,12 +9191,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5"
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16";
 	rename -uid "0D9AE493-104C-D0FA-B136-5290E19087CA";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "08118F44-6D4C-435F-CB72-19A922C6BA7E";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -9247,23 +9247,23 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__Book_3" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1";
+createNode transform -n "pasted__pasted__pasted__pasted__Book_3" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "B8A43262-EB41-187F-C6EA-9F876091B093";
 	setAttr ".t" -type "double3" 0.53178463796925202 -0.012016431534337183 -0.00018351519590353862 ;
 	setAttr ".r" -type "double3" 0.9189023131852575 -0.18584857647906569 12.262665708998515 ;
 	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
 	setAttr ".rpt" -type "double3" 8.8817841970012523e-16 -2.4674706722294104e-14 -2.6006974351844292e-14 ;
 	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__group16" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group16" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3";
 	rename -uid "9D074A74-424B-9247-8879-9DA1608490BA";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16";
 	rename -uid "BFE4C333-3D4E-181C-13AF-28949806C49F";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "44B611A4-B74F-9FE8-32AD-24A2E37D664D";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -9314,11 +9314,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCub
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16";
 	rename -uid "7B85DE70-354A-1C46-E1A5-C28425DCB9D6";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "CD5DF9EF-494B-AE8F-8A33-BB95C46B6792";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -9370,12 +9370,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bo
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16";
 	rename -uid "883F5FC5-0649-937C-4003-87B2C1B9EC84";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "7D5C45D0-514D-4E60-D36D-4E9292C78F72";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -9427,12 +9427,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5"
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16";
 	rename -uid "3A6AED82-494B-20FA-2DC1-01A1EA8D61D3";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "8AD525BF-484E-551F-6B8F-DCACD8658C75";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -9495,52 +9495,52 @@ createNode transform -n "pasted__pasted__group16" -p "pasted__group18";
 	setAttr ".t" -type "double3" 0.24896254626738745 0 0 ;
 	setAttr ".rp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__group15" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__group15" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16";
 	rename -uid "F58FEF7F-E04C-A59F-166B-8A9CEEAABB14";
 	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
 	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__pasted__group14" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15";
+createNode transform -n "pasted__pasted__pasted__pasted__group14" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15";
 	rename -uid "6AD0FEF8-4F42-F53D-2DDF-248AD557C624";
 	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
 	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__group11" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group11" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14";
 	rename -uid "321FD8AD-1346-67DE-79FC-4EA018AD939B";
 	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
 	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group10" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11";
 	rename -uid "6FA0E19E-8344-DC3F-8974-39AAE3552FC3";
 	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10";
 	rename -uid "EA4271DB-3E41-6D6B-5C10-1DA801C8B13A";
 	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
 	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
 	rename -uid "7189A92E-F041-B5FD-0161-72A81F89A159";
 	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "FBD0D932-8640-255F-2076-EAB8EDFE74D9";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "504AB85F-1F44-D7F6-CD03-099FE62DC5AC";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "A0BE7CC1-FC46-FD34-0AB4-C4A9A1121EA2";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -9592,12 +9592,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "403FCA56-FA42-8C70-50BD-60976E2548C2";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "F5C174C4-2C41-2CCA-5654-678A80BA1DAE";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -9649,12 +9649,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "C76C8698-D440-84DE-AE44-F1B4B8F2A9B2";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "AE680CDB-4949-92FE-2FE6-AF930E841E74";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -9706,12 +9706,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "719B31A2-984B-0E07-58F9-33864BBD6C82";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "9A82A6EC-194C-6939-9D16-ABB9CF234BCE";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -9772,52 +9772,52 @@ createNode transform -n "pasted__pasted__group16" -p "pasted__group17";
 	setAttr ".t" -type "double3" 0.24896254626738745 0 0 ;
 	setAttr ".rp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__group15" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__group15" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16";
 	rename -uid "313A3385-3A4B-B536-9E73-A5941A0AC686";
 	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
 	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__pasted__group14" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15";
+createNode transform -n "pasted__pasted__pasted__pasted__group14" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15";
 	rename -uid "EFB6E9E2-744F-F57D-0B33-D19838F61F8C";
 	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
 	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__group11" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group11" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14";
 	rename -uid "34EDBB52-0D48-ED71-9288-F49EA45460E2";
 	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
 	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group10" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11";
 	rename -uid "68D07841-F14E-6656-7C2A-E6BEA97A3ACB";
 	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10";
 	rename -uid "177BFB2E-CE46-A51E-3B91-C0A75A4442A6";
 	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
 	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
 	rename -uid "46D65576-5F4A-0D00-479A-89B2B883C4EA";
 	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "1842E9C3-304E-159D-8ADB-13914390E8B2";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "D5150EB7-7446-F61F-E3AB-CBB63F74AC20";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "D07BC1F9-E346-2A52-A4C4-EFBE19958E28";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -9869,12 +9869,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "0629A530-6B4B-5ACB-DB62-3BB73F2AF064";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "3356C540-D54E-B4FE-CED6-BB8F94AADB12";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -9926,12 +9926,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "FFD6BA86-8247-5A7F-9727-0193FF6D64B6";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "05304873-D943-BAA0-9007-D0B1F85992B6";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -9983,12 +9983,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "3691D5A0-084F-CF2E-3234-A9B55D07F3AC";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "E79A9C25-A542-C2D2-B4C9-C5B7F9B39FCC";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -10049,46 +10049,46 @@ createNode transform -n "pasted__pasted__group15" -p "pasted__group16";
 	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
 	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__group14" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15";
+createNode transform -n "pasted__pasted__pasted__group14" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15";
 	rename -uid "55E30350-4D4C-503F-24AE-F39CEE71EE25";
 	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
 	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__pasted__group11" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14";
+createNode transform -n "pasted__pasted__pasted__pasted__group11" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14";
 	rename -uid "B8A6F2A3-F549-FBC0-7FDE-ADAB5961EF29";
 	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
 	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__group10" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group10" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11";
 	rename -uid "2D3D82C1-9344-5D55-B0B1-3EBA7637377C";
 	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group9" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10";
 	rename -uid "3F0FC653-DC48-395E-E2E9-D89B4F0C4A39";
 	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
 	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9";
 	rename -uid "915AFABC-E343-4079-FB46-95A19A4A0F8F";
 	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "C8D6CF2C-434B-0451-0414-D7942C001E91";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "5FC05F9F-3A44-095E-9FF9-CBB3180514D8";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "59004AA5-7A48-C9A0-C84D-BC90E983AB35";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -10140,12 +10140,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "4C0FD085-CF41-ABAA-BC29-E9AFEA55934E";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "D652BD1A-6D4A-2DB4-1769-13BF3F36DB03";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -10197,12 +10197,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCub
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "123C864B-B04A-7BA9-2CA3-E29C958CBB74";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "486EE4B4-1C45-AF1F-6C91-F1BAAE5F48A3";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -10254,12 +10254,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "6F43860D-2448-6BBD-F743-0FAE63D10125";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "13DD4C7E-0F4D-AE02-2711-1EBFB06E06CA";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -10320,40 +10320,40 @@ createNode transform -n "pasted__pasted__group14" -p "pasted__group15";
 	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
 	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__group11" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14";
+createNode transform -n "pasted__pasted__pasted__group11" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14";
 	rename -uid "C6AB2022-EE42-F103-C8C4-B3A9E889CF7B";
 	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
 	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
-createNode transform -n "pasted__pasted__pasted__pasted__group10" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11";
+createNode transform -n "pasted__pasted__pasted__pasted__group10" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11";
 	rename -uid "B0BD1B4B-154B-EBBC-47CA-81910891F217";
 	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__group9" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group9" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10";
 	rename -uid "ADA9F4C4-0F4E-99FC-29BF-29BB658FEFC6";
 	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
 	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9";
 	rename -uid "694CB81F-334F-5238-148C-53805B71F73D";
 	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "44437ED1-1C42-B7D3-B89A-F298D29EBDAE";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "531C416E-7A4B-2BB1-7160-1DBBFAFF777A";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "724DD817-C849-028A-E40F-57A29CCCF202";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -10405,12 +10405,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "033CC404-A541-7B58-EB73-299809C7C7C6";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "0316CD5D-454E-8E12-DF93-41A8CC07552C";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -10462,12 +10462,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5"
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "C6770406-3543-E54A-DBE6-0FB86EB1F4F7";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "FCA06CF5-DC4A-C492-1975-20AFB2632AC4";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -10519,12 +10519,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCub
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "57161EFF-984E-1C36-D567-1196961ADEDC";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "851DF9C4-DA46-41E4-49E8-8BA99ED03D54";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -10612,7 +10612,7 @@ createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted_
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "9D59C37A-3D4D-1470-80DE-D4A447A9C9D1";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -10667,7 +10667,7 @@ createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "pas
 	rename -uid "000F66E7-1149-056A-CE75-79B81AA4B81C";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "9445BA82-C44E-7A36-0FD0-CA810128E4D7";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -10724,7 +10724,7 @@ createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5"
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "C397FAF8-C94F-F0C1-2103-48AE32379E72";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -10781,7 +10781,7 @@ createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted_
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "E3F4A77A-9345-C356-2CC5-F99783A07ABD";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -10832,9 +10832,9 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Top_Shelves_Full" -p "Bookshelf_Full";
+createNode transform -n "Top_Shlv_Full" -p "Bkshlv_Full";
 	rename -uid "C00494A8-1A4E-6FC6-2836-D485A381635A";
-createNode transform -n "TS_Right_Books" -p "Top_Shelves_Full";
+createNode transform -n "TS_Right_Books" -p "Top_Shlv_Full";
 	rename -uid "38A6C408-FE4D-21CC-987A-4CA52BA7CC63";
 createNode transform -n "pasted__group9" -p "TS_Right_Books";
 	rename -uid "01F2234B-CE46-BE01-AF11-23993746DB96";
@@ -10847,14 +10847,14 @@ createNode transform -n "pasted__pasted__Books_Template_1" -p "pasted__group9";
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
-createNode transform -n "pasted__pasted__Book_1" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1";
+createNode transform -n "pasted__pasted__Book_1" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1";
 	rename -uid "74FE3AE9-3B48-BEE9-07D7-E4B2ACB631F0";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1";
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1";
 	rename -uid "5642B9A1-3E41-F73F-3622-4E9D2C8E944C";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "75C0503A-E04C-62BF-B413-24A95A0AA00F";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -10905,11 +10905,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pCube5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1";
+createNode transform -n "pasted__pasted__pCube5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1";
 	rename -uid "EE0E29BE-004B-81C0-D16B-A6885038B172";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pCube5";
 	rename -uid "79E2F5BA-C247-181B-C3D1-93810E88648F";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -10960,11 +10960,11 @@ createNode mesh -n "pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top_Shelves
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1";
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1";
 	rename -uid "034F5CDF-5446-1C6C-E23C-1A876F2D24FD";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pCube5";
 	rename -uid "89408EA8-394D-1E6F-367F-8DB730A9FE16";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -11015,11 +11015,11 @@ createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1";
 	rename -uid "CF58A59F-5D4C-239D-E2D7-DAB8D28642CB";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "291DC532-234C-6184-6996-91BEA7354678";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -11070,21 +11070,21 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bo
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__Book_2" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1";
+createNode transform -n "pasted__pasted__Book_2" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1";
 	rename -uid "AA40C19E-064A-22E6-F95F-BB83776F396F";
 	setAttr ".t" -type "double3" 0.29299862901414997 0 0 ;
 	setAttr ".r" -type "double3" 1.557675929899065 -0.72501092284057955 9.6429894561233809 ;
 	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
 	setAttr ".rpt" -type "double3" -1.7763568394002505e-15 6.9388939039072284e-15 -1.0952350137927169e-13 ;
 	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
-createNode transform -n "pasted__pasted__pasted__group16" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2";
+createNode transform -n "pasted__pasted__pasted__group16" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2";
 	rename -uid "7C12CF96-C643-751E-1D0E-E98BFDF356AC";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
 	rename -uid "7BD14AAA-C340-68C9-001D-1085F26983A0";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "AE461A9B-1D4E-1B49-E898-2D84BC529788";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -11135,11 +11135,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bo
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
 	rename -uid "B8E33DA3-8D40-A30C-581D-899F9A634990";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5";
 	rename -uid "C227287D-D544-7CC5-2F0B-84A7E6ACB624";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -11190,11 +11190,11 @@ createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
 	rename -uid "26A8A23E-D040-A283-EF1A-28B005E3B5D6";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "A8E673A9-F14A-0159-DBD5-30BC3311EC28";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -11246,12 +11246,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16";
 	rename -uid "089FCF34-9943-7682-928B-E389C3F72E56";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "1106E851-3E4C-AEFD-2F2E-A093A590F57B";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -11302,21 +11302,21 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5"
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__Book_3" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1";
+createNode transform -n "pasted__pasted__Book_3" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1";
 	rename -uid "5A68A5BD-F540-1CDA-E996-AE89B92F8D94";
 	setAttr ".t" -type "double3" 0.53178463796925202 -0.012016431534337183 -0.00018351519590353862 ;
 	setAttr ".r" -type "double3" 0.9189023131852575 -0.18584857647906569 12.262665708998515 ;
 	setAttr ".rp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
 	setAttr ".rpt" -type "double3" 8.8817841970012523e-16 -2.4674706722294104e-14 -2.6006974351844292e-14 ;
 	setAttr ".sp" -type "double3" 0.080225035976443815 4.6168183408456462 -16.414856675222438 ;
-createNode transform -n "pasted__pasted__pasted__group16" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3";
+createNode transform -n "pasted__pasted__pasted__group16" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3";
 	rename -uid "DC7ADE9C-3445-4BCC-1E02-BA84EFE628DE";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
 	rename -uid "FA707A98-A546-05E7-C569-D5AFBB8062D5";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "D00954A6-9947-BBE0-2EDA-188052222F45";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -11367,11 +11367,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bo
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
 	rename -uid "1CCEB3C2-3949-28B7-BEF6-62B88F66BCD5";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5";
 	rename -uid "CAF60B18-D64C-9788-7E2E-DC9ADAEA83A4";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -11422,11 +11422,11 @@ createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
 	rename -uid "FB4CFBF0-754C-F31E-1C9A-2085C8B9EAE6";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "2DA87271-964F-5764-5FE3-C6884B5E7DB7";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -11478,12 +11478,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16";
 	rename -uid "04ADD92F-D64F-0CD5-CE8C-10886F2B9E28";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "A6F3726F-E84B-FBF2-380E-EF940C15F33C";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -11558,54 +11558,54 @@ createNode transform -n "pasted__pasted__pasted__pasted__group16" -p "pasted__pa
 	setAttr ".t" -type "double3" 0.24896254626738745 0 0 ;
 	setAttr ".rp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__group15" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group15" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16";
 	rename -uid "9D7A1606-364D-6D94-C01F-788983859262";
 	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
 	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group14" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15";
 	rename -uid "EB11510A-F542-C0C5-B9F6-F9944B8C6F07";
 	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
 	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14";
 	rename -uid "CE553F8F-824A-CDE9-F108-F3A9592307A1";
 	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
 	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11";
 	rename -uid "6FD15032-0D44-CE74-84A9-B8A28073F83E";
 	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10";
 	rename -uid "B94EA6CC-AF46-B8DA-D52D-4BB5A45C41DA";
 	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
 	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
 	rename -uid "56B7CDC4-DA4A-0E47-E131-F3B48197EBD5";
 	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "BCE6D572-D84B-6329-8409-86BD6B84D816";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "53036458-164D-BB10-ED10-5293F6B8BFE3";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "7B1A6643-3E41-0953-FCC4-1D964E70B344";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -11657,12 +11657,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "D5F4B25A-344B-1FA1-C1CB-1B9BEB58271B";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "E0A5E8C1-3D49-3EE6-FAD3-6EA1B6245591";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -11714,12 +11714,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "B2A9014D-2A4A-95F0-1CF3-3CB311E490DF";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "0DC3174E-D247-9C9F-82EF-FC877FB2FCAB";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -11771,12 +11771,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "28E9E7BD-9043-84C7-F5BF-D2A53E32382B";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "F0C8DC05-8E4F-2CCB-D24B-EC90FC8F3A46";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -11837,54 +11837,54 @@ createNode transform -n "pasted__pasted__pasted__pasted__group16" -p "pasted__pa
 	setAttr ".t" -type "double3" 0.24896254626738745 0 0 ;
 	setAttr ".rp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__group15" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group15" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16";
 	rename -uid "6BB7FF12-0C41-908F-2BBD-29A5BCA51B6E";
 	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
 	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group14" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15";
 	rename -uid "BAA278B1-904D-C54D-3042-FE8ADF093286";
 	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
 	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14";
 	rename -uid "BB6AD709-2248-83D4-1F87-E283D3BCEF85";
 	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
 	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11";
 	rename -uid "EA1603E9-F049-F41A-5A33-D2866308A57D";
 	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10";
 	rename -uid "8EF799B8-7F4A-5281-1C21-A682995AA6A6";
 	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
 	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
 	rename -uid "95F31FB0-564E-B720-579A-ACB6EA504966";
 	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "5AB77A0C-8A4F-5119-C848-EFA03860B849";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "787335B7-D444-FB4A-84AC-E6BD8ED228BE";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "414E9E75-0E4A-2C5A-8F33-E3A238513EF7";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -11936,12 +11936,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "74479D4E-5C4A-7EFD-DE16-749A39024ECC";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "00D011C8-4B48-0706-6745-AEB7A68A1F30";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -11993,12 +11993,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "CECF0D95-0A4F-24E2-7984-9BA816C5A171";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "B635C204-5C4B-B53D-F1F8-B4A4E1BB32BC";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -12050,12 +12050,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "3B3BD870-F549-499A-7A86-E58FC302CF90";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "90E43A00-5447-D719-8726-3C943EAF17D4";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -12111,53 +12111,53 @@ createNode transform -n "pasted__pasted__pasted__group16" -p "pasted__pasted__pa
 	setAttr ".t" -type "double3" 0.24896254626738745 0 0 ;
 	setAttr ".rp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -8.9135722622096001 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__pasted__group15" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__group15" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16";
 	rename -uid "B89CF38B-A040-F504-59B5-76B83E5B10D1";
 	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
 	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__group14" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group14" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15";
 	rename -uid "9D28A2C1-2F40-79A1-90A8-B8B68BE57931";
 	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
 	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group11" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14";
 	rename -uid "1684A886-E64B-CC3F-FC1B-C3BDCB1A4F00";
 	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
 	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11";
 	rename -uid "8B002107-CE45-A78C-9EDC-BDB44629B763";
 	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10";
 	rename -uid "A8C35DE3-9444-FCA6-4DC5-59BFF3BB1CFC";
 	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
 	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
 	rename -uid "8592DA26-324B-349C-F913-D5B9426066F2";
 	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "2A7CF77C-CD4D-F935-4E82-C08BD9CE088F";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "D3794DBF-E54F-652E-4822-21B1B5565A9A";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "73A2E4C2-1345-ABE1-EE8F-01A4CEE51106";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -12209,12 +12209,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "4B9CE495-8A4B-AFF1-847A-D3AC7BBAE57E";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "912AC23B-F242-CC8E-2647-FEAC486D20A2";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -12266,12 +12266,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "C3615CC9-B043-5A53-3EA9-4AB029DE695F";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "E9216357-7249-313B-265E-4CA01DB5205F";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -12323,12 +12323,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "44C71F2F-3D41-A11E-C52D-30A2E882EF2E";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "FF10A692-E540-C722-1643-2CADE0978D4E";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -12384,47 +12384,47 @@ createNode transform -n "pasted__pasted__pasted__group15" -p "pasted__pasted__pa
 	setAttr ".t" -type "double3" 0.26867094293253224 0 0 ;
 	setAttr ".rp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -9.1822432051421323 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__pasted__group14" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15";
+createNode transform -n "pasted__pasted__pasted__pasted__group14" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15";
 	rename -uid "066E3F4C-A740-77F6-BCBE-33BA26381445";
 	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
 	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__group11" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group11" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14";
 	rename -uid "9E2B7276-0243-08AF-EFC0-B9917B4F4AB4";
 	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
 	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group10" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11";
 	rename -uid "592C68BC-3647-C1C8-ED59-CF8D45A76A60";
 	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10";
 	rename -uid "98E463F6-A645-B1C0-71D5-20935E77F690";
 	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
 	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9";
 	rename -uid "731FFF13-9F4C-7269-C22D-0DACB196B64C";
 	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "A3D57B10-EC46-0E5D-80D3-CD946C2127DA";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "794C3069-D643-1B9B-B682-3B98AFD4BB5F";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "17FA2D7E-6348-CC10-EA1E-3B9EA99EB82E";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -12476,12 +12476,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "93CDDB7C-5443-DF4C-78C9-34B3576AB239";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "AF702609-2E45-647B-6351-AD987E9234C3";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -12533,12 +12533,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "90A85547-F04E-D8E1-E97A-3AB68F26D779";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "D5C45B75-3E49-84C1-CE59-A28D803A2DEC";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -12590,12 +12590,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "83E9CBFE-1540-24FB-7371-C985A9D56342";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "9F4B2F90-5B4B-F0BF-6D99-20B391CD4903";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -12651,41 +12651,41 @@ createNode transform -n "pasted__pasted__pasted__group14" -p "pasted__pasted__pa
 	setAttr ".t" -type "double3" -2.7862730059712426 0 0 ;
 	setAttr ".rp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
 	setAttr ".sp" -type "double3" -6.3959701991708897 6.7922395025860283 11.21764590792443 ;
-createNode transform -n "pasted__pasted__pasted__pasted__group11" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14";
+createNode transform -n "pasted__pasted__pasted__pasted__group11" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14";
 	rename -uid "EC624BF4-7243-4942-1803-AE8186D52AD0";
 	setAttr ".t" -type "double3" 2.1706896851720359 -1.6876974790688379 0 ;
 	setAttr ".rp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
 	setAttr ".sp" -type "double3" -8.8845033093329953 8.47618283342136 11.217645907924542 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__group10" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__group10" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11";
 	rename -uid "80D70BE8-4B44-ABD8-5FA7-8BB695FF0F82";
 	setAttr ".t" -type "double3" 1.9881719770327972 0 2.9031753428815943 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 	setAttr ".sp" -type "double3" -10.872675286365793 8.47618283342136 8.3144705650429476 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group9" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10";
 	rename -uid "63C3FC9F-B345-B3E1-3C01-778E0A982A4B";
 	setAttr ".t" -type "double3" -0.42336198298999506 3.6156084367717813 -0.060121465555997844 ;
 	setAttr ".rp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 	setAttr ".sp" -type "double3" -10.449313303375797 4.8605743966495787 8.3745920305989454 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9";
 	rename -uid "1C42963C-3F45-4E24-3ED1-F98D2283B9F2";
 	setAttr ".t" -type "double3" -10.777393696921409 0.24751020403743862 24.870189612947936 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".rp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 	setAttr ".sp" -type "double3" 0.32270397369284298 4.613064192612141 -16.420233095075318 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1";
 	rename -uid "756DA9C0-A040-FD23-0BA6-369CA5E4FDF0";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "10D7C198-C943-02F7-60FD-41BB2921B766";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "647F2AC3-6548-7D46-23A2-6B9E7DFBE0B7";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -12737,12 +12737,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "C380AC32-3547-F1D6-54A5-98BC3EF4458D";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "28E5727B-2E41-1091-9CAF-C2845AE4448C";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -12794,12 +12794,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCub
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "729E998E-6A40-B7A3-153A-D2992FE4BEC6";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "C7B2343C-4240-F58B-BA56-9A81B27542B4";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -12851,12 +12851,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1";
 	rename -uid "A94EC2C8-D140-F5EA-9B1C-4A8B5B73779D";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "FED12E43-F549-1439-72E9-FB89D132B27C";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -12907,7 +12907,7 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__past
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "TS_Left_Donut" -p "Top_Shelves_Full";
+createNode transform -n "TS_Left_Donut" -p "Top_Shlv_Full";
 	rename -uid "C77D11B9-9D43-4B35-E9B7-678FFF46944A";
 	setAttr ".rp" -type "double3" -7.7599515914916992 8.1241588592529297 11.080643653869629 ;
 	setAttr ".sp" -type "double3" -7.7599515914916992 8.1241588592529297 11.080643653869629 ;
@@ -14206,7 +14206,7 @@ createNode mesh -n "TS_Left_DonutShape" -p "TS_Left_Donut";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "TS_Left_Books" -p "Top_Shelves_Full";
+createNode transform -n "TS_Left_Books" -p "Top_Shlv_Full";
 	rename -uid "72B7C0CC-3043-F682-B2A6-95BF69A6AB93";
 	setAttr ".t" -type "double3" -17.198973874375945 0 0.34497062155874758 ;
 	setAttr ".r" -type "double3" 0 89.999999999999986 0 ;
@@ -14231,7 +14231,7 @@ createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "pas
 	rename -uid "F8EF3AC9-C545-E9DD-6AF3-DDA032736F91";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "C6B99E35-B347-C025-F50C-1CBFBE080F0C";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -14286,7 +14286,7 @@ createNode transform -n "pasted__pasted__pasted__pCube5" -p "pasted__pasted__pas
 	rename -uid "98E63205-1844-748C-CA95-E0B66EC6E89E";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pCube5";
 	rename -uid "7F5A1A48-C348-5257-0010-E79D11244461";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -14341,7 +14341,7 @@ createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "pasted__pas
 	rename -uid "FD2CBB73-114F-1E95-C1E5-25B1F56FB339";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "0B24C08C-C141-D5F4-027D-E792E070A2BD";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -14398,7 +14398,7 @@ createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5"
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "23A7C0D6-D140-CDEA-D46A-4284D36135C6";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -14460,12 +14460,12 @@ createNode transform -n "pasted__pasted__pasted__pasted__group16" -p "pasted__pa
 	rename -uid "9D7D3133-F340-1DD1-9DEE-86B992185364";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16";
 	rename -uid "0F211DBD-FA40-6B95-9393-FA9687059DCB";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "23659817-AB4D-20CC-449E-A5961ECD7253";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -14516,11 +14516,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5"
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16";
 	rename -uid "01EF8C99-5A48-CF28-26FD-1EAD35139E46";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "F300E888-6348-EF58-033D-088139D59700";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -14571,11 +14571,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16";
 	rename -uid "7E81A6B7-D64C-927F-2971-7990BF528C6E";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "8D1447A8-D147-9CBA-D3D6-C9B6B4EC4A99";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -14627,12 +14627,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bo
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16";
 	rename -uid "B55212BF-044E-4622-3F5F-76B6DC7CDC93";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "212DEBDB-3A43-A564-8D31-9C83F195122C";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -14694,12 +14694,12 @@ createNode transform -n "pasted__pasted__pasted__pasted__group16" -p "pasted__pa
 	rename -uid "9243153E-0341-95E7-AF65-CAB274262F61";
 	setAttr ".t" -type "double3" 0 0 -18.84062585890462 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16";
 	rename -uid "E71BD2AC-D94D-6296-E8E4-8BB0FB9578F1";
 	setAttr ".rp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.076270326972007751 4.6168184280395508 2.4264646768569946 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "C6E1A720-2543-5738-31C5-8F81282EA57C";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -14750,11 +14750,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5"
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16";
 	rename -uid "237C230E-994F-C2A7-0944-C2B0ECF57BEA";
 	setAttr ".rp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "A3994D6F-094A-F6AF-3EEB-389C71E11901";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -14805,11 +14805,11 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16";
+createNode transform -n "pasted__pasted__pasted__pasted__pasted__pCube5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16";
 	rename -uid "237C4705-3142-D0E2-E756-44AD13AAEB83";
 	setAttr ".rp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
 	setAttr ".sp" -type "double3" 0.16045007109642029 4.6168184280395508 2.4264646768569946 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "F154A2F2-CD42-E7C7-B106-76990DCF2A50";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -14861,12 +14861,12 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pCubeShape5" -p "|Bo
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16";
 	rename -uid "65377349-0347-3CA0-A437-48AEF918E7F5";
 	setAttr ".rp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 	setAttr ".sp" -type "double3" 0.076270312070846558 4.6168184280395508 2.0600737333297729 ;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5" 
-		-p "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
+		-p "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5";
 	rename -uid "54659E59-0E4E-9282-390A-C998871CBDFA";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -14917,9 +14917,9 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCub
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Top_Shelves" -p "Top_Shelves_Full";
+createNode transform -n "Top_Shlv" -p "Top_Shlv_Full";
 	rename -uid "A8AA98FF-7C45-4A41-BD01-13B2A2ECB0CB";
-createNode transform -n "TS_Left" -p "Top_Shelves";
+createNode transform -n "TS_Left" -p "Top_Shlv";
 	rename -uid "73C2F7B7-A84B-A692-9072-0DAE04AE595F";
 	setAttr ".t" -type "double3" -0.64097560201162729 1.9162575610262493 0.64494463667464252 ;
 	setAttr ".rp" -type "double3" -7.8032070304286414 6.1701923538692753 10.768116518814539 ;
@@ -15047,7 +15047,7 @@ createNode mesh -n "pasted__pasted__pCubeShape4" -p "pasted__pasted__pCube4";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "TS_Right" -p "Top_Shelves";
+createNode transform -n "TS_Right" -p "Top_Shlv";
 	rename -uid "2A05A7E0-C545-47A9-BC30-029CAA195401";
 	setAttr ".rp" -type "double3" -11.654542922973633 7.8779315948486328 6.9513759613037109 ;
 	setAttr ".sp" -type "double3" -11.654542922973633 7.8779315948486328 6.9513759613037109 ;
@@ -15533,16 +15533,16 @@ createNode mesh -n "GroundShape" -p "Ground";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Table_Set";
+createNode transform -n "Tbl_Set";
 	rename -uid "A03C0122-C64D-1090-66A7-29AE7974A23C";
 	setAttr ".t" -type "double3" -4.7288727267929529 0.23702412991173638 7.9196097749097252 ;
-	setAttr ".r" -type "double3" 0 -93.64593569916363 0 ;
-createNode transform -n "Table" -p "Table_Set";
+	setAttr ".r" -type "double3" 0 -89.828921254645465 0 ;
+createNode transform -n "Tbl" -p "Tbl_Set";
 	rename -uid "47EF5BB4-A24E-F313-33B1-61B88D9A9952";
 	setAttr ".t" -type "double3" -0.25741254513684103 1.4773551317434426 -8.6736173798840355e-18 ;
 	setAttr ".rp" -type "double3" 0 -0.8220913448734245 0 ;
 	setAttr ".sp" -type "double3" 0 -0.8220913448734245 0 ;
-createNode transform -n "pCube1" -p "Table";
+createNode transform -n "pCube1" -p "Tbl";
 	rename -uid "699ECF79-0148-8EE0-7984-04995DD9F347";
 	setAttr ".rp" -type "double3" 0 -4.4703483581542969e-08 0 ;
 	setAttr ".sp" -type "double3" 0 -4.4703483581542969e-08 0 ;
@@ -15660,7 +15660,7 @@ createNode mesh -n "pCubeShape1" -p "pCube1";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube5" -p "Table";
+createNode transform -n "pCube5" -p "Tbl";
 	rename -uid "9B295A46-2A4B-147B-58C5-B697EDE6E972";
 	setAttr ".rp" -type "double3" 2.9723843336105347 -0.84017226099967957 1.2982702255249023 ;
 	setAttr ".sp" -type "double3" 2.9723843336105347 -0.84017226099967957 1.2982702255249023 ;
@@ -15715,7 +15715,7 @@ createNode mesh -n "pCubeShape5" -p "pCube5";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube2" -p "Table";
+createNode transform -n "pCube2" -p "Tbl";
 	rename -uid "DF8551D3-C245-808C-13C7-BCBEE8001135";
 	setAttr ".rp" -type "double3" -2.9817105531692505 -0.84017226099967957 1.299440324306488 ;
 	setAttr ".sp" -type "double3" -2.9817105531692505 -0.84017226099967957 1.299440324306488 ;
@@ -15770,7 +15770,7 @@ createNode mesh -n "pCubeShape2" -p "pCube2";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube3" -p "Table";
+createNode transform -n "pCube3" -p "Tbl";
 	rename -uid "87A12AAF-F649-3831-C477-008EA8246372";
 	setAttr ".rp" -type "double3" -2.9870383739471436 -0.84017226099967957 -1.3193044066429138 ;
 	setAttr ".sp" -type "double3" -2.9870383739471436 -0.84017226099967957 -1.3193044066429138 ;
@@ -15825,7 +15825,7 @@ createNode mesh -n "pCubeShape3" -p "pCube3";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube4" -p "Table";
+createNode transform -n "pCube4" -p "Tbl";
 	rename -uid "BC70B8F2-2944-D44B-6A80-368A9A969BEB";
 	setAttr ".rp" -type "double3" 2.9658015966415405 -0.84017226099967957 -1.2711142897605896 ;
 	setAttr ".sp" -type "double3" 2.9658015966415405 -0.84017226099967957 -1.2711142897605896 ;
@@ -15881,12 +15881,12 @@ createNode mesh -n "pCubeShape4" -p "pCube4";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Chair_1" -p "Table_Set";
+createNode transform -n "Chr_1" -p "Tbl_Set";
 	rename -uid "40A602A0-0848-0181-7A3F-D38F7030B746";
 	setAttr ".t" -type "double3" -9.1518026570463924 0.31771703120085926 1.0428606232590063e-16 ;
 	setAttr ".rp" -type "double3" 5.6322254347278324 0.52584495491354777 0.019466899050484598 ;
 	setAttr ".sp" -type "double3" 5.6322254347278324 0.52584495491354777 0.019466899050484598 ;
-createNode transform -n "Seat_1" -p "Chair_1";
+createNode transform -n "Seat_1" -p "Chr_1";
 	rename -uid "9681AE6D-1049-84A6-6F59-0C8BACB45C24";
 	setAttr ".rp" -type "double3" 5.6322257518768311 0.24654513597488403 0.022559061646461487 ;
 	setAttr ".sp" -type "double3" 5.6322257518768311 0.24654513597488403 0.022559061646461487 ;
@@ -15942,14 +15942,14 @@ createNode mesh -n "Seat_1Shape" -p "Seat_1";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Back_Chair_1" -p "Chair_1";
+createNode transform -n "Back_Chair_1" -p "Chr_1";
 	rename -uid "CAA18375-9A41-6B8A-FA17-9DA1D08A3FE9";
 createNode transform -n "pCylinder2" -p "Back_Chair_1";
 	rename -uid "0D9AA74B-CA4D-FFF0-99DD-3BA72668C6C7";
 	setAttr ".t" -type "double3" 0 -1.1102230246251565e-16 0 ;
 	setAttr ".rp" -type "double3" 5.188145637512207 0.77964514493942261 -0.27639129757881165 ;
 	setAttr ".sp" -type "double3" 5.188145637512207 0.77964514493942261 -0.27639129757881165 ;
-createNode mesh -n "pCylinderShape2" -p "|Table_Set|Chair_1|Back_Chair_1|pCylinder2";
+createNode mesh -n "pCylinderShape2" -p "|Tbl_Set|Chr_1|Back_Chair_1|pCylinder2";
 	rename -uid "4083782A-4644-28AB-CA52-B1B6FACA8CFE";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -16167,7 +16167,7 @@ createNode transform -n "pCylinder4" -p "Back_Chair_1";
 	setAttr ".t" -type "double3" 0 -1.1102230246251565e-16 0 ;
 	setAttr ".rp" -type "double3" 5.1921370029449463 0.70774871110916138 0.40935814380645752 ;
 	setAttr ".sp" -type "double3" 5.1921370029449463 0.70774871110916138 0.40935814380645752 ;
-createNode mesh -n "pCylinderShape4" -p "|Table_Set|Chair_1|Back_Chair_1|pCylinder4";
+createNode mesh -n "pCylinderShape4" -p "|Tbl_Set|Chr_1|Back_Chair_1|pCylinder4";
 	rename -uid "E4688E52-6F45-F77F-FC38-63A8FB9E5FC8";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -16385,7 +16385,7 @@ createNode transform -n "pCylinder7" -p "Back_Chair_1";
 	setAttr ".t" -type "double3" 0 -1.1102230246251565e-16 0 ;
 	setAttr ".rp" -type "double3" 5.1921370029449463 0.71977746486663818 -0.4252484142780304 ;
 	setAttr ".sp" -type "double3" 5.1921370029449463 0.71977746486663818 -0.4252484142780304 ;
-createNode mesh -n "pCylinderShape7" -p "|Table_Set|Chair_1|Back_Chair_1|pCylinder7";
+createNode mesh -n "pCylinderShape7" -p "|Tbl_Set|Chr_1|Back_Chair_1|pCylinder7";
 	rename -uid "7AF25B59-8244-7CEE-49BF-2F931876F60C";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -16603,7 +16603,7 @@ createNode transform -n "pCylinder8" -p "Back_Chair_1";
 	setAttr ".t" -type "double3" 0 -1.1102230246251565e-16 0 ;
 	setAttr ".rp" -type "double3" 5.188145637512207 0.89355015754699707 -0.11013665795326233 ;
 	setAttr ".sp" -type "double3" 5.188145637512207 0.89355015754699707 -0.11013665795326233 ;
-createNode mesh -n "pCylinderShape8" -p "|Table_Set|Chair_1|Back_Chair_1|pCylinder8";
+createNode mesh -n "pCylinderShape8" -p "|Tbl_Set|Chr_1|Back_Chair_1|pCylinder8";
 	rename -uid "0F8F6190-1A41-5835-B528-028E372675B3";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -16821,7 +16821,7 @@ createNode transform -n "pCylinder5" -p "Back_Chair_1";
 	setAttr ".t" -type "double3" 0 -1.1102230246251565e-16 0 ;
 	setAttr ".rp" -type "double3" 5.188145637512207 0.77964514493942261 0.22849300503730774 ;
 	setAttr ".sp" -type "double3" 5.188145637512207 0.77964514493942261 0.22849300503730774 ;
-createNode mesh -n "pCylinderShape5" -p "|Table_Set|Chair_1|Back_Chair_1|pCylinder5";
+createNode mesh -n "pCylinderShape5" -p "|Tbl_Set|Chr_1|Back_Chair_1|pCylinder5";
 	rename -uid "9340DB7E-C44B-EF04-F6DB-E38B87A08FA6";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -17039,7 +17039,7 @@ createNode transform -n "pCylinder6" -p "Back_Chair_1";
 	setAttr ".t" -type "double3" 0 -1.1102230246251565e-16 0 ;
 	setAttr ".rp" -type "double3" 5.188145637512207 0.89355015754699707 0.054475188255310059 ;
 	setAttr ".sp" -type "double3" 5.188145637512207 0.89355015754699707 0.054475188255310059 ;
-createNode mesh -n "pCylinderShape6" -p "|Table_Set|Chair_1|Back_Chair_1|pCylinder6";
+createNode mesh -n "pCylinderShape6" -p "|Tbl_Set|Chr_1|Back_Chair_1|pCylinder6";
 	rename -uid "4D59AA86-A140-CB7E-DAB7-EDA6513D44CD";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -17252,7 +17252,7 @@ createNode mesh -n "pCylinderShape6" -p "|Table_Set|Chair_1|Back_Chair_1|pCylind
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Legs_1" -p "Chair_1";
+createNode transform -n "Legs_1" -p "Chr_1";
 	rename -uid "89008BD9-334A-7D88-F05B-C98B36667155";
 createNode transform -n "Back_left_leg_1" -p "Legs_1";
 	rename -uid "64DB902A-C849-B79D-4C61-80BE49353754";
@@ -17478,14 +17478,14 @@ createNode mesh -n "Front_right_leg_1Shape" -p "Front_right_leg_1";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Chair_2" -p "Table_Set";
+createNode transform -n "Chr_2" -p "Tbl_Set";
 	rename -uid "E3B1E9AB-8A41-44AE-E553-CEB8372073D2";
 	setAttr ".t" -type "double3" -1.3716259349562077 0.27809432745815527 -7.2380268281540516 ;
 	setAttr ".r" -type "double3" -0.63229775324981607 -87.999429434164426 0.32932466785931097 ;
 	setAttr ".rp" -type "double3" 5.6315394424183456 0.52584495491354777 0.019466899050484598 ;
 	setAttr ".rpt" -type "double3" -5.4516264598792343 0.0012256106113871096 5.6091169642273204 ;
 	setAttr ".sp" -type "double3" 5.6315394424183456 0.52584495491354777 0.019466899050484598 ;
-createNode transform -n "Seat_2" -p "Chair_2";
+createNode transform -n "Seat_2" -p "Chr_2";
 	rename -uid "4DB027D9-4245-8435-334B-0787DFE046C2";
 	setAttr ".rp" -type "double3" 5.6322257518768311 0.24654513597488403 0.022559061646461487 ;
 	setAttr ".sp" -type "double3" 5.6322257518768311 0.24654513597488403 0.022559061646461487 ;
@@ -17541,7 +17541,7 @@ createNode mesh -n "Seat_2Shape" -p "Seat_2";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Legs_2" -p "Chair_2";
+createNode transform -n "Legs_2" -p "Chr_2";
 	rename -uid "3C173143-2745-13E2-5698-BBB74C1D675D";
 createNode transform -n "pCube8" -p "Legs_2";
 	rename -uid "CBC2244A-A04F-7598-4C6D-86801B3427FC";
@@ -17550,7 +17550,7 @@ createNode transform -n "pCube8" -p "Legs_2";
 	setAttr ".rp" -type "double3" 5.2237613201141357 -0.17696522176265714 -0.42946577072143555 ;
 	setAttr ".sp" -type "double3" 5.2237613201141357 -0.17696522176265717 -0.42946577072143555 ;
 	setAttr ".spt" -type "double3" 0 2.7755575615628895e-17 0 ;
-createNode mesh -n "pCubeShape8" -p "|Table_Set|Chair_2|Legs_2|pCube8";
+createNode mesh -n "pCubeShape8" -p "|Tbl_Set|Chr_2|Legs_2|pCube8";
 	rename -uid "5C3D39F9-C148-C2E3-D994-8A8913397D1D";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -17608,7 +17608,7 @@ createNode transform -n "pCube9" -p "Legs_2";
 	setAttr ".rp" -type "double3" 5.2237613201141357 -0.17696522176265714 0.43055814504623413 ;
 	setAttr ".sp" -type "double3" 5.2237613201141357 -0.17696522176265717 0.43055814504623413 ;
 	setAttr ".spt" -type "double3" 0 2.7755575615628895e-17 0 ;
-createNode mesh -n "pCubeShape9" -p "|Table_Set|Chair_2|Legs_2|pCube9";
+createNode mesh -n "pCubeShape9" -p "|Tbl_Set|Chr_2|Legs_2|pCube9";
 	rename -uid "98BDBE28-D449-932A-14B7-418064E517D2";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -17666,7 +17666,7 @@ createNode transform -n "pCube7" -p "Legs_2";
 	setAttr ".rp" -type "double3" 6.0425701141357422 -0.17696522176265714 0.43055814504623413 ;
 	setAttr ".sp" -type "double3" 6.0425701141357422 -0.17696522176265717 0.43055814504623413 ;
 	setAttr ".spt" -type "double3" 0 2.7755575615628895e-17 0 ;
-createNode mesh -n "pCubeShape7" -p "|Table_Set|Chair_2|Legs_2|pCube7";
+createNode mesh -n "pCubeShape7" -p "|Tbl_Set|Chr_2|Legs_2|pCube7";
 	rename -uid "31923E2A-694E-4854-EE6D-D7A9CC8262D6";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -17724,7 +17724,7 @@ createNode transform -n "pCube10" -p "Legs_2";
 	setAttr ".rp" -type "double3" 6.0278229713439941 -0.17696522176265714 -0.42078346014022827 ;
 	setAttr ".sp" -type "double3" 6.0278229713439941 -0.17696522176265717 -0.42078346014022827 ;
 	setAttr ".spt" -type "double3" 0 2.7755575615628895e-17 0 ;
-createNode mesh -n "pCubeShape10" -p "|Table_Set|Chair_2|Legs_2|pCube10";
+createNode mesh -n "pCubeShape10" -p "|Tbl_Set|Chr_2|Legs_2|pCube10";
 	rename -uid "5DB20994-2F41-2043-78E0-4CB559A0BADB";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -17775,7 +17775,7 @@ createNode mesh -n "pCubeShape10" -p "|Table_Set|Chair_2|Legs_2|pCube10";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Back_Chair_2" -p "Chair_2";
+createNode transform -n "Back_Chair_2" -p "Chr_2";
 	rename -uid "3D4C2A8B-FF4C-EEF9-92FE-C1A1B6014800";
 createNode transform -n "pCylinder6" -p "Back_Chair_2";
 	rename -uid "8909ACE8-A64D-3E6A-BB90-EC9426A95367";
@@ -17784,7 +17784,7 @@ createNode transform -n "pCylinder6" -p "Back_Chair_2";
 	setAttr ".rp" -type "double3" 5.1705121994018555 0.89355015754699685 0.070644408464431763 ;
 	setAttr ".sp" -type "double3" 5.1705121994018555 0.89355015754699707 0.070644408464431763 ;
 	setAttr ".spt" -type "double3" 0 -2.2204460492503116e-16 0 ;
-createNode mesh -n "pCylinderShape6" -p "|Table_Set|Chair_2|Back_Chair_2|pCylinder6";
+createNode mesh -n "pCylinderShape6" -p "|Tbl_Set|Chr_2|Back_Chair_2|pCylinder6";
 	rename -uid "089621F0-D048-2C82-A60A-138329026762";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -18004,7 +18004,7 @@ createNode transform -n "pCylinder5" -p "Back_Chair_2";
 	setAttr ".rp" -type "double3" 5.1705121994018555 0.77964514493942239 0.24466228485107422 ;
 	setAttr ".sp" -type "double3" 5.1705121994018555 0.77964514493942261 0.24466228485107422 ;
 	setAttr ".spt" -type "double3" 0 -2.2204460492503116e-16 0 ;
-createNode mesh -n "pCylinderShape5" -p "|Table_Set|Chair_2|Back_Chair_2|pCylinder5";
+createNode mesh -n "pCylinderShape5" -p "|Tbl_Set|Chr_2|Back_Chair_2|pCylinder5";
 	rename -uid "5907A67C-3543-C30C-BE50-3A8A30F4DFD6";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -18224,7 +18224,7 @@ createNode transform -n "pCylinder8" -p "Back_Chair_2";
 	setAttr ".rp" -type "double3" 5.1705121994018555 0.89355015754699685 -0.093967437744140625 ;
 	setAttr ".sp" -type "double3" 5.1705121994018555 0.89355015754699707 -0.093967437744140625 ;
 	setAttr ".spt" -type "double3" 0 -2.2204460492503116e-16 0 ;
-createNode mesh -n "pCylinderShape8" -p "|Table_Set|Chair_2|Back_Chair_2|pCylinder8";
+createNode mesh -n "pCylinderShape8" -p "|Tbl_Set|Chr_2|Back_Chair_2|pCylinder8";
 	rename -uid "A4295F52-CD4F-877F-FE9C-B8BD72A3C6D0";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -18444,7 +18444,7 @@ createNode transform -n "pCylinder4" -p "Back_Chair_2";
 	setAttr ".rp" -type "double3" 5.1921370029449463 0.70774871110916127 0.40935814380645752 ;
 	setAttr ".sp" -type "double3" 5.1921370029449463 0.70774871110916138 0.40935814380645752 ;
 	setAttr ".spt" -type "double3" 0 -1.1102230246251558e-16 0 ;
-createNode mesh -n "pCylinderShape4" -p "|Table_Set|Chair_2|Back_Chair_2|pCylinder4";
+createNode mesh -n "pCylinderShape4" -p "|Tbl_Set|Chr_2|Back_Chair_2|pCylinder4";
 	rename -uid "293BD346-F249-1116-F4F2-5889CF9D42EA";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -18664,7 +18664,7 @@ createNode transform -n "pCylinder7" -p "Back_Chair_2";
 	setAttr ".rp" -type "double3" 5.1921370029449463 0.71977746486663807 -0.4252484142780304 ;
 	setAttr ".sp" -type "double3" 5.1921370029449463 0.71977746486663818 -0.4252484142780304 ;
 	setAttr ".spt" -type "double3" 0 -1.1102230246251558e-16 0 ;
-createNode mesh -n "pCylinderShape7" -p "|Table_Set|Chair_2|Back_Chair_2|pCylinder7";
+createNode mesh -n "pCylinderShape7" -p "|Tbl_Set|Chr_2|Back_Chair_2|pCylinder7";
 	rename -uid "69080816-CC47-7CA1-8313-C0A68BD372DD";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -18884,7 +18884,7 @@ createNode transform -n "pCylinder2" -p "Back_Chair_2";
 	setAttr ".rp" -type "double3" 5.1705121994018555 0.77964514493942239 -0.26022207736968994 ;
 	setAttr ".sp" -type "double3" 5.1705121994018555 0.77964514493942261 -0.26022207736968994 ;
 	setAttr ".spt" -type "double3" 0 -2.2204460492503116e-16 0 ;
-createNode mesh -n "pCylinderShape2" -p "|Table_Set|Chair_2|Back_Chair_2|pCylinder2";
+createNode mesh -n "pCylinderShape2" -p "|Tbl_Set|Chr_2|Back_Chair_2|pCylinder2";
 	rename -uid "77B825CF-B94F-23D4-04AA-73B26D9CCBDE";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -19097,14 +19097,14 @@ createNode mesh -n "pCylinderShape2" -p "|Table_Set|Chair_2|Back_Chair_2|pCylind
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Chair_3" -p "Table_Set";
+createNode transform -n "Chr_3" -p "Tbl_Set";
 	rename -uid "F490627A-7940-A8E6-365B-B8B026382BC5";
 	setAttr ".t" -type "double3" 1.3844247664525045 0.27051986504032755 -7.3342946073226978 ;
 	setAttr ".r" -type "double3" -0.63229775324981607 -87.999429434164426 0.32932466785931097 ;
 	setAttr ".rp" -type "double3" 5.6315394424183456 0.52584495491354777 0.019466899050484598 ;
 	setAttr ".rpt" -type "double3" -5.4516264598792343 0.0012256106113871096 5.6091169642273204 ;
 	setAttr ".sp" -type "double3" 5.6315394424183456 0.52584495491354777 0.019466899050484598 ;
-createNode transform -n "Seat_3" -p "Chair_3";
+createNode transform -n "Seat_3" -p "Chr_3";
 	rename -uid "B0FDA88A-0F4A-0516-D83B-D5B190B8910C";
 	setAttr ".rp" -type "double3" 5.6322257518768311 0.24654513597488403 0.022559061646461487 ;
 	setAttr ".sp" -type "double3" 5.6322257518768311 0.24654513597488403 0.022559061646461487 ;
@@ -19160,7 +19160,7 @@ createNode mesh -n "Seat_3Shape" -p "Seat_3";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Legs_3" -p "Chair_3";
+createNode transform -n "Legs_3" -p "Chr_3";
 	rename -uid "53CEDE40-C648-4AA6-7CF0-90A9B02E2E53";
 createNode transform -n "pCube8" -p "Legs_3";
 	rename -uid "1288A599-7245-88E0-08CA-3882353C8714";
@@ -19169,7 +19169,7 @@ createNode transform -n "pCube8" -p "Legs_3";
 	setAttr ".rp" -type "double3" 5.2237613201141357 -0.17696522176265714 -0.42946577072143555 ;
 	setAttr ".sp" -type "double3" 5.2237613201141357 -0.17696522176265717 -0.42946577072143555 ;
 	setAttr ".spt" -type "double3" 0 2.7755575615628895e-17 0 ;
-createNode mesh -n "pCubeShape8" -p "|Table_Set|Chair_3|Legs_3|pCube8";
+createNode mesh -n "pCubeShape8" -p "|Tbl_Set|Chr_3|Legs_3|pCube8";
 	rename -uid "551AB30B-E743-F4C5-1ACA-1BA6C9FBD264";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -19227,7 +19227,7 @@ createNode transform -n "pCube9" -p "Legs_3";
 	setAttr ".rp" -type "double3" 5.2237613201141357 -0.17696522176265714 0.43055814504623413 ;
 	setAttr ".sp" -type "double3" 5.2237613201141357 -0.17696522176265717 0.43055814504623413 ;
 	setAttr ".spt" -type "double3" 0 2.7755575615628895e-17 0 ;
-createNode mesh -n "pCubeShape9" -p "|Table_Set|Chair_3|Legs_3|pCube9";
+createNode mesh -n "pCubeShape9" -p "|Tbl_Set|Chr_3|Legs_3|pCube9";
 	rename -uid "D38E3F29-FE43-E71D-EE5D-C78433CDB69E";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -19285,7 +19285,7 @@ createNode transform -n "pCube10" -p "Legs_3";
 	setAttr ".rp" -type "double3" 6.0278229713439941 -0.17696522176265714 -0.42078346014022827 ;
 	setAttr ".sp" -type "double3" 6.0278229713439941 -0.17696522176265717 -0.42078346014022827 ;
 	setAttr ".spt" -type "double3" 0 2.7755575615628895e-17 0 ;
-createNode mesh -n "pCubeShape10" -p "|Table_Set|Chair_3|Legs_3|pCube10";
+createNode mesh -n "pCubeShape10" -p "|Tbl_Set|Chr_3|Legs_3|pCube10";
 	rename -uid "1119824F-3343-B229-84AF-319BE20683A0";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -19343,7 +19343,7 @@ createNode transform -n "pCube7" -p "Legs_3";
 	setAttr ".rp" -type "double3" 6.0425701141357422 -0.17696522176265714 0.43055814504623413 ;
 	setAttr ".sp" -type "double3" 6.0425701141357422 -0.17696522176265717 0.43055814504623413 ;
 	setAttr ".spt" -type "double3" 0 2.7755575615628895e-17 0 ;
-createNode mesh -n "pCubeShape7" -p "|Table_Set|Chair_3|Legs_3|pCube7";
+createNode mesh -n "pCubeShape7" -p "|Tbl_Set|Chr_3|Legs_3|pCube7";
 	rename -uid "8E8474F5-EE4B-FD31-F7E4-51AB2DF31A71";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -19394,7 +19394,7 @@ createNode mesh -n "pCubeShape7" -p "|Table_Set|Chair_3|Legs_3|pCube7";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Back_Chair_3" -p "Chair_3";
+createNode transform -n "Back_Chair_3" -p "Chr_3";
 	rename -uid "0260A1FF-D74E-477E-2E68-41A91ABE7664";
 createNode transform -n "pCylinder8" -p "Back_Chair_3";
 	rename -uid "6BD748E4-044F-C7DD-F0C8-1A867705446F";
@@ -19403,7 +19403,7 @@ createNode transform -n "pCylinder8" -p "Back_Chair_3";
 	setAttr ".rp" -type "double3" 5.1705121994018555 0.89355015754699685 -0.093967437744140625 ;
 	setAttr ".sp" -type "double3" 5.1705121994018555 0.89355015754699707 -0.093967437744140625 ;
 	setAttr ".spt" -type "double3" 0 -2.2204460492503116e-16 0 ;
-createNode mesh -n "pCylinderShape8" -p "|Table_Set|Chair_3|Back_Chair_3|pCylinder8";
+createNode mesh -n "pCylinderShape8" -p "|Tbl_Set|Chr_3|Back_Chair_3|pCylinder8";
 	rename -uid "668C0971-D44C-1EFC-F910-A5B98CEB2074";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -19623,7 +19623,7 @@ createNode transform -n "pCylinder6" -p "Back_Chair_3";
 	setAttr ".rp" -type "double3" 5.1705121994018555 0.89355015754699685 0.070644408464431763 ;
 	setAttr ".sp" -type "double3" 5.1705121994018555 0.89355015754699707 0.070644408464431763 ;
 	setAttr ".spt" -type "double3" 0 -2.2204460492503116e-16 0 ;
-createNode mesh -n "pCylinderShape6" -p "|Table_Set|Chair_3|Back_Chair_3|pCylinder6";
+createNode mesh -n "pCylinderShape6" -p "|Tbl_Set|Chr_3|Back_Chair_3|pCylinder6";
 	rename -uid "3EE76610-8144-0FE0-B200-59A3F968ECFB";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -19843,7 +19843,7 @@ createNode transform -n "pCylinder5" -p "Back_Chair_3";
 	setAttr ".rp" -type "double3" 5.1705121994018555 0.77964514493942239 0.24466228485107422 ;
 	setAttr ".sp" -type "double3" 5.1705121994018555 0.77964514493942261 0.24466228485107422 ;
 	setAttr ".spt" -type "double3" 0 -2.2204460492503116e-16 0 ;
-createNode mesh -n "pCylinderShape5" -p "|Table_Set|Chair_3|Back_Chair_3|pCylinder5";
+createNode mesh -n "pCylinderShape5" -p "|Tbl_Set|Chr_3|Back_Chair_3|pCylinder5";
 	rename -uid "4AFD8F34-6A49-E41E-6261-54ACE88A1F26";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -20063,7 +20063,7 @@ createNode transform -n "pCylinder4" -p "Back_Chair_3";
 	setAttr ".rp" -type "double3" 5.1921370029449463 0.70774871110916127 0.40935814380645752 ;
 	setAttr ".sp" -type "double3" 5.1921370029449463 0.70774871110916138 0.40935814380645752 ;
 	setAttr ".spt" -type "double3" 0 -1.1102230246251558e-16 0 ;
-createNode mesh -n "pCylinderShape4" -p "|Table_Set|Chair_3|Back_Chair_3|pCylinder4";
+createNode mesh -n "pCylinderShape4" -p "|Tbl_Set|Chr_3|Back_Chair_3|pCylinder4";
 	rename -uid "39E312E1-404C-BF36-CCA8-FFA5C49A215D";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -20283,7 +20283,7 @@ createNode transform -n "pCylinder7" -p "Back_Chair_3";
 	setAttr ".rp" -type "double3" 5.1921370029449463 0.71977746486663807 -0.4252484142780304 ;
 	setAttr ".sp" -type "double3" 5.1921370029449463 0.71977746486663818 -0.4252484142780304 ;
 	setAttr ".spt" -type "double3" 0 -1.1102230246251558e-16 0 ;
-createNode mesh -n "pCylinderShape7" -p "|Table_Set|Chair_3|Back_Chair_3|pCylinder7";
+createNode mesh -n "pCylinderShape7" -p "|Tbl_Set|Chr_3|Back_Chair_3|pCylinder7";
 	rename -uid "6FA771F8-334E-78DA-BF46-99BCFBB1AB57";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -20503,7 +20503,7 @@ createNode transform -n "pCylinder2" -p "Back_Chair_3";
 	setAttr ".rp" -type "double3" 5.1705121994018555 0.77964514493942239 -0.26022207736968994 ;
 	setAttr ".sp" -type "double3" 5.1705121994018555 0.77964514493942261 -0.26022207736968994 ;
 	setAttr ".spt" -type "double3" 0 -2.2204460492503116e-16 0 ;
-createNode mesh -n "pCylinderShape2" -p "|Table_Set|Chair_3|Back_Chair_3|pCylinder2";
+createNode mesh -n "pCylinderShape2" -p "|Tbl_Set|Chr_3|Back_Chair_3|pCylinder2";
 	rename -uid "77624B03-EF41-6D63-F05A-13ABDF6FFD54";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -20716,14 +20716,14 @@ createNode mesh -n "pCylinderShape2" -p "|Table_Set|Chair_3|Back_Chair_3|pCylind
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Chair_4" -p "Table_Set";
+createNode transform -n "Chr_4" -p "Tbl_Set";
 	rename -uid "BFA6CF4F-614C-2630-A9D3-0483B2FBB3FC";
 	setAttr ".t" -type "double3" 8.526585492244962 0.31252791373068178 0.086979987930625627 ;
 	setAttr ".r" -type "double3" 0 -180.51198721765854 0 ;
 	setAttr ".rp" -type "double3" 5.6322254347278324 0.52584495491354777 0.019466899050484598 ;
 	setAttr ".rpt" -type "double3" -11.264052054138649 0 -0.089261144153510927 ;
 	setAttr ".sp" -type "double3" 5.6322254347278324 0.52584495491354777 0.019466899050484598 ;
-createNode transform -n "Seat_4" -p "Chair_4";
+createNode transform -n "Seat_4" -p "Chr_4";
 	rename -uid "C96DF4D4-8946-8648-B028-03AE26394B8D";
 	setAttr ".rp" -type "double3" 5.6322257518768311 0.24654513597488403 0.022559061646461487 ;
 	setAttr ".sp" -type "double3" 5.6322257518768311 0.24654513597488403 0.022559061646461487 ;
@@ -20779,14 +20779,14 @@ createNode mesh -n "Seat_4Shape" -p "Seat_4";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Legs_4" -p "Chair_4";
+createNode transform -n "Legs_4" -p "Chr_4";
 	rename -uid "95C93279-604C-968D-63EE-5FBCC3D17C93";
 createNode transform -n "pCube8" -p "Legs_4";
 	rename -uid "FF560BD5-FF48-05D0-738C-9DA9CEF587EA";
 	setAttr ".t" -type "double3" 0 0 8.8817841970012523e-16 ;
 	setAttr ".rp" -type "double3" 5.2237613201141357 -0.17696522176265717 -0.42946577072143555 ;
 	setAttr ".sp" -type "double3" 5.2237613201141357 -0.17696522176265717 -0.42946577072143555 ;
-createNode mesh -n "pCubeShape8" -p "|Table_Set|Chair_4|Legs_4|pCube8";
+createNode mesh -n "pCubeShape8" -p "|Tbl_Set|Chr_4|Legs_4|pCube8";
 	rename -uid "22CF3A08-CA4D-8B80-89B1-0C9CB6065D8A";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -20842,7 +20842,7 @@ createNode transform -n "pCube9" -p "Legs_4";
 	setAttr ".t" -type "double3" 0 0 8.8817841970012523e-16 ;
 	setAttr ".rp" -type "double3" 5.2237613201141357 -0.17696522176265717 0.43055814504623413 ;
 	setAttr ".sp" -type "double3" 5.2237613201141357 -0.17696522176265717 0.43055814504623413 ;
-createNode mesh -n "pCubeShape9" -p "|Table_Set|Chair_4|Legs_4|pCube9";
+createNode mesh -n "pCubeShape9" -p "|Tbl_Set|Chr_4|Legs_4|pCube9";
 	rename -uid "F1A46DEA-924D-81A3-603D-48B5193E39A6";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -20898,7 +20898,7 @@ createNode transform -n "pCube10" -p "Legs_4";
 	setAttr ".t" -type "double3" 0 0 8.8817841970012523e-16 ;
 	setAttr ".rp" -type "double3" 6.0278229713439941 -0.17696522176265717 -0.42078346014022827 ;
 	setAttr ".sp" -type "double3" 6.0278229713439941 -0.17696522176265717 -0.42078346014022827 ;
-createNode mesh -n "pCubeShape10" -p "|Table_Set|Chair_4|Legs_4|pCube10";
+createNode mesh -n "pCubeShape10" -p "|Tbl_Set|Chr_4|Legs_4|pCube10";
 	rename -uid "CAC1277A-A044-43EB-27E3-F2B9288ABEC5";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -20954,7 +20954,7 @@ createNode transform -n "pCube7" -p "Legs_4";
 	setAttr ".t" -type "double3" 0 0 8.8817841970012523e-16 ;
 	setAttr ".rp" -type "double3" 6.0425701141357422 -0.17696522176265717 0.43055814504623413 ;
 	setAttr ".sp" -type "double3" 6.0425701141357422 -0.17696522176265717 0.43055814504623413 ;
-createNode mesh -n "pCubeShape7" -p "|Table_Set|Chair_4|Legs_4|pCube7";
+createNode mesh -n "pCubeShape7" -p "|Tbl_Set|Chr_4|Legs_4|pCube7";
 	rename -uid "F08B86AF-D145-87A0-0C14-23B98B60CAEB";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -21005,14 +21005,14 @@ createNode mesh -n "pCubeShape7" -p "|Table_Set|Chair_4|Legs_4|pCube7";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Back_Chair_4" -p "Chair_4";
+createNode transform -n "Back_Chair_4" -p "Chr_4";
 	rename -uid "225897E9-6C4B-C758-3D97-6BBC4C5035A1";
 createNode transform -n "pCylinder5" -p "Back_Chair_4";
 	rename -uid "B583CEB8-E14C-A72B-D4FD-ABB0A67C1635";
 	setAttr ".t" -type "double3" 0 0 8.8817841970012523e-16 ;
 	setAttr ".rp" -type "double3" 5.2075464725494385 0.77964514493942261 0.24466228485107422 ;
 	setAttr ".sp" -type "double3" 5.2075464725494385 0.77964514493942261 0.24466228485107422 ;
-createNode mesh -n "pCylinderShape5" -p "|Table_Set|Chair_4|Back_Chair_4|pCylinder5";
+createNode mesh -n "pCylinderShape5" -p "|Tbl_Set|Chr_4|Back_Chair_4|pCylinder5";
 	rename -uid "676FEBFE-3F47-EC04-9E29-6BA859EBE328";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -21230,7 +21230,7 @@ createNode transform -n "pCylinder6" -p "Back_Chair_4";
 	setAttr ".t" -type "double3" 0 0 8.8817841970012523e-16 ;
 	setAttr ".rp" -type "double3" 5.2075464725494385 0.89355015754699707 0.070644408464431763 ;
 	setAttr ".sp" -type "double3" 5.2075464725494385 0.89355015754699707 0.070644408464431763 ;
-createNode mesh -n "pCylinderShape6" -p "|Table_Set|Chair_4|Back_Chair_4|pCylinder6";
+createNode mesh -n "pCylinderShape6" -p "|Tbl_Set|Chr_4|Back_Chair_4|pCylinder6";
 	rename -uid "B990E4E2-6142-63AF-3503-BA99143173EB";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -21448,7 +21448,7 @@ createNode transform -n "pCylinder8" -p "Back_Chair_4";
 	setAttr ".t" -type "double3" 0 0 8.8817841970012523e-16 ;
 	setAttr ".rp" -type "double3" 5.2075464725494385 0.89355015754699707 -0.093967437744140625 ;
 	setAttr ".sp" -type "double3" 5.2075464725494385 0.89355015754699707 -0.093967437744140625 ;
-createNode mesh -n "pCylinderShape8" -p "|Table_Set|Chair_4|Back_Chair_4|pCylinder8";
+createNode mesh -n "pCylinderShape8" -p "|Tbl_Set|Chr_4|Back_Chair_4|pCylinder8";
 	rename -uid "EEF2CA4A-2B49-38EA-AF22-B9A184B92D37";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -21666,7 +21666,7 @@ createNode transform -n "pCylinder4" -p "Back_Chair_4";
 	setAttr ".t" -type "double3" 0 0 8.8817841970012523e-16 ;
 	setAttr ".rp" -type "double3" 5.1921370029449463 0.70774871110916138 0.40935814380645752 ;
 	setAttr ".sp" -type "double3" 5.1921370029449463 0.70774871110916138 0.40935814380645752 ;
-createNode mesh -n "pCylinderShape4" -p "|Table_Set|Chair_4|Back_Chair_4|pCylinder4";
+createNode mesh -n "pCylinderShape4" -p "|Tbl_Set|Chr_4|Back_Chair_4|pCylinder4";
 	rename -uid "1A2E001E-1340-865E-D2AC-938B14F2A513";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -21884,7 +21884,7 @@ createNode transform -n "pCylinder7" -p "Back_Chair_4";
 	setAttr ".t" -type "double3" 0 0 8.8817841970012523e-16 ;
 	setAttr ".rp" -type "double3" 5.1921370029449463 0.71977746486663818 -0.4252484142780304 ;
 	setAttr ".sp" -type "double3" 5.1921370029449463 0.71977746486663818 -0.4252484142780304 ;
-createNode mesh -n "pCylinderShape7" -p "|Table_Set|Chair_4|Back_Chair_4|pCylinder7";
+createNode mesh -n "pCylinderShape7" -p "|Tbl_Set|Chr_4|Back_Chair_4|pCylinder7";
 	rename -uid "F53943FD-B947-C539-BD3C-BEB3F48DE242";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -22102,7 +22102,7 @@ createNode transform -n "pCylinder2" -p "Back_Chair_4";
 	setAttr ".t" -type "double3" 0 0 8.8817841970012523e-16 ;
 	setAttr ".rp" -type "double3" 5.2075464725494385 0.77964514493942261 -0.26022207736968994 ;
 	setAttr ".sp" -type "double3" 5.2075464725494385 0.77964514493942261 -0.26022207736968994 ;
-createNode mesh -n "pCylinderShape2" -p "|Table_Set|Chair_4|Back_Chair_4|pCylinder2";
+createNode mesh -n "pCylinderShape2" -p "|Tbl_Set|Chr_4|Back_Chair_4|pCylinder2";
 	rename -uid "AFFA4EAF-4F41-23E3-8027-D7A4298212B8";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -22315,135 +22315,6 @@ createNode mesh -n "pCylinderShape2" -p "|Table_Set|Chair_4|Back_Chair_4|pCylind
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Wall_Left";
-	rename -uid "448E448F-F04C-5785-36E1-4D9FC5BE1579";
-	setAttr ".rp" -type "double3" -7.1137721538543701 2.9578855037689209 12.402474403381348 ;
-	setAttr ".sp" -type "double3" -7.1137721538543701 2.9578855037689209 12.402474403381348 ;
-createNode mesh -n "Wall_LeftShape" -p "Wall_Left";
-	rename -uid "DD7CFD07-E746-C9BE-B30D-3DAABCD7C2E4";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr -s 6 ".gtag";
-	setAttr ".gtag[0].gtagnm" -type "string" "back";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 2 "f[2]" "f[4]";
-	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
-	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[1]";
-	setAttr ".gtag[2].gtagnm" -type "string" "front";
-	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
-	setAttr ".gtag[3].gtagnm" -type "string" "left";
-	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
-	setAttr ".gtag[4].gtagnm" -type "string" "right";
-	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[6]";
-	setAttr ".gtag[5].gtagnm" -type "string" "top";
-	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[3]";
-	setAttr ".pv" -type "double2" 0.5 0.5 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 22 ".uvst[0].uvsp[0:21]" -type "float2" 0.375 0 0.625 0 0.375
-		 0.25 0.625 0.25 0.125 0.24837142 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.17249952
-		 0.25 0.375 0.45250046 0.125 0 0.375 0.50162858 0.875 0.24837142 0.625 0.50162858
-		 0.875 0 0.82750046 0.25 0.625 0.45250046 0 0 0 1 1 0 1 1;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 10 ".pt[0:9]" -type "float3"  -7.1137724 2.9578855 12.402474 
-		-7.1137724 2.9578855 12.402474 -7.1137724 2.9578855 12.402474 -7.1137724 2.9578855 
-		12.402474 -7.1137724 2.9578855 12.402474 -7.1137724 2.9578855 12.402474 -7.1137724 
-		2.9578855 12.402474 -7.1137724 2.9578855 12.402474 -7.1137724 2.9578855 12.402474 
-		-7.1137724 2.9578855 12.402474;
-	setAttr -s 10 ".vt[0:9]"  -5.06499958 -2.96036935 0.10149956 5.065000057 -2.96036935 0.10149956
-		 -5.06499958 2.96036935 0.10149956 5.065000057 2.96036935 0.10149956 5.065000057 2.96036935 -0.062930107
-		 -5.06499958 2.96036935 -0.062930107 -5.06499958 -2.96036935 -0.10149956 5.065000057 -2.96036935 -0.10149956
-		 5.065000057 2.92179942 -0.10149956 -5.06499958 2.9217999 -0.10149956;
-	setAttr -s 15 ".ed[0:14]"  0 1 0 1 3 0 3 2 0 2 0 0 6 7 0 7 1 0 0 6 0
-		 9 8 0 8 7 0 6 9 0 4 5 0 5 2 0 3 4 0 9 5 0 4 8 0;
-	setAttr -s 7 -ch 30 ".fc[0:6]" -type "polyFaces" 
-		f 4 0 1 2 3
-		mu 0 4 0 1 3 2
-		f 4 4 5 -1 6
-		mu 0 4 5 6 8 7
-		f 4 7 8 -5 9
-		mu 0 4 12 14 6 5
-		f 4 10 11 -3 12
-		mu 0 4 17 10 2 3
-		f 4 13 -11 14 -8
-		mu 0 4 18 19 21 20
-		f 5 -14 -10 -7 -4 -12
-		mu 0 5 9 4 11 0 2
-		f 5 -15 -13 -2 -6 -9
-		mu 0 5 13 16 3 1 15;
-	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
-	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Wall_Right";
-	rename -uid "60E9059D-5B45-6045-3C75-BEAB39940AC7";
-	setAttr ".r" -type "double3" 0 90 0 ;
-	setAttr ".rp" -type "double3" -7.1137723951909813 2.9578855918146942 12.402474771216898 ;
-	setAttr ".sp" -type "double3" -7.1137723951909813 2.9578855918146942 12.402474771216898 ;
-createNode transform -n "pasted__pCube11" -p "Wall_Right";
-	rename -uid "1865E80F-4A44-87E8-F18A-A2BD8A3C5248";
-	setAttr ".rp" -type "double3" -2.1000418663024902 2.9578855037689209 7.3825874328613281 ;
-	setAttr ".sp" -type "double3" -2.1000418663024902 2.9578855037689209 7.3825874328613281 ;
-createNode mesh -n "pasted__pCubeShape11" -p "pasted__pCube11";
-	rename -uid "A654E6A2-1E4E-88C1-4088-49807919B9E1";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr -s 6 ".gtag";
-	setAttr ".gtag[0].gtagnm" -type "string" "back";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 2 "f[0]" "f[4]";
-	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
-	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[1]";
-	setAttr ".gtag[2].gtagnm" -type "string" "front";
-	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[3]";
-	setAttr ".gtag[3].gtagnm" -type "string" "left";
-	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
-	setAttr ".gtag[4].gtagnm" -type "string" "right";
-	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[6]";
-	setAttr ".gtag[5].gtagnm" -type "string" "top";
-	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[2]";
-	setAttr ".pv" -type "double2" 0.5 0.5 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 22 ".uvst[0].uvsp[0:21]" -type "float2" 0.375 0 0.375 0.29749954
-		 0.875 0.25 0.125 0 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.32750046
-		 0.25 0.625 0 0.125 0.25 0.875 0 0.625 0.24837142 0.375 0.24837142 0.625 0.29749954
-		 0.67249954 0.25 0 0 0 1 1 0 1 1;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 10 ".pt[0:9]" -type "float3"  -7.1137724 2.9578855 12.402474 
-		-7.1137724 2.9578855 12.402474 -7.1137724 2.9578855 12.402474 -7.1137724 2.9578855 
-		12.402474 -7.1137724 2.9578855 12.402474 -7.1137724 2.9578855 12.402474 -7.1137724 
-		2.9578855 12.402474 -7.1137724 2.9578855 12.402474 -7.1137724 2.9578855 12.402474 
-		-7.1137724 2.9578855 12.402474;
-	setAttr -s 10 ".vt[0:9]"  -0.051268578 -2.96036935 -4.91838741 10.07872963 -2.96036935 -4.91838741
-		 -0.051268578 2.92179942 -4.91838837 10.07872963 2.9217999 -4.91838741 -0.051268578 2.96036935 -5.12138653
-		 10.07872963 2.96036935 -5.12138653 -0.051268578 -2.96036935 -5.12138653 10.07872963 -2.96036935 -5.12138653
-		 10.07872963 2.96036935 -4.95695686 -0.051268578 2.96036935 -4.95695686;
-	setAttr -s 15 ".ed[0:14]"  4 5 0 5 7 0 7 6 0 6 4 0 7 1 0 1 0 0 0 6 0
-		 9 8 0 8 5 0 4 9 0 3 2 0 2 0 0 1 3 0 9 2 0 3 8 0;
-	setAttr -s 7 -ch 30 ".fc[0:6]" -type "polyFaces" 
-		f 4 0 1 2 3
-		mu 0 4 4 5 7 6
-		f 4 -3 4 5 6
-		mu 0 4 6 7 9 8
-		f 4 7 8 -1 9
-		mu 0 4 1 16 5 4
-		f 4 10 11 -6 12
-		mu 0 4 14 15 0 11
-		f 4 13 -11 14 -8
-		mu 0 4 18 19 21 20
-		f 5 -14 -10 -4 -7 -12
-		mu 0 5 15 10 12 3 0
-		f 5 -15 -13 -5 -2 -9
-		mu 0 5 17 14 11 13 2;
-	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
-	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "Small_Shelf";
 	rename -uid "B8C4A65F-4A4B-ADD2-5F63-E4BC12374F87";
 	setAttr ".rp" -type "double3" -9.0826091766357422 0.6884334534406662 11.485245227813721 ;
@@ -22614,21 +22485,362 @@ createNode mesh -n "Small_ShelfShape" -p "Small_Shelf";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "Walls";
+	rename -uid "BC7AB9A5-7E47-7364-3457-D8A19C935F0D";
+createNode transform -n "Wall_Left" -p "Walls";
+	rename -uid "448E448F-F04C-5785-36E1-4D9FC5BE1579";
+	setAttr ".rp" -type "double3" -7.1137721538543701 2.9578855037689209 12.402474403381348 ;
+	setAttr ".sp" -type "double3" -7.1137721538543701 2.9578855037689209 12.402474403381348 ;
+createNode mesh -n "Wall_LeftShape" -p "Wall_Left";
+	rename -uid "DD7CFD07-E746-C9BE-B30D-3DAABCD7C2E4";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr -s 6 ".gtag";
+	setAttr ".gtag[0].gtagnm" -type "string" "back";
+	setAttr ".gtag[0].gtagcmp" -type "componentList" 2 "f[2]" "f[4]";
+	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
+	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[1]";
+	setAttr ".gtag[2].gtagnm" -type "string" "front";
+	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
+	setAttr ".gtag[3].gtagnm" -type "string" "left";
+	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
+	setAttr ".gtag[4].gtagnm" -type "string" "right";
+	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[6]";
+	setAttr ".gtag[5].gtagnm" -type "string" "top";
+	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[3]";
+	setAttr ".pv" -type "double2" 0.5 0.5 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 22 ".uvst[0].uvsp[0:21]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.125 0.24837142 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.17249952
+		 0.25 0.375 0.45250046 0.125 0 0.375 0.50162858 0.875 0.24837142 0.625 0.50162858
+		 0.875 0 0.82750046 0.25 0.625 0.45250046 0 0 0 1 1 0 1 1;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 10 ".pt[0:9]" -type "float3"  -7.1137724 2.9578855 12.402474 
+		-7.1137724 2.9578855 12.402474 -7.1137724 2.9578855 12.402474 -7.1137724 2.9578855 
+		12.402474 -7.1137724 2.9578855 12.402474 -7.1137724 2.9578855 12.402474 -7.1137724 
+		2.9578855 12.402474 -7.1137724 2.9578855 12.402474 -7.1137724 2.9578855 12.402474 
+		-7.1137724 2.9578855 12.402474;
+	setAttr -s 10 ".vt[0:9]"  -5.06499958 -2.96036935 0.10149956 5.065000057 -2.96036935 0.10149956
+		 -5.06499958 2.96036935 0.10149956 5.065000057 2.96036935 0.10149956 5.065000057 2.96036935 -0.062930107
+		 -5.06499958 2.96036935 -0.062930107 -5.06499958 -2.96036935 -0.10149956 5.065000057 -2.96036935 -0.10149956
+		 5.065000057 2.92179942 -0.10149956 -5.06499958 2.9217999 -0.10149956;
+	setAttr -s 15 ".ed[0:14]"  0 1 0 1 3 0 3 2 0 2 0 0 6 7 0 7 1 0 0 6 0
+		 9 8 0 8 7 0 6 9 0 4 5 0 5 2 0 3 4 0 9 5 0 4 8 0;
+	setAttr -s 7 -ch 30 ".fc[0:6]" -type "polyFaces" 
+		f 4 0 1 2 3
+		mu 0 4 0 1 3 2
+		f 4 4 5 -1 6
+		mu 0 4 5 6 8 7
+		f 4 7 8 -5 9
+		mu 0 4 12 14 6 5
+		f 4 10 11 -3 12
+		mu 0 4 17 10 2 3
+		f 4 13 -11 14 -8
+		mu 0 4 18 19 21 20
+		f 5 -14 -10 -7 -4 -12
+		mu 0 5 9 4 11 0 2
+		f 5 -15 -13 -2 -6 -9
+		mu 0 5 13 16 3 1 15;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "Wall_Right" -p "Walls";
+	rename -uid "60E9059D-5B45-6045-3C75-BEAB39940AC7";
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".rp" -type "double3" -7.1137723951909813 2.9578855918146942 12.402474771216898 ;
+	setAttr ".sp" -type "double3" -7.1137723951909813 2.9578855918146942 12.402474771216898 ;
+createNode transform -n "pasted__pCube11" -p "Wall_Right";
+	rename -uid "1865E80F-4A44-87E8-F18A-A2BD8A3C5248";
+	setAttr ".rp" -type "double3" -2.1000418663024902 2.9578855037689209 7.3825874328613281 ;
+	setAttr ".sp" -type "double3" -2.1000418663024902 2.9578855037689209 7.3825874328613281 ;
+createNode mesh -n "pasted__pCubeShape11" -p "pasted__pCube11";
+	rename -uid "A654E6A2-1E4E-88C1-4088-49807919B9E1";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr -s 6 ".gtag";
+	setAttr ".gtag[0].gtagnm" -type "string" "back";
+	setAttr ".gtag[0].gtagcmp" -type "componentList" 2 "f[0]" "f[4]";
+	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
+	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[1]";
+	setAttr ".gtag[2].gtagnm" -type "string" "front";
+	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[3]";
+	setAttr ".gtag[3].gtagnm" -type "string" "left";
+	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
+	setAttr ".gtag[4].gtagnm" -type "string" "right";
+	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[6]";
+	setAttr ".gtag[5].gtagnm" -type "string" "top";
+	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[2]";
+	setAttr ".pv" -type "double2" 0.5 0.5 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 22 ".uvst[0].uvsp[0:21]" -type "float2" 0.375 0 0.375 0.29749954
+		 0.875 0.25 0.125 0 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.32750046
+		 0.25 0.625 0 0.125 0.25 0.875 0 0.625 0.24837142 0.375 0.24837142 0.625 0.29749954
+		 0.67249954 0.25 0 0 0 1 1 0 1 1;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 10 ".pt[0:9]" -type "float3"  -7.1137724 2.9578855 12.402474 
+		-7.1137724 2.9578855 12.402474 -7.1137724 2.9578855 12.402474 -7.1137724 2.9578855 
+		12.402474 -7.1137724 2.9578855 12.402474 -7.1137724 2.9578855 12.402474 -7.1137724 
+		2.9578855 12.402474 -7.1137724 2.9578855 12.402474 -7.1137724 2.9578855 12.402474 
+		-7.1137724 2.9578855 12.402474;
+	setAttr -s 10 ".vt[0:9]"  -0.051268578 -2.96036935 -4.91838741 10.07872963 -2.96036935 -4.91838741
+		 -0.051268578 2.92179942 -4.91838837 10.07872963 2.9217999 -4.91838741 -0.051268578 2.96036935 -5.12138653
+		 10.07872963 2.96036935 -5.12138653 -0.051268578 -2.96036935 -5.12138653 10.07872963 -2.96036935 -5.12138653
+		 10.07872963 2.96036935 -4.95695686 -0.051268578 2.96036935 -4.95695686;
+	setAttr -s 15 ".ed[0:14]"  4 5 0 5 7 0 7 6 0 6 4 0 7 1 0 1 0 0 0 6 0
+		 9 8 0 8 5 0 4 9 0 3 2 0 2 0 0 1 3 0 9 2 0 3 8 0;
+	setAttr -s 7 -ch 30 ".fc[0:6]" -type "polyFaces" 
+		f 4 0 1 2 3
+		mu 0 4 4 5 7 6
+		f 4 -3 4 5 6
+		mu 0 4 6 7 9 8
+		f 4 7 8 -1 9
+		mu 0 4 1 16 5 4
+		f 4 10 11 -6 12
+		mu 0 4 14 15 0 11
+		f 4 13 -11 14 -8
+		mu 0 4 18 19 21 20
+		f 5 -14 -10 -4 -7 -12
+		mu 0 5 15 10 12 3 0
+		f 5 -15 -13 -5 -2 -9
+		mu 0 5 17 14 11 13 2;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "Mshrm_full";
+	rename -uid "44C1EDF6-FD47-4272-C732-ECA331FFB53E";
+	setAttr ".t" -type "double3" -10.926732270309222 -1.2238060365085894 8.9228259191851986 ;
+createNode transform -n "Msh_Body" -p "Mshrm_full";
+	rename -uid "5EB68BA2-BA4C-6FC1-1E28-45AF5104EFC4";
+createNode transform -n "pSphere1" -p "Msh_Body";
+	rename -uid "D1FF412A-E240-A954-C510-CAAF20CFC8CF";
+	setAttr ".t" -type "double3" 0 1.3810947124956698 0 ;
+	setAttr ".s" -type "double3" 1.0664546215777133 1 1 ;
+createNode mesh -n "pSphereShape1" -p "pSphere1";
+	rename -uid "5957851E-BD4B-23DD-4C73-0DBFF0B99971";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.58333331346511841 0.5625 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 193 ".pt";
+	setAttr ".pt[0:165]" -type "float3"  -0.04342474 0.42334613 -9.0941787e-05 
+		-0.042672768 0.42334598 0.0055272654 -0.040796652 0.42334619 0.010839924 -0.037667871 
+		0.4233461 0.015510321 -0.033253774 0.42334598 0.019106731 -0.027681515 0.42334607 
+		0.02114886 -0.021287233 0.42334569 0.02119866 -0.014616657 0.42334598 0.018966198 
+		-0.0083666006 0.42334574 0.01442118 -0.0032719783 0.42334604 0.0078529119 3.5393983e-05 
+		0.42334574 -0.00013336539 0.0011637285 0.42334569 -0.0087018684 3.4660101e-05 0.42334607 
+		-0.016932316 -0.0031074956 0.42334625 -0.02398569 -0.0077710957 0.42334619 -0.029243901 
+		-0.013336441 0.42334625 -0.032387163 -0.019186761 0.42334616 -0.033392761 -0.024810672 
+		0.42334619 -0.032473277 -0.029857799 0.42334598 -0.029982612 -0.034141883 0.42334598 
+		-0.026311276 -0.037603527 0.42334595 -0.021815419 -0.040255159 0.42334625 -0.016772946 
+		-0.042123705 0.42334595 -0.011381686 -0.04320091 0.42334619 -0.0057796203 -0.043264225 
+		0.36136773 -0.00020384789 -0.042505875 0.36125818 0.0053313449 -0.040636986 0.36111182 
+		0.01055298 -0.037539802 0.36093578 0.015130237 -0.033187076 0.36073992 0.018640652 
+		-0.027709059 0.36053768 0.02061817 -0.021437269 0.36034262 0.020638898 -0.014918804 
+		0.36016601 0.018443584 -0.0087955426 0.36003375 0.01396139 -0.0038166903 0.35994694 
+		0.0075215399 -0.00058221631 0.35991701 -0.00029843301 0.00052615255 0.3599475 -0.008686617 
+		-0.00056711584 0.36003405 -0.016747691 -0.0036309492 0.36016673 -0.023683239 -0.0081809042 
+		0.36034262 -0.028834287 -0.013625856 0.36053771 -0.031941403 -0.019361839 0.36074013 
+		-0.032955989 -0.024889491 0.36093569 -0.032081034 -0.029863223 0.36111155 -0.029655671 
+		-0.03409481 0.3612583 -0.026058353 -0.03752093 0.36136794 -0.021637848 -0.040147096 
+		0.36143523 -0.016668634 -0.041995168 0.36145809 -0.011347704 -0.043055013 0.36143532 
+		-0.0058167391 -0.042769864 0.29573655 -0.00054609776 -0.041995421 0.29553673 0.0047375932 
+		-0.040155821 0.29526955 0.0096895695 -0.03715653 0.29494908 0.013991684 -0.03299018 
+		0.29459432 0.017251253 -0.027793616 0.29422763 0.019042611 -0.021881536 0.29387656 
+		0.018982455 -0.015766837 0.29356316 0.016844586 -0.010059921 0.29331893 0.012607455 
+		-0.0054181162 0.29316258 0.0065489858 -0.0023993086 0.29310387 -0.00078386068 -0.001347743 
+		0.29316264 -0.0086420104 -0.0023395848 0.29331884 -0.016205195 -0.0051653031 0.29356325 
+		-0.022720847 -0.0093942024 0.2938768 -0.027620375 -0.014487145 0.2942276 -0.030618124 
+		-0.019886088 0.29459444 -0.03165406 -0.025126942 0.29494911 -0.030904265 -0.029878005 
+		0.29526922 -0.028668091 -0.033949196 0.29553616 -0.025291519 -0.037263393 0.2957364 
+		-0.021096991 -0.039809555 0.2958599 -0.016347647 -0.041594982 0.29590154 -0.0112416 
+		-0.042601645 0.29585987 -0.0059283227 -0.041878074 0.22986621 -0.0011272132 -0.041113466 
+		0.22960158 0.0037321523 -0.039318413 0.22926025 0.0082332268 -0.036499105 0.2288461 
+		0.012089193 -0.032652535 0.22838879 0.014951766 -0.027923793 0.22791749 0.016458288 
+		-0.02260286 0.22746855 0.016292423 -0.017150136 0.2270678 0.014282107 -0.01208849 
+		0.2267566 0.010428652 -0.0079820007 0.22655757 0.0049877465 -0.0053032162 0.22648947 
+		-0.0015594661 -0.0043498212 0.22655769 -0.0085676536 -0.0051868511 0.2267566 -0.015328571 
+		-0.0076451097 0.22706793 -0.021190116 -0.011364575 0.22746885 -0.025648881 -0.015892308 
+		0.22791764 -0.028443959 -0.020743396 0.22838868 -0.029493921 -0.025508285 0.22884603 
+		-0.028928787 -0.029880427 0.22925991 -0.026990112 -0.03368713 0.22960153 -0.023981864 
+		-0.03678076 0.22986612 -0.020150885 -0.039179593 0.23002696 -0.015777616 -0.040851787 
+		0.23008166 -0.011044502 -0.041770145 0.23002689 -0.0061106496 -0.040478751 0.16775531 
+		-0.0019583851 -0.039704949 0.16747305 0.002286315 -0.038060948 0.16709875 0.0061645582 
+		-0.035525665 0.1666529 0.0094211102 -0.032146573 0.16616251 0.011769861 -0.028069645 
+		0.16565952 0.012927622 -0.023573663 0.16516903 0.012671739 -0.018974695 0.16475794 
+		0.010852665 -0.014759557 0.16442919 0.0075332969 -0.011351506 0.16421983 0.0029250607 
+		-0.0091202669 0.16414845 -0.0025788546 -0.0083010122 0.16422017 -0.0084596425 -0.0089493301 
+		0.1644294 -0.014151379 -0.010941337 0.16475797 -0.019128095 -0.01401647 0.16516945 
+		-0.022996111 -0.017784417 0.16565955 -0.025457589 -0.021895997 0.16616255 -0.02648524 
+		-0.025999039 0.16665286 -0.026132775 -0.029824778 0.16709873 -0.02457252 -0.033189222 
+		0.16747284 -0.022029283 -0.035983399 0.16775483 -0.01873563 -0.038147092 0.16793016 
+		-0.014905479 -0.03964448 0.16798955 -0.010723684 -0.040438145 0.16793023 -0.0063544735 
+		-0.038444713 0.11360376 -0.0030441135 -0.037733793 0.11334114 0.00039407611 -0.036311507 
+		0.11299324 0.003481105 -0.034190051 0.11258174 0.0060104057 -0.031436399 0.11213086 
+		0.0077680349 -0.028187476 0.11167119 0.0085559636 -0.02465634 0.11123475 0.0082267374 
+		-0.021121819 0.11085366 0.0067154616 -0.01790157 0.11055721 0.0040735379 -0.015308492 
+		0.11036896 0.00047829747 -0.01360379 0.11030449 -0.0037762523 -0.012953008 0.11036901 
+		-0.0083123744 -0.013401637 0.11055714 -0.012719911 -0.014870688 0.11085359 -0.016613774 
+		-0.017177463 0.11123478 -0.019684121 -0.020072494 0.11167119 -0.021728974 -0.023282148 
+		0.11213116 -0.022664502 -0.02654735 0.11258171 -0.022512686 -0.029650815 0.11299336 
+		-0.02137671 -0.032427371 0.11334121 -0.019409854 -0.034763269 0.11360411 -0.016784145 
+		-0.036581784 0.1137678 -0.013672844 -0.037830353 0.11382297 -0.010240935 -0.038465068 
+		0.11376777 -0.0066454113 -0.035691187 0.071362451 -0.0043751374 -0.035105318 0.071164422 
+		-0.0019308701 -0.034023173 0.070895933 0.00021902472 -0.032463163 0.070579499 0.0019310266 
+		-0.030494981 0.070235267 0.0030670092 -0.028228842 0.069886535 0.0035119429 -0.02581647 
+		0.06955719 0.0031903833 -0.02344127 0.06927108 0.0020840764 -0.021301262 0.06904944 
+		0.00024429709 -0.019586921 0.06890928 -0.0022042841 -0.018453315 0.068861283 -0.0050713122 
+		-0.018001709 0.068909273 -0.0081203803 -0.018262684 0.069049492 -0.011096392 -0.019196678 
+		0.069271199 -0.013756793 -0.020701516 0.069557272 -0.015898909 -0.022631098 0.069886453 
+		-0.01737937 -0.024817385 0.070235267 -0.018122382 -0.027091049 0.070579514 -0.018118255 
+		-0.029298902 0.070895925 -0.017411739 -0.031312175 0.071164459 -0.016087417 -0.033042371 
+		0.071362317 -0.014260814 -0.034374043 0.071495876 -0.01203813;
+	setAttr ".pt[166:192]" -0.035281286 0.071542859 -0.0095619597 -0.035733446 
+		0.071495898 -0.0069644302 -0.032147817 0.04430845 -0.005912438 -0.031834915 0.044182807 
+		-0.0046344697 -0.031203158 0.044048637 -0.0035271496 -0.030355848 0.043876257 -0.0026759431 
+		-0.029317044 0.043690063 -0.0021414757 -0.028151631 0.043502495 -0.0019699931 -0.026938513 
+		0.043326631 -0.0021849871 -0.025765382 0.043174352 -0.0027821586 -0.024721831 0.04305733 
+		-0.0037266761 -0.02389 0.042983297 -0.0049542636 -0.023336753 0.042958051 -0.0063751563 
+		-0.02310548 0.042983286 -0.0078819394 -0.023212276 0.04305727 -0.0093600675 -0.023644216 
+		0.043174356 -0.010698494 -0.024362154 0.043326661 -0.011800386 -0.025305882 0.04350248 
+		-0.012591027 -0.026401378 0.043690078 -0.013022967 -0.027568854 0.043876208 -0.013077118 
+		-0.028728664 0.044048578 -0.012761593 -0.029830202 0.044182803 -0.012116842 -0.030740537 
+		0.04430848 -0.011165 -0.031475715 0.044378784 -0.0099977888 -0.031972043 0.0444027 
+		-0.0086795241 -0.032201298 0.044378802 -0.0072900131 -0.027925119 0.034602068 -0.007599771;
+createNode transform -n "pCylinder9" -p "Msh_Body";
+	rename -uid "23C88FFC-1E48-DFC7-E0D9-34B275EF38A9";
+	setAttr ".t" -type "double3" 0 1.7816126315515715 -0.0050003234683014819 ;
+	setAttr ".s" -type "double3" 0.61581404474026258 0.14178923892675613 0.53943373791938842 ;
+createNode mesh -n "pCylinderShape9" -p "pCylinder9";
+	rename -uid "D9B37F5C-3C4F-37EA-3FD8-43B28F18FD7D";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pCylinder10" -p "Msh_Body";
+	rename -uid "E2CC7E0F-1B46-A632-5185-E78563B170BF";
+	setAttr ".t" -type "double3" 0 1.3800305023806203 0 ;
+	setAttr ".s" -type "double3" 0.37760871529319107 0.40648387571644762 0.41395732554617309 ;
+createNode mesh -n "pCylinderShape10" -p "pCylinder10";
+	rename -uid "00523E54-FE45-A471-3C1D-23BBCD5700B4";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "Msh_Spts" -p "Mshrm_full";
+	rename -uid "47B6542A-7B46-3841-C212-F0B55E79644C";
+createNode transform -n "pasted__pSphere2" -p "Msh_Spts";
+	rename -uid "D0633D0D-264F-07E2-25E6-B7BB48517F6C";
+	setAttr ".t" -type "double3" 0.066081725594647381 2.2997881550476205 -0.49450427128061669 ;
+	setAttr ".r" -type "double3" -21.033323622000502 -0.64504488779179547 -1.9419925611747106 ;
+	setAttr ".s" -type "double3" 0.40829985206318387 0.040034398987689505 0.40829985206318392 ;
+createNode mesh -n "pasted__pSphereShape2" -p "pasted__pSphere2";
+	rename -uid "14846E78-7441-A26F-6D55-5AB4C0D40040";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pSphere2" -p "Msh_Spts";
+	rename -uid "B4890482-3C4B-F9CE-9AFA-BEBE87DB107B";
+	setAttr ".t" -type "double3" 0.70597969357297985 2.2536208932133204 0.092124610901308648 ;
+	setAttr ".r" -type "double3" 8.6631872108808921 -44.325133908365558 -36.711883498258075 ;
+	setAttr ".s" -type "double3" 0.11236346247677008 0.011017402200129058 0.11236346247677008 ;
+createNode mesh -n "pasted__pasted__pSphereShape2" -p "pasted__pasted__pSphere2";
+	rename -uid "639051DF-2449-379B-043F-EDA8B9E14AC8";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pSphere2" -p "Msh_Spts";
+	rename -uid "71A81502-754E-0BA8-79CE-879F44F14E33";
+	setAttr ".t" -type "double3" 0 2.287465757678016 0.60048465094583625 ;
+	setAttr ".r" -type "double3" 27.065083881509583 0 0 ;
+	setAttr ".s" -type "double3" 0.22761264110148086 0.022317753098495707 0.22761264110148086 ;
+createNode mesh -n "pSphereShape2" -p "pSphere2";
+	rename -uid "7A59EB48-9F48-B713-AF00-7E99BC14DC7B";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pSphere3" -p "Msh_Spts";
+	rename -uid "691E3EA5-9441-1D80-A66C-488030886213";
+	setAttr ".t" -type "double3" -0.60932152571553155 2.2924541373459553 -0.18609252551424338 ;
+	setAttr ".r" -type "double3" -6.7699547841797392 7.053124634104865 19.893598261737115 ;
+	setAttr ".s" -type "double3" 0.22761264110148086 0.022317753098495711 0.22761264110148086 ;
+createNode mesh -n "pasted__pSphereShape3" -p "pasted__pSphere3";
+	rename -uid "3EC25A48-904F-BF88-3E22-4BA51E1A6F3F";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pSphere4" -p "Msh_Spts";
+	rename -uid "70F93408-7048-1E65-8F00-028E0FD81096";
+	setAttr ".t" -type "double3" -0.59596367027974972 2.2648566846323188 0.36255794793101476 ;
+	setAttr ".r" -type "double3" 23.065502449527649 -45.414864912130803 5.7069849631223422 ;
+	setAttr ".s" -type "double3" 0.11236346247677008 0.011017402200129058 0.11236346247677009 ;
+createNode mesh -n "pasted__pSphereShape4" -p "pasted__pSphere4";
+	rename -uid "4AD5E445-8E41-564F-C38C-7CB38C310C48";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "247BE8F0-FD40-AA33-A3D0-EFA7AC243759";
+	rename -uid "4CB75DC6-5742-BEA3-6091-8183076DF32A";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "DADF6CAC-D649-05B1-6002-EEB2CC28F87C";
+	rename -uid "6F598006-BD4B-9F86-E08D-F1845D0E13B1";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "C9DE5232-4143-B25F-65DF-0C99AAEF3A44";
+	rename -uid "4C237E57-EF4D-0B14-DA58-8E8DC7DB284C";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "079416E0-924E-4ADE-CB78-F1B3343A9330";
+	rename -uid "94B870EF-7C45-3274-DCF3-5CA5C30E6BB0";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "32F39271-5C40-47CF-C89B-6ABDE986FB8C";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "5AAA40F8-8A40-C617-D720-4CA68084D872";
+	rename -uid "58B0FBEE-4A44-B82C-AF8C-3AAC2DDFAA79";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "2B8EE73F-FB4A-2B4D-6B9C-E0ADCD194F35";
 	setAttr ".g" yes;
@@ -22648,7 +22860,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            -pluginObjects \"mayaUsdProxyShapeBaseDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
 		+ "\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n"
 		+ "            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n"
-		+ "            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 512\n            -height 1000\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n"
+		+ "            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1338\n            -height 1002\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n"
 		+ "        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            -pluginObjects \"mayaUsdProxyShapeBaseDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n"
 		+ "            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n"
 		+ "            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -selectCommand \"print(\\\"\\\")\" \n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n"
@@ -22672,14 +22884,186 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"motionMakerEditorPanel\" (localizedPanelLabel(\"MotionMaker Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"MotionMaker Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 512\\n    -height 1000\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    -pluginObjects \\\"mayaUsdProxyShapeBaseDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 512\\n    -height 1000\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    -pluginObjects \\\"mayaUsdProxyShapeBaseDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1338\\n    -height 1002\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    -pluginObjects \\\"mayaUsdProxyShapeBaseDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1338\\n    -height 1002\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    -pluginObjects \\\"mayaUsdProxyShapeBaseDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "7C051321-6B4D-07C5-A12C-9FB6087CDF41";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 120 -ast 1 -aet 200 ";
 	setAttr ".st" 6;
+createNode deleteComponent -n "deleteComponent14";
+	rename -uid "3AA25394-CD4D-F84D-2DC4-C4ABCBDA027E";
+	setAttr ".dc" -type "componentList" 1 "f[120]";
+createNode deleteComponent -n "deleteComponent13";
+	rename -uid "AEC6EACD-6D41-53EF-254A-94A124183517";
+	setAttr ".dc" -type "componentList" 1 "f[120]";
+createNode deleteComponent -n "deleteComponent12";
+	rename -uid "2732EDEF-C74B-5118-6389-24B23A0989E0";
+	setAttr ".dc" -type "componentList" 1 "f[120]";
+createNode deleteComponent -n "deleteComponent11";
+	rename -uid "B060D12E-F445-AC44-45FE-B7991D5FAFA5";
+	setAttr ".dc" -type "componentList" 1 "f[120]";
+createNode deleteComponent -n "deleteComponent10";
+	rename -uid "FAAFE327-1F45-AAC0-47BF-B08ABD541075";
+	setAttr ".dc" -type "componentList" 1 "f[122]";
+createNode deleteComponent -n "deleteComponent9";
+	rename -uid "17630C17-8543-BF70-E8C9-C39B24A78C48";
+	setAttr ".dc" -type "componentList" 1 "f[120]";
+createNode deleteComponent -n "deleteComponent8";
+	rename -uid "6B191578-8945-28CA-9E19-56B8AE832103";
+	setAttr ".dc" -type "componentList" 1 "f[120]";
+createNode deleteComponent -n "deleteComponent7";
+	rename -uid "D885C406-CE44-7AB8-EE02-F1B0139CCED5";
+	setAttr ".dc" -type "componentList" 1 "f[137]";
+createNode deleteComponent -n "deleteComponent6";
+	rename -uid "3A172699-2C47-C120-03F3-CDA8FAB1432B";
+	setAttr ".dc" -type "componentList" 1 "f[138]";
+createNode deleteComponent -n "deleteComponent5";
+	rename -uid "FABDD2D3-7047-9192-92F6-A5B01E24480A";
+	setAttr ".dc" -type "componentList" 1 "f[139]";
+createNode deleteComponent -n "deleteComponent4";
+	rename -uid "1F9D6AC7-D74D-89E3-CA1E-758410D05B26";
+	setAttr ".dc" -type "componentList" 1 "f[140]";
+createNode deleteComponent -n "deleteComponent3";
+	rename -uid "74781D96-3A44-865D-24B2-2CB97A3CDB25";
+	setAttr ".dc" -type "componentList" 1 "f[141]";
+createNode deleteComponent -n "deleteComponent2";
+	rename -uid "4B5D512B-524B-BA2C-DDE8-2BBDE14676A9";
+	setAttr ".dc" -type "componentList" 1 "f[120]";
+createNode deleteComponent -n "deleteComponent1";
+	rename -uid "9007D764-DE49-3AE8-A3F9-749E940B8035";
+	setAttr ".dc" -type "componentList" 1 "f[121]";
+createNode polySphere -n "polySphere1";
+	rename -uid "F98696E4-A54C-F372-B45E-7081974D712B";
+	setAttr ".sa" 24;
+	setAttr ".sh" 16;
+createNode deleteComponent -n "deleteComponent15";
+	rename -uid "2895EE71-0A4D-8F5F-7D8F-6BA190824343";
+	setAttr ".dc" -type "componentList" 1 "f[120]";
+createNode deleteComponent -n "deleteComponent16";
+	rename -uid "D0DA4E12-EE4A-F195-726E-649C803477D4";
+	setAttr ".dc" -type "componentList" 1 "f[120]";
+createNode deleteComponent -n "deleteComponent17";
+	rename -uid "4C2D882E-884D-BFCC-E7D8-388417B9B999";
+	setAttr ".dc" -type "componentList" 1 "f[120]";
+createNode deleteComponent -n "deleteComponent18";
+	rename -uid "57ED854F-6B4A-7087-7423-4EB2E37F9A2E";
+	setAttr ".dc" -type "componentList" 1 "f[122]";
+createNode deleteComponent -n "deleteComponent19";
+	rename -uid "8D44EC01-5847-85DF-0D63-1BA9A1B432BE";
+	setAttr ".dc" -type "componentList" 1 "f[120]";
+createNode deleteComponent -n "deleteComponent20";
+	rename -uid "D66551A8-5845-4242-7026-F1835269A756";
+	setAttr ".dc" -type "componentList" 1 "f[120]";
+createNode deleteComponent -n "deleteComponent21";
+	rename -uid "6BA823E6-9343-D4CE-1F6F-BFB2729E7AE4";
+	setAttr ".dc" -type "componentList" 1 "f[120]";
+createNode deleteComponent -n "deleteComponent22";
+	rename -uid "E539FBB1-1C47-AD9B-6C4D-28A4F8F54051";
+	setAttr ".dc" -type "componentList" 1 "f[120]";
+createNode deleteComponent -n "deleteComponent23";
+	rename -uid "6C5C02D5-8645-DD5F-5790-CA83D5E0693F";
+	setAttr ".dc" -type "componentList" 1 "f[120]";
+createNode deleteComponent -n "deleteComponent24";
+	rename -uid "5135DB47-7349-D11A-C98E-889618F2069F";
+	setAttr ".dc" -type "componentList" 1 "f[120]";
+createNode deleteComponent -n "deleteComponent25";
+	rename -uid "3853BDBF-1542-8E62-9DB8-5B9A08375835";
+	setAttr ".dc" -type "componentList" 1 "f[0:119]";
+createNode deleteComponent -n "deleteComponent26";
+	rename -uid "2B38B5C4-E146-FBDC-260A-389CF29B41F3";
+	setAttr ".dc" -type "componentList" 1 "f[192:215]";
+createNode deleteComponent -n "deleteComponent27";
+	rename -uid "C80C6A91-A44E-3846-48CF-7184D55FD790";
+	setAttr ".dc" -type "componentList" 1 "f[21]";
+createNode deleteComponent -n "deleteComponent28";
+	rename -uid "960193C4-7C48-0147-D355-ADA3DF4E0025";
+	setAttr ".dc" -type "componentList" 1 "f[21]";
+createNode deleteComponent -n "deleteComponent29";
+	rename -uid "A3F723A2-AA44-D4A9-2490-9290567077F7";
+	setAttr ".dc" -type "componentList" 1 "f[21]";
+createNode deleteComponent -n "deleteComponent30";
+	rename -uid "FA8B82D3-CA42-6AC1-D3D9-BF9DDC8C530A";
+	setAttr ".dc" -type "componentList" 1 "f[0]";
+createNode deleteComponent -n "deleteComponent31";
+	rename -uid "751CF494-F445-87C1-FA28-3FB79E49E37C";
+	setAttr ".dc" -type "componentList" 1 "f[19]";
+createNode deleteComponent -n "deleteComponent32";
+	rename -uid "19103680-C144-9624-17B8-4C9B2F6BC53F";
+	setAttr ".dc" -type "componentList" 1 "f[18]";
+createNode deleteComponent -n "deleteComponent33";
+	rename -uid "EA18BCC2-DD45-DEB4-7065-D19F27287732";
+	setAttr ".dc" -type "componentList" 1 "f[17]";
+createNode deleteComponent -n "deleteComponent34";
+	rename -uid "0A32D6FD-FC4C-04DF-4F4B-6F9A04ADF173";
+	setAttr ".dc" -type "componentList" 1 "f[16]";
+createNode deleteComponent -n "deleteComponent35";
+	rename -uid "892180F3-D14A-72D3-957D-B7BB0E5408E4";
+	setAttr ".dc" -type "componentList" 1 "f[13]";
+createNode deleteComponent -n "deleteComponent36";
+	rename -uid "02B99F22-924B-8328-A8EC-B6A3D8A51BBD";
+	setAttr ".dc" -type "componentList" 1 "f[12]";
+createNode deleteComponent -n "deleteComponent37";
+	rename -uid "0B819E6D-014C-094D-2C91-D99924F09D53";
+	setAttr ".dc" -type "componentList" 1 "f[11]";
+createNode deleteComponent -n "deleteComponent38";
+	rename -uid "B11E7470-E640-9AED-B921-8BBD8E7283F1";
+	setAttr ".dc" -type "componentList" 1 "f[10]";
+createNode deleteComponent -n "deleteComponent39";
+	rename -uid "8F19C2ED-7F49-2F8F-4071-89BF8CCFA274";
+	setAttr ".dc" -type "componentList" 1 "f[9]";
+createNode deleteComponent -n "deleteComponent40";
+	rename -uid "9B474FC9-024E-4703-F0ED-729AF9616499";
+	setAttr ".dc" -type "componentList" 1 "f[8]";
+createNode deleteComponent -n "deleteComponent41";
+	rename -uid "48084467-4B45-6FAA-9FD3-A08B9DB742B4";
+	setAttr ".dc" -type "componentList" 1 "f[7]";
+createNode deleteComponent -n "deleteComponent42";
+	rename -uid "2714CDA1-374B-300D-6BC4-B798A645E934";
+	setAttr ".dc" -type "componentList" 1 "f[6]";
+createNode deleteComponent -n "deleteComponent43";
+	rename -uid "FE2FF56B-0840-94BF-F152-B29EF6516145";
+	setAttr ".dc" -type "componentList" 1 "f[5]";
+createNode deleteComponent -n "deleteComponent44";
+	rename -uid "9384AA93-2F43-F8DB-CD15-47AABB05BB77";
+	setAttr ".dc" -type "componentList" 1 "f[4]";
+createNode deleteComponent -n "deleteComponent45";
+	rename -uid "B5281571-6E4E-9095-8418-B18CA7890D58";
+	setAttr ".dc" -type "componentList" 1 "f[0]";
+createNode deleteComponent -n "deleteComponent46";
+	rename -uid "1CEBAC38-0841-ED4E-6DA6-3B80899F9E6E";
+	setAttr ".dc" -type "componentList" 1 "f[2]";
+createNode deleteComponent -n "deleteComponent47";
+	rename -uid "913FA1A6-0942-87FA-C152-5EBD9A28BF29";
+	setAttr ".dc" -type "componentList" 1 "f[1]";
+createNode deleteComponent -n "deleteComponent48";
+	rename -uid "3181516C-7C46-F84B-41A2-C1A06B04B3E5";
+	setAttr ".dc" -type "componentList" 1 "f[2]";
+createNode deleteComponent -n "deleteComponent49";
+	rename -uid "ABCDC0FD-0640-9A67-7BC3-429EA9B51338";
+	setAttr ".dc" -type "componentList" 1 "f[1]";
+createNode deleteComponent -n "deleteComponent50";
+	rename -uid "52CF25B2-D748-3E1E-6969-24B0A6B237A5";
+	setAttr ".dc" -type "componentList" 1 "f[0]";
+createNode polyCylinder -n "polyCylinder1";
+	rename -uid "7826CABD-C148-F26A-90D8-13996E604990";
+	setAttr ".sc" 1;
+	setAttr ".cuv" 3;
+createNode polyCylinder -n "polyCylinder2";
+	rename -uid "A29D8687-8844-3F09-30AF-99B9E045CD2A";
+	setAttr ".sc" 1;
+	setAttr ".cuv" 3;
+createNode polySphere -n "polySphere2";
+	rename -uid "6E5A1EBE-BE4C-032A-7F24-26A786790985";
+createNode polySphere -n "pasted__polySphere2";
+	rename -uid "F50AEF8C-A747-4A19-9E89-1E94AFFE0EED";
+createNode polySphere -n "pasted__polySphere3";
+	rename -uid "1C7EFC97-F34E-46D1-4071-64AAEABE9EEA";
+createNode polySphere -n "pasted__pasted__polySphere2";
+	rename -uid "A9D42382-D04E-3051-C6A4-49A117BD505C";
+createNode polySphere -n "pasted__polySphere4";
+	rename -uid "E902368E-2546-3162-C8A4-A4B873DE81AF";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -22705,7 +23089,7 @@ select -ne :openPBR_shader1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 202 ".dsm";
+	setAttr -s 210 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -22729,12 +23113,70 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
 	setAttr -s 4 ".sol";
+connectAttr "deleteComponent50.og" "pSphereShape1.i";
+connectAttr "polyCylinder1.out" "pCylinderShape9.i";
+connectAttr "polyCylinder2.out" "pCylinderShape10.i";
+connectAttr "pasted__polySphere3.out" "pasted__pSphereShape2.i";
+connectAttr "pasted__pasted__polySphere2.out" "pasted__pasted__pSphereShape2.i";
+connectAttr "polySphere2.out" "pSphereShape2.i";
+connectAttr "pasted__polySphere4.out" "pasted__pSphereShape3.i";
+connectAttr "pasted__polySphere2.out" "pasted__pSphereShape4.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
+connectAttr "deleteComponent13.og" "deleteComponent14.ig";
+connectAttr "deleteComponent12.og" "deleteComponent13.ig";
+connectAttr "deleteComponent11.og" "deleteComponent12.ig";
+connectAttr "deleteComponent10.og" "deleteComponent11.ig";
+connectAttr "deleteComponent9.og" "deleteComponent10.ig";
+connectAttr "deleteComponent8.og" "deleteComponent9.ig";
+connectAttr "deleteComponent7.og" "deleteComponent8.ig";
+connectAttr "deleteComponent6.og" "deleteComponent7.ig";
+connectAttr "deleteComponent5.og" "deleteComponent6.ig";
+connectAttr "deleteComponent4.og" "deleteComponent5.ig";
+connectAttr "deleteComponent3.og" "deleteComponent4.ig";
+connectAttr "deleteComponent2.og" "deleteComponent3.ig";
+connectAttr "deleteComponent1.og" "deleteComponent2.ig";
+connectAttr "polySphere1.out" "deleteComponent1.ig";
+connectAttr "deleteComponent14.og" "deleteComponent15.ig";
+connectAttr "deleteComponent15.og" "deleteComponent16.ig";
+connectAttr "deleteComponent16.og" "deleteComponent17.ig";
+connectAttr "deleteComponent17.og" "deleteComponent18.ig";
+connectAttr "deleteComponent18.og" "deleteComponent19.ig";
+connectAttr "deleteComponent19.og" "deleteComponent20.ig";
+connectAttr "deleteComponent20.og" "deleteComponent21.ig";
+connectAttr "deleteComponent21.og" "deleteComponent22.ig";
+connectAttr "deleteComponent22.og" "deleteComponent23.ig";
+connectAttr "deleteComponent23.og" "deleteComponent24.ig";
+connectAttr "deleteComponent24.og" "deleteComponent25.ig";
+connectAttr "deleteComponent25.og" "deleteComponent26.ig";
+connectAttr "deleteComponent26.og" "deleteComponent27.ig";
+connectAttr "deleteComponent27.og" "deleteComponent28.ig";
+connectAttr "deleteComponent28.og" "deleteComponent29.ig";
+connectAttr "deleteComponent29.og" "deleteComponent30.ig";
+connectAttr "deleteComponent30.og" "deleteComponent31.ig";
+connectAttr "deleteComponent31.og" "deleteComponent32.ig";
+connectAttr "deleteComponent32.og" "deleteComponent33.ig";
+connectAttr "deleteComponent33.og" "deleteComponent34.ig";
+connectAttr "deleteComponent34.og" "deleteComponent35.ig";
+connectAttr "deleteComponent35.og" "deleteComponent36.ig";
+connectAttr "deleteComponent36.og" "deleteComponent37.ig";
+connectAttr "deleteComponent37.og" "deleteComponent38.ig";
+connectAttr "deleteComponent38.og" "deleteComponent39.ig";
+connectAttr "deleteComponent39.og" "deleteComponent40.ig";
+connectAttr "deleteComponent40.og" "deleteComponent41.ig";
+connectAttr "deleteComponent41.og" "deleteComponent42.ig";
+connectAttr "deleteComponent42.og" "deleteComponent43.ig";
+connectAttr "deleteComponent43.og" "deleteComponent44.ig";
+connectAttr "deleteComponent44.og" "deleteComponent45.ig";
+connectAttr "deleteComponent45.og" "deleteComponent46.ig";
+connectAttr "deleteComponent46.og" "deleteComponent47.ig";
+connectAttr "deleteComponent47.og" "deleteComponent48.ig";
+connectAttr "deleteComponent48.og" "deleteComponent49.ig";
+connectAttr "deleteComponent49.og" "deleteComponent50.ig";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape2.iog" ":initialShadingGroup.dsm" -na;
@@ -22742,84 +23184,84 @@ connectAttr "pCubeShape3.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape4.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape5.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Seat_1Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|Table_Set|Chair_1|Back_Chair_1|pCylinder2|pCylinderShape2.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_1|Back_Chair_1|pCylinder2|pCylinderShape2.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_1|Back_Chair_1|pCylinder4|pCylinderShape4.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_1|Back_Chair_1|pCylinder4|pCylinderShape4.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_1|Back_Chair_1|pCylinder5|pCylinderShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_1|Back_Chair_1|pCylinder5|pCylinderShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_1|Back_Chair_1|pCylinder6|pCylinderShape6.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_1|Back_Chair_1|pCylinder6|pCylinderShape6.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_1|Back_Chair_1|pCylinder7|pCylinderShape7.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_1|Back_Chair_1|pCylinder7|pCylinderShape7.iog" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "Front_right_leg_1Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|Table_Set|Chair_1|Back_Chair_1|pCylinder8|pCylinderShape8.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_1|Back_Chair_1|pCylinder8|pCylinderShape8.iog" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "Back_left_leg_1Shape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Back_right_leg_1Shape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Front_left_leg_1Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|Table_Set|Chair_2|Legs_2|pCube8|pCubeShape8.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_2|Legs_2|pCube8|pCubeShape8.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_2|Legs_2|pCube9|pCubeShape9.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_2|Legs_2|pCube9|pCubeShape9.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_2|Legs_2|pCube10|pCubeShape10.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_2|Legs_2|pCube10|pCubeShape10.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_2|Back_Chair_2|pCylinder6|pCylinderShape6.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_2|Back_Chair_2|pCylinder6|pCylinderShape6.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_2|Back_Chair_2|pCylinder5|pCylinderShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_2|Back_Chair_2|pCylinder5|pCylinderShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_2|Back_Chair_2|pCylinder8|pCylinderShape8.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_2|Back_Chair_2|pCylinder8|pCylinderShape8.iog" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "Seat_2Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|Table_Set|Chair_2|Back_Chair_2|pCylinder4|pCylinderShape4.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_2|Back_Chair_2|pCylinder4|pCylinderShape4.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_2|Back_Chair_2|pCylinder7|pCylinderShape7.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_2|Back_Chair_2|pCylinder7|pCylinderShape7.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_2|Back_Chair_2|pCylinder2|pCylinderShape2.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_2|Back_Chair_2|pCylinder2|pCylinderShape2.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_2|Legs_2|pCube7|pCubeShape7.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_2|Legs_2|pCube7|pCubeShape7.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_3|Legs_3|pCube8|pCubeShape8.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_3|Legs_3|pCube8|pCubeShape8.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_3|Legs_3|pCube9|pCubeShape9.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_3|Legs_3|pCube9|pCubeShape9.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_3|Legs_3|pCube10|pCubeShape10.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_3|Legs_3|pCube10|pCubeShape10.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_3|Back_Chair_3|pCylinder6|pCylinderShape6.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_3|Back_Chair_3|pCylinder6|pCylinderShape6.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_3|Back_Chair_3|pCylinder5|pCylinderShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_3|Back_Chair_3|pCylinder5|pCylinderShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_3|Back_Chair_3|pCylinder8|pCylinderShape8.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_3|Back_Chair_3|pCylinder8|pCylinderShape8.iog" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "Seat_3Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|Table_Set|Chair_3|Back_Chair_3|pCylinder4|pCylinderShape4.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_3|Back_Chair_3|pCylinder4|pCylinderShape4.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_3|Back_Chair_3|pCylinder7|pCylinderShape7.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_3|Back_Chair_3|pCylinder7|pCylinderShape7.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_3|Back_Chair_3|pCylinder2|pCylinderShape2.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_3|Back_Chair_3|pCylinder2|pCylinderShape2.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_3|Legs_3|pCube7|pCubeShape7.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_3|Legs_3|pCube7|pCubeShape7.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_4|Legs_4|pCube8|pCubeShape8.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_4|Legs_4|pCube8|pCubeShape8.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_4|Legs_4|pCube9|pCubeShape9.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_4|Legs_4|pCube9|pCubeShape9.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_4|Legs_4|pCube10|pCubeShape10.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_4|Legs_4|pCube10|pCubeShape10.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_4|Back_Chair_4|pCylinder6|pCylinderShape6.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_4|Back_Chair_4|pCylinder6|pCylinderShape6.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_4|Back_Chair_4|pCylinder5|pCylinderShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_4|Back_Chair_4|pCylinder5|pCylinderShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_4|Back_Chair_4|pCylinder8|pCylinderShape8.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_4|Back_Chair_4|pCylinder8|pCylinderShape8.iog" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "Seat_4Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|Table_Set|Chair_4|Back_Chair_4|pCylinder4|pCylinderShape4.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_4|Back_Chair_4|pCylinder4|pCylinderShape4.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_4|Back_Chair_4|pCylinder7|pCylinderShape7.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_4|Back_Chair_4|pCylinder7|pCylinderShape7.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_4|Back_Chair_4|pCylinder2|pCylinderShape2.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_4|Back_Chair_4|pCylinder2|pCylinderShape2.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Table_Set|Chair_4|Legs_4|pCube7|pCubeShape7.iog" ":initialShadingGroup.dsm"
+connectAttr "|Tbl_Set|Chr_4|Legs_4|pCube7|pCubeShape7.iog" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "Tree_TrunkShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Tree_LBShape.iog" ":initialShadingGroup.dsm" -na;
@@ -22835,274 +23277,282 @@ connectAttr "TS_RightShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "BS_LeftShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "BS_RightShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pasted__pCubeShape5.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_1|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_1|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_2|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Right_Books|pasted__Book_3|pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Right_Books|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pCube5|pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group9|pasted__pasted__Books_Template_1|pasted__pasted__Book_3|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Left_Books|pasted__pasted__group9|pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_2|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group12|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__Book_3|pasted__pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "TS_Left_DonutShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pasted__pasted__pTorusShape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group14|pasted__pasted__group11|pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group15|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group16|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group17|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Middle_Shelves_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Middle_Shlv_Full|MS_Left_Books|pasted__Book_Template_2|pasted__group18|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group14|pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group15|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group16|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group17|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Bottom_Shelves_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Bottom_Shlv_Full|BS_Left_Books|pasted__group19|pasted__pasted__Book_Template_2|pasted__pasted__group18|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "BS_Left_ConeShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pasted__pasted__pConeShape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group17|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Bookshelf_Full|Top_Shelves_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
+connectAttr "|Bkshlv_Full|Top_Shlv_Full|TS_Right_Books|pasted__group21|pasted__pasted__group19|pasted__pasted__pasted__Book_Template_2|pasted__pasted__pasted__group18|pasted__pasted__pasted__pasted__group16|pasted__pasted__pasted__pasted__pasted__group15|pasted__pasted__pasted__pasted__pasted__pasted__group14|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group11|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group10|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Books_Template_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__Book_1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "GroundShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Wall_LeftShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pasted__pCubeShape11.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Small_ShelfShape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pSphereShape1.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pCylinderShape9.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pCylinderShape10.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pSphereShape2.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pasted__pSphereShape4.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pasted__pSphereShape2.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pasted__pasted__pSphereShape2.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pasted__pSphereShape3.iog" ":initialShadingGroup.dsm" -na;
 // End of room_scene.ma
