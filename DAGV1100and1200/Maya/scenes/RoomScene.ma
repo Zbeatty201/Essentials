@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: RoomScene.ma
-//Last modified: Sat, Jun 06, 2026 03:03:04 PM
+//Last modified: Wed, Jun 17, 2026 04:13:20 PM
 //Codeset: UTF-8
 file -rdi 1 -ns "Floor" -rfn "FloorRN" -op "v=0;" -typ "mayaAscii" "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Floor.ma";
 file -rdi 1 -ns "Walls" -rfn "WallsRN" -op "v=0;" -typ "mayaAscii" "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Walls.ma";
@@ -9,6 +9,8 @@ file -rdi 1 -ns "Chr" -rfn "ChrRN" -op "v=0;" -typ "mayaAscii" "/Users/zacbeatty
 file -rdi 1 -ns "Bkshlv_full" -rfn "Bkshlv_fullRN" -op "v=0;" -typ "mayaAscii"
 		 "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Bkshlv_full.ma";
 file -rdi 1 -ns "Mshrm" -rfn "MshrmRN" -op "v=0;" -typ "mayaAscii" "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Mshrm.ma";
+file -rdi 1 -ns "Unit5_LabScene" -rfn "Unit5_LabSceneRN" -op "v=0;" -typ "mayaAscii"
+		 "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Unit5_LabScene.ma";
 file -r -ns "Floor" -dr 1 -rfn "FloorRN" -op "v=0;" -typ "mayaAscii" "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Floor.ma";
 file -r -ns "Walls" -dr 1 -rfn "WallsRN" -op "v=0;" -typ "mayaAscii" "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Walls.ma";
 file -r -ns "Tbl" -dr 1 -rfn "TblRN" -op "v=0;" -typ "mayaAscii" "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Tbl.ma";
@@ -16,6 +18,8 @@ file -r -ns "Chr" -dr 1 -rfn "ChrRN" -op "v=0;" -typ "mayaAscii" "/Users/zacbeat
 file -r -ns "Bkshlv_full" -dr 1 -rfn "Bkshlv_fullRN" -op "v=0;" -typ "mayaAscii"
 		 "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Bkshlv_full.ma";
 file -r -ns "Mshrm" -dr 1 -rfn "MshrmRN" -op "v=0;" -typ "mayaAscii" "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Mshrm.ma";
+file -r -ns "Unit5_LabScene" -dr 1 -rfn "Unit5_LabSceneRN" -op "v=0;" -typ "mayaAscii"
+		 "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Unit5_LabScene.ma";
 requires maya "2027";
 requires "mtoa" "5.6.0";
 currentUnit -l centimeter -a degree -t film;
@@ -24,21 +28,21 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202603302215-e16e754b0e";
 fileInfo "osv" "Mac OS X 20.5.1";
-fileInfo "UUID" "7B1B43C1-394C-B353-E5B9-24977C5F607A";
+fileInfo "UUID" "037A0C12-EB47-3759-1D3B-4E9FB0E37DFA";
 createNode transform -s -n "persp";
 	rename -uid "E2F28254-0447-C230-A653-D89F035F6989";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 5.355243218112463 4.1332311073882648 -5.9171100751811974 ;
-	setAttr ".r" -type "double3" -8.1383527295986333 143.39999999999682 0 ;
+	setAttr ".t" -type "double3" 2.6878170026158528 8.7888642617749628 -3.6106719174223474 ;
+	setAttr ".r" -type "double3" -30.938352729580625 138.19999999997745 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A928C5AF-CD43-922C-24D0-17B7EA8F428D";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 17.086642786794794;
+	setAttr ".coi" 17.09511597425351;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -4.729641330189585 1.7143792524779595 7.6621984887679044 ;
+	setAttr ".tp" -type "double3" -7.0854414701461792 0 7.3201228380203247 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "7B9D8317-6341-93B9-505F-968D5B3B61F7";
@@ -90,21 +94,30 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
+createNode transform -n "group1";
+	rename -uid "7D0C7644-E14C-20D5-1E88-E2A23E8D437F";
+	setAttr ".t" -type "double3" -3.0566493190521018 -0.19942851175937196 18.766441897108148 ;
+	setAttr ".r" -type "double3" 0 -90.083 0 ;
+	setAttr ".s" -type "double3" 0.74349630099497854 0.74349630099497854 0.74349630099497854 ;
+	setAttr ".rp" -type "double3" -14.586005474622135 3.148381845247469 7.9718322089628337 ;
+	setAttr ".rpt" -type "double3" 6.6353112498305737 0 -22.569370556829238 ;
+	setAttr ".sp" -type "double3" -19.618127830767307 4.2345628902715049 10.722087249519046 ;
+	setAttr ".spt" -type "double3" 5.0321223561451713 -1.0861810450240357 -2.7502550405562114 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "E68F488E-B644-7CBD-1F6E-DBB1B84AFF8A";
+	rename -uid "E964CC56-A744-A70B-4ECA-9CBD79E036B1";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "649C55D0-A14F-6A79-F63F-AAA49A5AC69F";
+	rename -uid "9ECEBD3F-5B47-9564-006B-4C97B12CFD5A";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "F5BEC0CD-8243-8EFF-340C-C1AEDE51B5D6";
+	rename -uid "57BD7AFD-B34A-6506-118F-64ADFFDEFBBF";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "38C930CA-F344-BDA5-9E66-AEA0AE0C726E";
+	rename -uid "226B3266-E549-5B9D-E69C-999AC8766F38";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "9583D3A5-5F48-80AF-3E21-70AF662B7B71";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "CA1C6200-D648-F814-2387-0F8C05D65E3C";
+	rename -uid "98CB3072-F742-40BD-4AC5-D899A58E550D";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "65F79D16-6545-DEAF-38E4-59861F11DDC6";
 	setAttr ".g" yes;
@@ -198,6 +211,33 @@ createNode reference -n "MshrmRN";
 		"MshrmRN" 0;
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
+createNode reference -n "Unit5_LabSceneRN";
+	rename -uid "6FAB06E4-1340-E7C1-AE34-1D8FCAB10417";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"Unit5_LabSceneRN"
+		"Unit5_LabSceneRN" 0
+		"Unit5_LabSceneRN" 12
+		0 "|Unit5_LabScene:polySurface1" "|group1" "-s -r "
+		0 "|Unit5_LabScene:pCylinder1" "|group1" "-s -r "
+		0 "|Unit5_LabScene:pCube1" "|group1" "-s -r "
+		2 "|group1|Unit5_LabScene:polySurface1" "translate" " -type \"double3\" -19.63528610064950897 -0.3706062759720421 10.65832562453012677"
+		
+		2 "|group1|Unit5_LabScene:polySurface1" "rotate" " -type \"double3\" 0 0 0"
+		
+		2 "|group1|Unit5_LabScene:polySurface1" "rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		
+		2 "|group1|Unit5_LabScene:pCylinder1" "translate" " -type \"double3\" -19.63528610064950897 -0.3706062759720421 10.65832562453012677"
+		
+		2 "|group1|Unit5_LabScene:pCylinder1" "rotate" " -type \"double3\" 0 0 0"
+		
+		2 "|group1|Unit5_LabScene:pCylinder1" "rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		
+		2 "|group1|Unit5_LabScene:pCube1" "translate" " -type \"double3\" -19.63528610064950897 -0.3706062759720421 10.65832562453012677"
+		
+		2 "|group1|Unit5_LabScene:pCube1" "rotate" " -type \"double3\" 0 0 0"
+		2 "|group1|Unit5_LabScene:pCube1" "rotatePivotTranslate" " -type \"double3\" 0 0 0";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -216,6 +256,7 @@ select -ne :defaultShaderList1;
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
+	setAttr -s 3 ".r";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -223,7 +264,7 @@ select -ne :openPBR_shader1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 176 ".dsm";
+	setAttr -s 181 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
