@@ -10,6 +10,7 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202603302215-e16e754b0e";
 fileInfo "osv" "Mac OS X 20.5.1";
+fileInfo "UUID" "CBB6EEA5-0249-A235-E5DB-D984B64F8A58";
 createNode transform -s -n "persp";
 	rename -uid "6CCB831C-254A-6636-050F-77B2B5862243";
 	setAttr ".v" no;
