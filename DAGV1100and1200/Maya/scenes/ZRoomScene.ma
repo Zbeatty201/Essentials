@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
-//Name: RoomScene.ma
-//Last modified: Wed, Jun 17, 2026 04:13:20 PM
+//Name: ZRoomScene.ma
+//Last modified: Fri, Jul 10, 2026 10:16:46 PM
 //Codeset: UTF-8
 file -rdi 1 -ns "Floor" -rfn "FloorRN" -op "v=0;" -typ "mayaAscii" "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Floor.ma";
 file -rdi 1 -ns "Walls" -rfn "WallsRN" -op "v=0;" -typ "mayaAscii" "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Walls.ma";
@@ -11,6 +11,7 @@ file -rdi 1 -ns "Bkshlv_full" -rfn "Bkshlv_fullRN" -op "v=0;" -typ "mayaAscii"
 file -rdi 1 -ns "Mshrm" -rfn "MshrmRN" -op "v=0;" -typ "mayaAscii" "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Mshrm.ma";
 file -rdi 1 -ns "Unit5_LabScene" -rfn "Unit5_LabSceneRN" -op "v=0;" -typ "mayaAscii"
 		 "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Unit5_LabScene.ma";
+file -rdi 1 -ns "Cactus" -rfn "CactusRN" -op "v=0;" -typ "mayaAscii" "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Cactus.ma";
 file -r -ns "Floor" -dr 1 -rfn "FloorRN" -op "v=0;" -typ "mayaAscii" "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Floor.ma";
 file -r -ns "Walls" -dr 1 -rfn "WallsRN" -op "v=0;" -typ "mayaAscii" "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Walls.ma";
 file -r -ns "Tbl" -dr 1 -rfn "TblRN" -op "v=0;" -typ "mayaAscii" "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Tbl.ma";
@@ -20,6 +21,7 @@ file -r -ns "Bkshlv_full" -dr 1 -rfn "Bkshlv_fullRN" -op "v=0;" -typ "mayaAscii"
 file -r -ns "Mshrm" -dr 1 -rfn "MshrmRN" -op "v=0;" -typ "mayaAscii" "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Mshrm.ma";
 file -r -ns "Unit5_LabScene" -dr 1 -rfn "Unit5_LabSceneRN" -op "v=0;" -typ "mayaAscii"
 		 "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Unit5_LabScene.ma";
+file -r -ns "Cactus" -dr 1 -rfn "CactusRN" -op "v=0;" -typ "mayaAscii" "/Users/zacbeatty/GitRepo/Essentials/DAGV1100and1200/Maya//assets/Cactus.ma";
 requires maya "2027";
 requires "mtoa" "5.6.0";
 currentUnit -l centimeter -a degree -t film;
@@ -28,21 +30,21 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202603302215-e16e754b0e";
 fileInfo "osv" "Mac OS X 20.5.1";
-fileInfo "UUID" "037A0C12-EB47-3759-1D3B-4E9FB0E37DFA";
+fileInfo "UUID" "6DF34BC0-E54F-A6A1-69D1-65AC8D89FB0C";
 createNode transform -s -n "persp";
 	rename -uid "E2F28254-0447-C230-A653-D89F035F6989";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2.6878170026158528 8.7888642617749628 -3.6106719174223474 ;
-	setAttr ".r" -type "double3" -30.938352729580625 138.19999999997745 0 ;
+	setAttr ".t" -type "double3" 6.9797087654662109 5.943494523073511 5.5225146135449537 ;
+	setAttr ".r" -type "double3" -16.538352729572974 100.59999999997132 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A928C5AF-CD43-922C-24D0-17B7EA8F428D";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 17.09511597425351;
+	setAttr ".coi" 12.364350692345889;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -7.0854414701461792 0 7.3201228380203247 ;
+	setAttr ".tp" -type "double3" -4.6708569797415684 2.423894347084222 7.7028587288334034 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "7B9D8317-6341-93B9-505F-968D5B3B61F7";
@@ -103,21 +105,26 @@ createNode transform -n "group1";
 	setAttr ".rpt" -type "double3" 6.6353112498305737 0 -22.569370556829238 ;
 	setAttr ".sp" -type "double3" -19.618127830767307 4.2345628902715049 10.722087249519046 ;
 	setAttr ".spt" -type "double3" 5.0321223561451713 -1.0861810450240357 -2.7502550405562114 ;
+createNode transform -n "Cactus1";
+	rename -uid "9283F417-F243-9DE6-348F-6B954DDA5658";
+	setAttr ".t" -type "double3" -4.6708569797415684 1.7307063913251168 7.7028587288334034 ;
+	setAttr ".r" -type "double3" 0 -31.60860953223527 0 ;
+	setAttr ".s" -type "double3" 0.083573850489953361 0.083573850489953361 0.083573850489953361 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "E964CC56-A744-A70B-4ECA-9CBD79E036B1";
+	rename -uid "A5FBE0B2-6F46-3B1E-E9B3-7AA7498090B0";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "9ECEBD3F-5B47-9564-006B-4C97B12CFD5A";
+	rename -uid "8424FC33-854A-E24E-12C0-7F8E210ABF7F";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "57BD7AFD-B34A-6506-118F-64ADFFDEFBBF";
+	rename -uid "A10F4907-C144-F7CA-8AC1-D3BBAF64C8ED";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "226B3266-E549-5B9D-E69C-999AC8766F38";
+	rename -uid "E156B5F5-BC4B-4638-7CE7-599876678A89";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "9583D3A5-5F48-80AF-3E21-70AF662B7B71";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "98CB3072-F742-40BD-4AC5-D899A58E550D";
+	rename -uid "B86E2DB5-A948-E803-06EB-B5B14AE5C591";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "65F79D16-6545-DEAF-38E4-59861F11DDC6";
 	setAttr ".g" yes;
@@ -238,6 +245,42 @@ createNode reference -n "Unit5_LabSceneRN";
 		2 "|group1|Unit5_LabScene:pCube1" "rotatePivotTranslate" " -type \"double3\" 0 0 0";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
+createNode reference -n "CactusRN";
+	rename -uid "D3E472D9-8E4C-3977-C15C-AB9CBD42BD20";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"CactusRN"
+		"CactusRN" 0
+		"CactusRN" 24
+		0 "|Cactus:revolvedSurface1" "|Cactus1" "-s -r "
+		0 "|Cactus:pCylinder1" "|Cactus1" "-s -r "
+		0 "|Cactus:Cactus" "|Cactus1" "-s -r "
+		0 "|Cactus:Cactus1" "|Cactus1" "-s -r "
+		0 "|Cactus:Cactus2" "|Cactus1" "-s -r "
+		0 "|Cactus:Cactus3" "|Cactus1" "-s -r "
+		0 "|Cactus:group10" "|Cactus1" "-s -r "
+		0 "|Cactus:group11" "|Cactus1" "-s -r "
+		0 "|Cactus:group12" "|Cactus1" "-s -r "
+		0 "|Cactus:group14" "|Cactus1" "-s -r "
+		0 "|Cactus:group15" "|Cactus1" "-s -r "
+		0 "|Cactus:group16" "|Cactus1" "-s -r "
+		0 "|Cactus:group17" "|Cactus1" "-s -r "
+		0 "|Cactus:group18" "|Cactus1" "-s -r "
+		0 "|Cactus:group19" "|Cactus1" "-s -r "
+		0 "|Cactus:group20" "|Cactus1" "-s -r "
+		0 "|Cactus:group21" "|Cactus1" "-s -r "
+		0 "|Cactus:group22" "|Cactus1" "-s -r "
+		0 "|Cactus:group23" "|Cactus1" "-s -r "
+		0 "|Cactus:group24" "|Cactus1" "-s -r "
+		0 "|Cactus:group25" "|Cactus1" "-s -r "
+		0 "|Cactus:group26" "|Cactus1" "-s -r "
+		0 "|Cactus:group27" "|Cactus1" "-s -r "
+		0 "|Cactus:group28" "|Cactus1" "-s -r ";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode reference -n "sharedReferenceNode";
+	rename -uid "78EC6AE0-1B41-3397-B856-D1B8ECDE10BB";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"sharedReferenceNode";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -256,7 +299,7 @@ select -ne :defaultShaderList1;
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
-	setAttr -s 3 ".r";
+	setAttr -s 4 ".r";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -264,8 +307,9 @@ select -ne :openPBR_shader1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 181 ".dsm";
+	setAttr -s 870 ".dsm";
 	setAttr ".ro" yes;
+	setAttr -s 8 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultRenderGlobals;
@@ -286,13 +330,13 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
+connectAttr "sharedReferenceNode.sr" "Bkshlv_fullRN.sr";
+connectAttr "sharedReferenceNode.sr" "Unit5_LabSceneRN.sr";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-// End of RoomScene.ma
+// End of ZRoomScene.ma
